@@ -5,6 +5,7 @@
 package clientes;
 
 import baseDados.BaseDados;
+import java.sql.ResultSet;
 import pagamentos.Pagamento;
 
 /**
