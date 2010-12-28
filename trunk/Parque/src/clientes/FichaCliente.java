@@ -10,9 +10,10 @@ package clientes;
  */
 public class FichaCliente {
 
-    private String idCliente;
-    private String nomeCliente;
-    private String codigoEntrada;
-    private String matricula;
-    private String nib;
+    private String _idCliente;
+    private String _nomeCliente;
+    private String _codigoEntrada;
+    private String _matricula;
+    private String _nib;
+    public GestaoClientes _unnamed_GestaoClientes_;
 }
