@@ -2,15 +2,17 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package pagamentos;
+package acessos;
 
 /**
  *
  * @author Miguel
  */
-public class PagamentoAvenca extends Pagamento {
+public class MonitorSaida {
 
-    public void registaPagamento() {
+    public PortalSaida _unnamed_PortalSaida_;
+
+    public void comunicaErro(String aErro) {
         throw new UnsupportedOperationException();
     }
 }
