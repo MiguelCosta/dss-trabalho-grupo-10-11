@@ -39,4 +39,22 @@ public class Query extends Model {
         return rSet;
     }
 
+    public static String totalEntradasSaidas() throws SQLException {
+        String sqlEntradasRegistados = "SELECT * FROM registos_registados WHERE data_hora_entrada > 0";
+        String rel = null;
+        int entradas = 0;
+        int saidas = 0;
+        ResultSet rSet = null;
+
+        rSet = Model.stmt.executeQuery(sqlEntradasRegistados);
+        while(rSet.next()){
+            entradas++;
+        }
+
+        String sqlEntradasBilhetes = "SELECT * FROM registos WHERE data_hora_entrada > 0";
+        
+
+        return rel;
+    }
+
 }
