@@ -25,6 +25,9 @@ public class GestaoRelatorios {
             case 2:
                 rel = relatorioDiarioOcupacaoPorNivel(niveis, dia);
                 break;
+            case 3:
+                rel = relatorioDiarioTemposEstacionamento(niveis, dia);
+                break;
         }
         
         return rel;
@@ -117,6 +120,42 @@ public class GestaoRelatorios {
             rel = rel + "Total de clientes que estacionaram no nivel "+i+": "+totalNivel+"\n";
         }
         rel = rel + "********************************************\n";
+        System.out.println(rel);
+        return rel;
+    }
+
+    private String relatorioDiarioTemposEstacionamento(int niveis, int dia) throws SQLException {
+        String rel                  = "";
+        ResultSet rSet              = null;
+        float tempoMax              = 0;
+        float tempoMin              = 0;
+        float tempoMedio            = 0;
+        float tempoTotal            = 0;
+        int numeroEstacionametos    = 0;
+
+        int i = 0;
+        rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO DIA "+dia+" POR NIVEL\n";
+        rel = rel + "************************************************************\n";
+
+        while(i<niveis){
+            tempoTotal = 0;
+            numeroEstacionametos = 0;
+            String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
+            sql = sql + "FROM registos_lugares, lugares ";
+            sql = sql + "WHERE to_char(data_hora_ocupado, 'dd') = "+dia;
+            sql = sql + "AND to_char(data_hora_livre, 'dd') > 0 ";
+            sql = sql + "AND registos_lugares.id_lugar = lugares.id_lugar ";
+            sql = sql + "AND lugares.id_piso = "+i;
+            System.out.println(sql);
+
+            rSet = Model.stmt.executeQuery(sql);
+            
+            
+
+        }
+
+        
+
 
         return rel;
     }
