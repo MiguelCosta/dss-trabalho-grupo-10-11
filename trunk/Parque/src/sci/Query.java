@@ -83,6 +83,8 @@ public class Query extends Model {
         entradasTotal   = entradasBilhetes+entradasRegistados;
         saidasTotal     = saidasBilhetes+saidasRegistados;
 
+        rel = rel + "RELATORIO DIARIO DO DIA "+dia+"\n";
+        rel = rel + "*************************************************";
         rel = rel + "Total de entradas de clientes registados:   "+entradasRegistados+"\n";
         rel = rel + "Total de entradas de clientes com bilhetes: "+entradasBilhetes+"\n";
         rel = rel + "Total de saidas de clientes redistados:     "+saidasRegistados+"\n";
