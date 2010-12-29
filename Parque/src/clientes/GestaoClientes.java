@@ -4,7 +4,7 @@
  */
 package clientes;
 
-import baseDados.BaseDados;
+import sci.BaseDados;
 import pagamentos.Pagamento;
 
 /**
