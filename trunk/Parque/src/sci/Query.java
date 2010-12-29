@@ -113,9 +113,8 @@ public class Query extends Model {
                 totalNivel++;
             }
             rel = rel + "Total de clientes que estacionaram no nivel "+i+": "+totalNivel+"\n";
-            
         }
-
+        rel = rel + "********************************************\n";
 
         return rel;
     }
