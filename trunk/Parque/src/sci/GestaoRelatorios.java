@@ -14,11 +14,11 @@ public class GestaoRelatorios {
 
     public BaseDados _baseDados;
 
-    public String geraRelatorios(int relatorio) throws SQLException {
+    public String gerarRelatoriosDiarios(int relatorio, int dia) throws SQLException {
         String rel = null;
 
         switch (relatorio) {
-            case 1: rel = Query.totalEntradasSaidas();
+            case 1: rel = Query.totalEntradasSaidas(dia);
         }
         
         return rel;
