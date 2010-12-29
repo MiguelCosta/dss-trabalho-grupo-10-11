@@ -1,6 +1,6 @@
 
 - Criar tabelas:
-    registo_pagamentos -> tabela onde diz quando o cliente registado fez o pagamento
+    registo_pagamentos  -> tabela onde diz quando o cliente registado fez o pagamento
     registos_registados -> tabela onde diz quando um cliente registado entrou e sai do parque, já existe a tabela registos
                            mas é para os que entram com bilhetes, por isso é necessário esta
 
