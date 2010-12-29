@@ -18,7 +18,10 @@ public class GestaoRelatorios {
         String rel = null;
 
         switch (relatorio) {
-            case 1: rel = Query.totalEntradasSaidas(dia);
+            case 1: 
+                rel = Query.relatorioDiariototalEntradasSaidas(dia);
+                break;
+            case 2:
         }
         
         return rel;
