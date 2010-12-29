@@ -40,7 +40,7 @@ public class Query extends Model {
     }
 
     /**
-     * Função que recebe um dia e calcula o numero total de entradas e saidas do parque
+     * Metodo que recebe um dia e calcula o numero total de entradas e saidas do parque
      * @param dia
      * @return String - relatorio completo já com paragrafos
      * @throws SQLException
@@ -96,6 +96,13 @@ public class Query extends Model {
         return rel;
     }
 
+    /**
+     * Metodo que recebe o numero total de niveis e um dia, e calcula o relatorio de ocupaçao diario de todos os niveis
+     * @param niveis
+     * @param dia
+     * @return
+     * @throws SQLException
+     */
     public static String relatorioDiarioOcupacaoPorNivel(int niveis, int dia) throws SQLException{
         String rel      = "";
         ResultSet rSet  = null;
@@ -107,7 +114,7 @@ public class Query extends Model {
         
         while(i<niveis){
             totalNivel = 0;
-            String sql = "SELECT * FROM lugares, registos_lugares WHERE lugares.id_lugar = "+i+"1 AND TO_CHAR(registos_lugares.data_hora_ocupado, 'dd') = "+dia+"\n";
+            String sql = "SELECT * FROM lugares, registos_lugares WHERE lugares.id_lugar = "+i+" AND TO_CHAR(registos_lugares.data_hora_ocupado, 'dd') = "+dia+"\n";
             rSet = Model.stmt.executeQuery(sql);
             while(rSet.next()){
                 totalNivel++;
