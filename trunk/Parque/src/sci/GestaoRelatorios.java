@@ -6,6 +6,8 @@ package sci;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -125,13 +127,18 @@ public class GestaoRelatorios {
     }
 
     private String relatorioDiarioTemposEstacionamento(int niveis, int dia) throws SQLException {
-        String rel                  = "";
-        ResultSet rSet              = null;
-        float tempoMax              = 0;
-        float tempoMin              = 0;
-        float tempoMedio            = 0;
-        float tempoTotal            = 0;
-        int numeroEstacionametos    = 0;
+        String rel                      = "";
+        ResultSet rSet                  = null;
+        float tempoMax                  = 0;
+        float tempoMin                  = 0;
+        float tempoMedio                = 0;
+        float tempoTotal                = 0;
+        int numeroEstacionametos        = 0;
+        String data_inicio              = "";
+        String data_fim                 = "";
+        GregorianCalendar dataInicio    = new GregorianCalendar();
+        GregorianCalendar dataFim       = new GregorianCalendar();
+        int diferenca                   = dataFim-dataInicio;
 
         int i = 0;
         rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO DIA "+dia+" POR NIVEL\n";
@@ -149,14 +156,15 @@ public class GestaoRelatorios {
             System.out.println(sql);
 
             rSet = Model.stmt.executeQuery(sql);
-            
+            while(rSet.next()){
+                data_inicio = rSet.getString(1);
+                data_fim = rSet.getString(2);
+            }
             
 
         }
 
         
-
-
         return rel;
     }
 
