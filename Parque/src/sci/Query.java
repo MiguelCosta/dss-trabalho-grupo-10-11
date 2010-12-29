@@ -45,7 +45,7 @@ public class Query extends Model {
      * @return String - relatorio completo já com paragrafos
      * @throws SQLException
      */
-    public static String totalEntradasSaidas(int dia) throws SQLException {
+    public static String relatorioDiariototalEntradasSaidas(int dia) throws SQLException {
         
         String rel              = "";
         int entradasBilhetes    = 0;
