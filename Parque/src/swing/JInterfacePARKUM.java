@@ -10,22 +10,22 @@
  */
 package swing;
 
-import baseDados.Model;
-import baseDados.Query;
+import sci.Model;
+import sci.Query;
 import clientes.FichaCliente;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
  * @author Hugo
  */
-public class JInterfacePARKUM extends javax.swing.JFrame {
+public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
     ResultSet rSet = null;
     FichaCliente cliente = new FichaCliente();
@@ -143,7 +143,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame {
 
         jListClientesRegistados.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes Registados"));
         try {
-            rSet = baseDados.Query.queryClientes();
+            rSet = sci.Query.queryClientes();
             DefaultListModel model = new DefaultListModel();
             while (rSet.next())
             model.addElement(rSet.getString(1));
@@ -1041,6 +1041,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame {
             jTextFieldMatricula.setText(cliente.getMatricula());
             jTextFieldNib.setText(cliente.getNib());
             
+           
+            
         } catch (SQLException ex) {
             Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1066,6 +1068,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame {
             }
         });
     }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonManRegista;
@@ -1160,4 +1164,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldidCliente;
     private javax.swing.JTextPane jTextPaneManDescri;
     // End of variables declaration//GEN-END:variables
+
+    public void update(Observable o, Object arg) {
+        
+    }
 }
