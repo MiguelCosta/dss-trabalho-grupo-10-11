@@ -1034,6 +1034,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame {
                 cliente.setNib(rSet.getString(5));
             }
 
+            
             jTextFieldidCliente.setText(cliente.getIdCliente());
             jTextFieldNomeCliente.setText(cliente.getNomeCliente());
             jTextFieldModoEntrada.setText(cliente.getCodigoEntrada());
