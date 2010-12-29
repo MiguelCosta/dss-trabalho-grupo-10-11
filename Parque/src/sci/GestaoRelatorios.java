@@ -14,7 +14,7 @@ public class GestaoRelatorios {
 
     public BaseDados _baseDados;
 
-    public String gerarRelatoriosDiarios(int relatorio, int dia) throws SQLException {
+    public String gerarRelatoriosDiarios(int relatorio, int dia, int niveis) throws SQLException {
         String rel = null;
 
         switch (relatorio) {
@@ -22,6 +22,8 @@ public class GestaoRelatorios {
                 rel = Query.relatorioDiariototalEntradasSaidas(dia);
                 break;
             case 2:
+                rel = Query.relatorioDiarioOcupacaoPorNivel(niveis, dia);
+                break;
         }
         
         return rel;
