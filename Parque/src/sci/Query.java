@@ -39,6 +39,12 @@ public class Query extends Model {
         return rSet;
     }
 
+    /**
+     * Função que recebe um dia e calcula o numero total de entradas e saidas do parque
+     * @param dia
+     * @return String - relatorio completo já com paragrafos
+     * @throws SQLException
+     */
     public static String totalEntradasSaidas(int dia) throws SQLException {
         
         String rel              = "";
