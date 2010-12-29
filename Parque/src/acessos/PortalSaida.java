@@ -4,7 +4,7 @@
  */
 package acessos;
 
-import baseDados.BaseDados;
+import sci.BaseDados;
 
 /**
  *
