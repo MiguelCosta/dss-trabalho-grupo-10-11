@@ -6,7 +6,7 @@ package acessos;
 
 /**
  *
- * @author Miguel
+ * @author Grupo1
  */
 public class BarreiraEntrada {
 
