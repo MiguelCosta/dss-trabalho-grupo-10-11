@@ -96,4 +96,28 @@ public class Query extends Model {
         return rel;
     }
 
+    public static String relatorioDiarioOcupacaoPorNivel(int niveis, int dia) throws SQLException{
+        String rel      = "";
+        ResultSet rSet  = null;
+        int totalNivel  = 0;
+
+        int i = 0;
+        rel = rel + "RELATORIO DIARIO DO DIA "+dia+" POR NIVEL\n";
+        rel = rel + "********************************************\n";
+        
+        while(i<niveis){
+            totalNivel = 0;
+            String sql = "SELECT * FROM lugares, registos_lugares WHERE lugares.id_lugar = "+i+"1 AND TO_CHAR(registos_lugares.data_hora_ocupado, 'dd') = "+dia+"\n";
+            rSet = Model.stmt.executeQuery(sql);
+            while(rSet.next()){
+                totalNivel++;
+            }
+            rel = rel + "Total de clientes que estacionaram no nivel "+i+": "+totalNivel+"\n";
+            
+        }
+
+
+        return rel;
+    }
+
 }
