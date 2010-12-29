@@ -5,7 +5,7 @@
 package pagamentos;
 
 import acessos.Bilhete;
-import baseDados.BaseDados;
+import sci.BaseDados;
 import java.util.Vector;
 
 /**
