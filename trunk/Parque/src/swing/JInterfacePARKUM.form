@@ -202,7 +202,7 @@
                         <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jListClientesRegistadosValueChanged"/>
                       </Events>
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try {&#xa;    rSet = baseDados.Query.queryClientes();&#xa;    DefaultListModel model = new DefaultListModel();&#xa;    while (rSet.next())&#xa;        model.addElement(rSet.getString(1));&#xa;    jListClientesRegistados.setModel(model);&#xa;}&#xa;catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }&#xa;"/>
+                        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try {&#xa;    rSet = sci.Query.queryClientes();&#xa;    DefaultListModel model = new DefaultListModel();&#xa;    while (rSet.next())&#xa;        model.addElement(rSet.getString(1));&#xa;    jListClientesRegistados.setModel(model);&#xa;}&#xa;catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }&#xa;"/>
                       </AuxValues>
                     </Component>
                   </SubComponents>
