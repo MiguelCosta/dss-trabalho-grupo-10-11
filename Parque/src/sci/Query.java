@@ -5,6 +5,7 @@
 
 package sci;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -129,6 +130,29 @@ public class Query extends Model {
         commit2();
     }
 
-    
+    public static void alterarNomeCliente(String idCliente, String newNome) throws SQLException, Exception{
+        String sql = "UPDATE clientes SET nome = '"+newNome+"' WHERE id_cliente = '"+idCliente+"'";
+        Model.stmt.executeQuery(sql);
+        commit2();
+    }
+
+    public static void alterarModo(String idCliente, String newModo) throws SQLException, Exception{
+        String sql = "UPDATE clientes SET id_entrada = '"+newModo+"' WHERE id_cliente = '"+idCliente+"'";
+        Model.stmt.executeQuery(sql);
+        commit2();
+    }
+
+    public static void alterarMatricula(String idCliente, String newMatricula) throws SQLException, Exception{
+        String sql = "UPDATE clientes SET matricula = '"+newMatricula+"' WHERE id_cliente = '"+idCliente+"'";
+        Model.stmt.executeQuery(sql);
+        commit2();
+    }
+
+    public static void alterarNib(String idCliente, String newNib) throws SQLException, Exception{
+        String sql = "UPDATE clientes SET nib = '"+newNib+"' WHERE id_cliente = '"+idCliente+"'";
+        Model.stmt.executeQuery(sql);
+        commit2();
+    }
+
 
 }
