@@ -254,7 +254,7 @@ public class GestaoRelatorios {
 
         rel = rel + "RELATORIO DIARIO DOS TEMPOS ENTRE O PAGAMENTO E SADIDA DOS BILHETES\n";
         rel = rel + "DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
-        rel = rel + "*******************************************************************\n";
+        rel = rel + "*****************************************************************************************\n";
 
         while(rSet.next()){
            data_pagamento   = rSet.getString(1);
@@ -281,9 +281,9 @@ public class GestaoRelatorios {
         rel = rel + "Tempo medio:  "+tempoMedio+"\n";
         rel = rel + "Tempo máximo: "+tempoMax+"\n";
         rel = rel + "Tempo minimo: "+tempoMin+"\n";
-        rel = rel + "\n";
+        rel = rel + "Numero de bilhete: "+numeroBilhetes+"\n";
 
-        rel = rel + "*******************************************************************\n";
+        rel = rel + "*****************************************************************************************\n";
 
         return rel;
     }
