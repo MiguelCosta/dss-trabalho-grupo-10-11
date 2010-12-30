@@ -14,6 +14,14 @@ import java.sql.SQLException;
  */
 public class Query extends Model {
 
+
+    /*********************************
+     * Fazer commit da Base de Dados *
+     *********************************/
+    public static void commit2() throws Exception {
+        Model.stmt.executeQuery("commit");
+    }
+    
     /**
      * Lista todos os clientes
      * @return ResultSet
@@ -111,7 +119,15 @@ public class Query extends Model {
         return numPisos;
     }
 
-    
+    public static void adicionarCliente (String id_cliente, String nome_cliente, String modo_pagamento, String matricula, String nib) throws SQLException, Exception{
+
+        String sql = "INSERT INTO clientes  VALUES ('"+id_cliente+"','"+nome_cliente+"','"+modo_pagamento+"','"+matricula+"','"+nib+"')";
+
+        System.out.println(sql);
+
+        Model.stmt.executeQuery(sql);
+        commit2();
+    }
 
     
 
