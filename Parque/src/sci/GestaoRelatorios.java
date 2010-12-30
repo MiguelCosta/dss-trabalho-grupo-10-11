@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import parque.LerDatas;
 
 /**
  *
@@ -138,7 +139,7 @@ public class GestaoRelatorios {
         String data_fim                 = "";
         GregorianCalendar dataInicio    = new GregorianCalendar();
         GregorianCalendar dataFim       = new GregorianCalendar();
-        int diferenca                   = dataFim-dataInicio;
+        int diferenca                   = 0;
 
         int i = 0;
         rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO DIA "+dia+" POR NIVEL\n";
@@ -159,8 +160,11 @@ public class GestaoRelatorios {
             while(rSet.next()){
                 data_inicio = rSet.getString(1);
                 data_fim = rSet.getString(2);
+                dataInicio.set(LerDatas.getAno(data_inicio), LerDatas.getMes(data_inicio) , LerDatas.getDia(data_inicio), LerDatas.getHora(data_inicio), LerDatas.getMin(data_inicio), LerDatas.getSec(data_inicio));
+                dataFim.set(LerDatas.getAno(data_fim), LerDatas.getMes(data_fim) , LerDatas.getDia(data_fim), LerDatas.getHora(data_fim), LerDatas.getMin(data_fim), LerDatas.getSec(data_fim));
+                
+
             }
-            
 
         }
 
