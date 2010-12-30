@@ -16,6 +16,8 @@ import parque.LerDatas;
  */
 public class GestaoRelatorios {
 
+
+
     public BaseDados _baseDados;
 
     public static String gerarRelatoriosDiarios(int relatorio, int dia, int mes, int ano, int niveis) throws SQLException {
@@ -30,6 +32,9 @@ public class GestaoRelatorios {
                 break;
             case 3:
                 rel = relatorioDiarioTemposEstacionamento(niveis, dia,mes,ano);
+                break;
+            case 5:
+                rel = relatorioDiarioDiferencaPagamentoBilheteSaidaParque(dia,mes,ano);
                 break;
         }
         
@@ -147,6 +152,15 @@ public class GestaoRelatorios {
         return rel;
     }
 
+    /**
+     * Mostra os tempos medios, tempo maximo e tempo minimo de estacionamentos por piso
+     * @param niveis
+     * @param dia
+     * @param mes
+     * @param ano
+     * @return relatorio
+     * @throws SQLException
+     */
     private static String relatorioDiarioTemposEstacionamento(int niveis, int dia, int mes, int ano) throws SQLException {
         String rel                      = "";
         ResultSet rSet                  = null;
@@ -209,6 +223,20 @@ public class GestaoRelatorios {
             rel = rel + "\n";
             i++;
         }
+        return rel;
+    }
+
+    /**
+     * Mostra o relatoria diario das diferencas de tempo entre o pagamento do bilhete e a saida do parque
+     * @param dia
+     * @param mes
+     * @param ano
+     * @return relatorio
+     */
+    private static String relatorioDiarioDiferencaPagamentoBilheteSaidaParque(int dia, int mes, int ano) {
+        String rel = "";
+        
+
         return rel;
     }
 
