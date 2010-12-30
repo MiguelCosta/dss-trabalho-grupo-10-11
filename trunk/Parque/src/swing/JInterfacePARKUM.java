@@ -262,6 +262,12 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jLabel1.setText("NIB");
 
+        jTextFieldidCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldidClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -1004,6 +1010,18 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
     private void jRadioButtonNClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNClienteActionPerformed
         jRadioButtonNomeCliente.setSelected(false);
+        jListClientesRegistados.removeAll();
+        try {
+            rSet = Query.queryClientes();
+            DefaultListModel model = new DefaultListModel();
+            while (rSet.next()) {
+                model.addElement(rSet.getString(1));
+
+            }
+            jListClientesRegistados.setModel(model);
+        } catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jRadioButtonNClienteActionPerformed
 
     private void jRadioButtonRelFacPagChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelFacPagChequeActionPerformed
@@ -1028,6 +1046,20 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
     private void jRadioButtonNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNomeClienteActionPerformed
         jRadioButtonNCliente.setSelected(false);
+        jListClientesRegistados.removeAll();
+        try {
+            rSet = Query.queryClientes();
+            DefaultListModel model = new DefaultListModel();
+            while (rSet.next()) {
+                model.addElement(rSet.getString(2));
+
+            }
+            jListClientesRegistados.setModel(model);
+        } catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_jRadioButtonNomeClienteActionPerformed
 
     private void jRadioButtonRelDiaTotalEntSaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelDiaTotalEntSaiActionPerformed
@@ -1123,8 +1155,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         String sel = (String) jListClientesRegistados.getSelectedValue();
         
         try {
-            rSet = Query.procuraClientePorID(sel);
 
+            if(jRadioButtonNCliente.isSelected()==true){
+                rSet = Query.procuraClientePorID(sel);
+            }
+            else{
+                rSet=Query.procuraClientePorNome(sel);
+            }
+            
             while (rSet.next()) {
                 cliente.setIdCliente(rSet.getString(1));
                 cliente.setNomeCliente(rSet.getString(2));
@@ -1242,6 +1280,10 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
  */
     }//GEN-LAST:event_jButtonRelFacGerarActionPerformed
+
+    private void jTextFieldidClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldidClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldidClienteActionPerformed
 
 
 
