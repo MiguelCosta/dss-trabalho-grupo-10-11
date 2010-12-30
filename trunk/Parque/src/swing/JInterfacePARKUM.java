@@ -1203,8 +1203,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private void jButtonTabDistGeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTabDistGeraActionPerformed
         String rel="";
 
-        Object nivel = jComboBoxTabDistNivel.getSelectedItem();
-        Object hora = jComboBoxTabDistHora.getSelectedItem();
+        int nivel = Integer.parseInt(jComboBoxTabDistNivel.getSelectedItem().toString());
+        int hora = Integer.parseInt(jComboBoxTabDistHora.getSelectedItem().toString());
     }//GEN-LAST:event_jButtonTabDistGeraActionPerformed
 
 
