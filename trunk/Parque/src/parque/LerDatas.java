@@ -42,11 +42,11 @@ public class LerDatas {
         return Integer.parseInt(sec);
     }
 
-    public static long diferencaEntreDatas(GregorianCalendar daTa1, GregorianCalendar daTa2) {
+    public static float diferencaEntreDatas(GregorianCalendar daTa1, GregorianCalendar daTa2) {
 
         long dt1 = daTa1.getTimeInMillis();
         long dt2 = daTa2.getTimeInMillis();
-        long resultado = (long) ((dt2 - dt1) * 0.001);
+        float resultado = (float) (((dt2 - dt1) * 0.001)/60);
         return resultado;
     }
 }
