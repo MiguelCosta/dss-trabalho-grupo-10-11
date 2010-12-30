@@ -41,7 +41,7 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
         String matricula = null;
 
         rSet = Query.procuraClientePorID(sel);
-        String modoID=rSet.getString(3);
+        String modoID = rSet.getString(3);
         rSet1= Query.procuraModoEntradaPorID(modoID);
         while(rSet.next()){
            jTextFieldAltCod.setText(rSet.getString(1));
