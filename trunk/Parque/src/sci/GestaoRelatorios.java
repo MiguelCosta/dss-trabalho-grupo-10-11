@@ -182,7 +182,7 @@ public class GestaoRelatorios {
         while(i<=niveis){
             tempoTotal  = 0;
             tempoMax    = 0;
-            tempoMin    = 0;
+            tempoMin    = 10000;
             tempoMedio  = 0;
             numeroEstacionametos = 0;
             String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
@@ -214,8 +214,9 @@ public class GestaoRelatorios {
                 System.out.println("dif "+diferenca);
                 
             }
-            tempoMedio = tempoTotal/numeroEstacionametos;
-            System.out.println("med"+tempoMin);
+            if(tempoMin==10000) tempoMin=0;
+            if(numeroEstacionametos>0) tempoMedio = tempoTotal/numeroEstacionametos;
+            System.out.println("med "+tempoMedio);
             rel = rel + "Piso "+i+"\n";
             rel = rel + "Tempo medio de estacionamento:  "+tempoMedio+"\n";
             rel = rel + "Tempo máximo de estacionamento: "+tempoMax+"\n";
@@ -233,9 +234,56 @@ public class GestaoRelatorios {
      * @param ano
      * @return relatorio
      */
-    private static String relatorioDiarioDiferencaPagamentoBilheteSaidaParque(int dia, int mes, int ano) {
+    private static String relatorioDiarioDiferencaPagamentoBilheteSaidaParque(int dia, int mes, int ano) throws SQLException {
         String rel = "";
+        int numeroBilhetes              = 0;
+        float diferenca                 = 0;
+        float tempoMax                  = 0;
+        float tempoMin                  = 10000;
+        float tempoMedio                = 0;
+        float tempoTotal                = 0;
+        String data_pagamento           = "";
+        String data_saida               = "";
+        GregorianCalendar dataPagamento = new GregorianCalendar();
+        GregorianCalendar dataSaida     = new GregorianCalendar();
+        ResultSet rSet                  = null;
         
+        String sql = "SELECT to_char(data_hora_pagamento, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_saida, 'yyyy-mm-dd hh24:mi:ss') FROM bilhetes";
+
+        rSet = Model.stmt.executeQuery(sql);
+
+        rel = rel + "RELATORIO DIARIO DOS TEMPOS ENTRE O PAGAMENTO E SADIDA DOS BILHETES\n";
+        rel = rel + "DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
+        rel = rel + "*******************************************************************\n";
+
+        while(rSet.next()){
+           data_pagamento   = rSet.getString(1);
+           data_saida       = rSet.getString(2);
+
+           dataPagamento.set(LerDatas.getAno(data_pagamento), LerDatas.getMes(data_pagamento) , LerDatas.getDia(data_pagamento), LerDatas.getHora(data_pagamento), LerDatas.getMin(data_pagamento), LerDatas.getSec(data_pagamento));
+           dataSaida.set(LerDatas.getAno(data_saida), LerDatas.getMes(data_saida) , LerDatas.getDia(data_saida), LerDatas.getHora(data_saida), LerDatas.getMin(data_saida), LerDatas.getSec(data_saida));
+
+           diferenca = LerDatas.diferencaEntreDatas(dataPagamento, dataSaida);
+           tempoTotal = tempoTotal + diferenca;
+           numeroBilhetes++;
+
+           if (diferenca>tempoMax) tempoMax = diferenca;
+           if (diferenca<tempoMin && diferenca >0 ) tempoMin = diferenca;
+           System.out.println("max "+tempoMax);
+           System.out.println("min "+tempoMin);
+           System.out.println("dif "+diferenca);
+        }
+
+        if(tempoMin==10000) tempoMin=0;
+        if(numeroBilhetes>0) tempoMedio = tempoTotal/numeroBilhetes;
+        System.out.println("med "+tempoMedio);
+
+        rel = rel + "Tempo medio:  "+tempoMedio+"\n";
+        rel = rel + "Tempo máximo: "+tempoMax+"\n";
+        rel = rel + "Tempo minimo: "+tempoMin+"\n";
+        rel = rel + "\n";
+
+        rel = rel + "*******************************************************************\n";
 
         return rel;
     }
