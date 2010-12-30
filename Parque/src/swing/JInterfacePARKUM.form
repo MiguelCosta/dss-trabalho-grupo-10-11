@@ -65,7 +65,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jTabbedPane1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jSeparator1" alignment="1" pref="719" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" alignment="1" pref="723" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="jLabelIniciarSessão" min="-2" max="-2" attributes="0"/>
@@ -158,7 +158,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jTabbedPane3" min="-2" pref="133" max="-2" attributes="0"/>
-                                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                                  <EmptySpace pref="33" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jButtonEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jButtonRegistarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -245,7 +245,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabelProcura1">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="A Procura ser&#xe1; feita de acordo com o modo de "/>
+                        <Property name="text" type="java.lang.String" value="A procura ser&#xe1; feita de acordo com o modo de "/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabelProcura2">
@@ -494,7 +494,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jRadioButtonRelClienteValorMensal" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
-                                          <Component id="jButtonRelClienteGerarRel" pref="113" max="32767" attributes="0"/>
+                                          <Component id="jButtonRelClienteGerarRel" pref="127" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -540,7 +540,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelClienteValorMensal">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Valor Mensal a Facturar"/>
+                            <Property name="text" type="java.lang.String" value="Valor mensal a pagar"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -693,17 +693,22 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="jRadioButtonRelDiaNBilhete" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonRelDiaTemposPag" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabelRelDia1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jRadioButtonRelDiaViaturas" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jRadioButtonRelDiaNBilhete" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jRadioButtonRelDiaTemposPag" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabelRelDia1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jRadioButtonRelDiaOcupaNivel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButtonRelDiaTempoEsta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButtonRelDiaEntEst" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jRadioButtonRelDiaTotalEntSai" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jRadioButtonRelDiaOcupaNivel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButtonRelDiaTempoEsta" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButtonRelDiaEntEst" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButtonRelDiaTotalEntSai" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButtonRelDiaViaturas" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -733,12 +738,12 @@
                                           <Component id="jRadioButtonRelDiaTemposPag" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jRadioButtonRelDiaNBilhete" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jRadioButtonRelDiaViaturas" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="104" max="32767" attributes="0"/>
+                                          <EmptySpace pref="101" max="32767" attributes="0"/>
                                           <Component id="jButtonRelDiaGerar" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -766,7 +771,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelDiaOcupaNivel">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Ocupa&#xe7;&#xf5;es por N&#xed;vel"/>
+                            <Property name="text" type="java.lang.String" value="Ocupa&#xe7;&#xf5;es por n&#xed;vel"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelDiaOcupaNivelActionPerformed"/>
@@ -774,7 +779,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelDiaTempoEsta">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Tempos de Estacionamento"/>
+                            <Property name="text" type="java.lang.String" value="Tempos de estacionamento"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelDiaTempoEstaActionPerformed"/>
@@ -798,7 +803,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelDiaNBilhete">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="N&#xfa;mero de Bilhetes Estraviados"/>
+                            <Property name="text" type="java.lang.String" value="N&#xfa;mero de bilhetes estraviados"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelDiaNBilheteActionPerformed"/>
@@ -806,7 +811,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelDiaViaturas">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Viaturas que n&#xe3;o entraram nem sairam (Relativamente aos clientes registados)"/>
+                            <Property name="text" type="java.lang.String" value="Viaturas que n&#xe3;o entraram nem sairam (relativamente aos clientes registados)"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelDiaViaturasActionPerformed"/>
@@ -990,7 +995,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelMPNpag">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="N&#xfa;mero de Pagamentos por tipo"/>
+                            <Property name="text" type="java.lang.String" value="N&#xfa;mero de pagamentos, por tipo"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelMPNpagActionPerformed"/>
@@ -998,7 +1003,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelMPTotal">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Total recebido por cada tipo de pagamento(Dinheiro ou Cart&#xe3;o Magn&#xe9;tico)"/>
+                            <Property name="text" type="java.lang.String" value="Total recebido por cada tipo de pagamento (dinheiro ou cart&#xe3;o magn&#xe9;tico)"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelMPTotalActionPerformed"/>
@@ -1006,7 +1011,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelMPNumPerce">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="N&#xfa;mero e percegem de recibos emitido e o seu total"/>
+                            <Property name="text" type="java.lang.String" value="N&#xfa;mero e percentagem de recibos emitido e o seu total"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelMPNumPerceActionPerformed"/>
@@ -1014,7 +1019,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelMPAvarias">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="N&#xfa;mero de Avarias e opera&#xe7;&#xf5;es de manuten&#xe7;&#xe3;o registadas"/>
+                            <Property name="text" type="java.lang.String" value="N&#xfa;mero de avarias e opera&#xe7;&#xf5;es de manuten&#xe7;&#xe3;o registadas"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelMPAvariasActionPerformed"/>
@@ -1095,7 +1100,7 @@
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacPagDin">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Facturan&#xe7;&#xe3;o de pagamentos com dinheiro"/>
+                            <Property name="text" type="java.lang.String" value="Factura&#xe7;&#xe3;o de pagamentos com dinheiro"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelFacPagDinActionPerformed"/>
@@ -1154,7 +1159,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="317" max="32767" attributes="0"/>
+                                  <EmptySpace pref="332" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1227,12 +1232,12 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabelTabDist1">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Escolha o n&#xed;vel que pretende opter relat&#xf3;rio:"/>
+                            <Property name="text" type="java.lang.String" value="Escolha o n&#xed;vel que pretende obter o relat&#xf3;rio:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabelTabDist2">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Escolha a hora do dia de que pretende obter o relat&#xf3;rio"/>
+                            <Property name="text" type="java.lang.String" value="Escolha a hora do dia que pretende obter o relat&#xf3;rio"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="jComboBoxTabDistNivel">
@@ -1343,7 +1348,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="N&#xfa;mero da M&#xe1;quina:"/>
+                    <Property name="text" type="java.lang.String" value="Identifica&#xe7;&#xe3;o da m&#xe1;quina:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldManNumMaq">
@@ -1358,7 +1363,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Tempo Gasto (em minutos):"/>
+                    <Property name="text" type="java.lang.String" value="Tempo gasto (em minutos):"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldManTempo">
