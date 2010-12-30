@@ -30,4 +30,13 @@ public class Util {
                     (screenSize.height - dialogSize.height) / 2);
         }
     }
+
+    public static boolean isNumber(String input) {
+        try {
+            Integer.parseInt(input);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
