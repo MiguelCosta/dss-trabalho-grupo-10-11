@@ -58,24 +58,36 @@ public class GestaoRelatorios {
         ResultSet rSet          = null;
 
         String sqlEntradasRegistados = "SELECT * FROM registos_registados WHERE TO_CHAR(data_hora_entrada, 'dd') = "+dia;
+        sqlEntradasRegistados = sqlEntradasRegistados + " AND TO_CHAR(data_hora_entrada, 'mm') = "+mes;
+        sqlEntradasRegistados = sqlEntradasRegistados + " AND TO_CHAR(data_hora_entrada, 'yyyy') = "+ano;
+        System.out.println(sqlEntradasRegistados);
         rSet = Model.stmt.executeQuery(sqlEntradasRegistados);
         while(rSet.next()){
             entradasRegistados++;
         }
 
         String sqlEntradasBilhetes = "SELECT * FROM bilhetes WHERE TO_CHAR(data_hora_entrada, 'dd') ="+dia;
+        sqlEntradasBilhetes = sqlEntradasBilhetes + " AND TO_CHAR(data_hora_entrada, 'mm') = "+mes;
+        sqlEntradasBilhetes = sqlEntradasBilhetes + " AND TO_CHAR(data_hora_entrada, 'yyyy') = "+ano;
+        System.out.println(sqlEntradasBilhetes);
         rSet = Model.stmt.executeQuery(sqlEntradasBilhetes);
         while(rSet.next()){
             entradasBilhetes++;
         }
 
         String sqlSaidasRegistados = "SELECT * FROM registos_registados WHERE TO_CHAR(data_hora_saida, 'dd') = "+dia;
+        sqlSaidasRegistados = sqlSaidasRegistados + " AND TO_CHAR(data_hora_saida, 'mm') = "+mes;
+        sqlSaidasRegistados = sqlSaidasRegistados + " AND TO_CHAR(data_hora_saida, 'yyyy') = "+ano;
+        System.out.println(sqlSaidasRegistados);
         rSet = Model.stmt.executeQuery(sqlSaidasRegistados);
         while(rSet.next()){
             saidasRegistados++;
         }
 
         String sqlSaidasBilhetes = "SELECT * FROM bilhetes WHERE TO_CHAR(data_hora_saida, 'dd') = "+dia;
+        sqlSaidasBilhetes = sqlSaidasBilhetes + " AND TO_CHAR(data_hora_saida, 'mm') = "+mes;
+        sqlSaidasBilhetes = sqlSaidasBilhetes + " AND TO_CHAR(data_hora_saida, 'yyyy') = "+ano;
+        System.out.println(sqlSaidasBilhetes);
         rSet = Model.stmt.executeQuery(sqlSaidasBilhetes);
         while(rSet.next()){
             saidasBilhetes++;
@@ -84,15 +96,15 @@ public class GestaoRelatorios {
         entradasTotal   = entradasBilhetes+entradasRegistados;
         saidasTotal     = saidasBilhetes+saidasRegistados;
 
-        rel = rel + "RELATORIO DIARIO DO DIA "+dia+"\n";
+        rel = rel + "RELATORIO DIARIO DO DIA "+dia+"-"+mes+"-"+ano+"\n";
         rel = rel + "*************************************************\n";
-        rel = rel + "Total de entradas de clientes registados:   "+entradasRegistados+"\n";
+        rel = rel + "Total de entradas de clientes registados: "+entradasRegistados+"\n";
         rel = rel + "Total de entradas de clientes com bilhetes: "+entradasBilhetes+"\n";
-        rel = rel + "Total de saidas de clientes redistados:     "+saidasRegistados+"\n";
-        rel = rel + "Total de saidas de clientes com bilhetes:   "+saidasBilhetes+"\n";
+        rel = rel + "Total de saidas de clientes redistados: "+saidasRegistados+"\n";
+        rel = rel + "Total de saidas de clientes com bilhetes: "+saidasBilhetes+"\n";
         rel = rel + "*************************************************\n";
-        rel = rel + "Total de entradas:                          "+entradasTotal+"\n";
-        rel = rel + "Total de saidas:                            "+saidasTotal+"\n";
+        rel = rel + "Total de entradas: "+entradasTotal+"\n";
+        rel = rel + "Total de saidas: "+saidasTotal+"\n";
 
         return rel;
     }
@@ -110,12 +122,15 @@ public class GestaoRelatorios {
         int totalNivel  = 0;
 
         int i = 1;
-        rel = rel + "RELATORIO DIARIO DO DIA "+dia+" POR NIVEL\n";
+        rel = rel + "RELATORIO DIARIO DO DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
         rel = rel + "*************************************************\n";
 
         while(i<=niveis){
             totalNivel = 0;
-            String sql = "SELECT * FROM lugares, registos_lugares, pisos WHERE lugares.id_piso = "+i+" AND TO_CHAR(registos_lugares.data_hora_ocupado, 'dd') = "+dia;
+            String sql = "SELECT * FROM lugares, registos_lugares, pisos WHERE lugares.id_piso = "+i;
+            sql = sql + " AND TO_CHAR(registos_lugares.data_hora_ocupado, 'dd') = "+dia;
+            sql = sql + " AND TO_CHAR(registos_lugares.data_hora_ocupado, 'mm') = "+mes;
+            sql = sql + " AND TO_CHAR(registos_lugares.data_hora_ocupado, 'yyyy') = "+ano;
             sql = sql + " AND pisos.id_piso = lugares.id_piso";
             sql = sql + " AND registos_lugares.id_lugar = lugares.id_lugar";
 
@@ -147,7 +162,7 @@ public class GestaoRelatorios {
         float diferenca                 = 0;
 
         int i = 1;
-        rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO DIA "+dia+" POR NIVEL\n";
+        rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
         rel = rel + "************************************************************\n";
 
         while(i<=niveis){
@@ -159,6 +174,8 @@ public class GestaoRelatorios {
             String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
             sql = sql + " FROM registos_lugares, lugares ";
             sql = sql + " WHERE to_char(data_hora_ocupado, 'dd') = "+dia;
+            sql = sql + " AND to_char(data_hora_ocupado, 'mm') = "+mes;
+            sql = sql + " AND to_char(data_hora_ocupado, 'yyyy') = "+ano;
             sql = sql + " AND to_char(data_hora_livre, 'dd') > 0 ";
             sql = sql + " AND registos_lugares.id_lugar = lugares.id_lugar ";
             sql = sql + " AND lugares.id_piso = "+i;
