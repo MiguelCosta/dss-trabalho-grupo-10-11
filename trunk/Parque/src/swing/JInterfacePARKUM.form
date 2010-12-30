@@ -688,7 +688,7 @@
                                               <Component id="jLabelRelDia1" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jRadioButtonRelDiaViaturas" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="229" max="32767" attributes="0"/>
+                                          <EmptySpace pref="182" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -697,7 +697,7 @@
                                               <Component id="jRadioButtonRelDiaEntEst" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jRadioButtonRelDiaTotalEntSai" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="102" max="32767" attributes="0"/>
+                                          <EmptySpace pref="55" max="32767" attributes="0"/>
                                           <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                       </Group>
