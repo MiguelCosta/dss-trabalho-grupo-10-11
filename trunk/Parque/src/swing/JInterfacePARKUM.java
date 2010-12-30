@@ -616,6 +616,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTabbedPane2.addTab("Relatórios Diários", jPanel9);
 
         jButtonRelMPGerar.setText("Gerar Relatório");
+        jButtonRelMPGerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRelMPGerarActionPerformed(evt);
+            }
+        });
 
         jRadioButtonRelMPNpag.setText("Número de Pagamentos por tipo");
         jRadioButtonRelMPNpag.addActionListener(new java.awt.event.ActionListener() {
@@ -1170,6 +1175,40 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private void jTextFieldSelecDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSelecDiaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldSelecDiaActionPerformed
+
+    private void jButtonRelMPGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelMPGerarActionPerformed
+
+        String rel = "";
+
+        String idMaq_texto = jTextFieldRelMPIdMaq.getText();
+
+        int idMaq;
+        if (Util.isNumber(idMaq_texto)) idMaq = Integer.parseInt(idMaq_texto);
+        /*
+            try {
+                if (jRadioButtonRelMPNpag.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosMaqPagamento(1,idMaq);
+                if (jRadioButtonRelMPTotal.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosMaqPagamento(2,idMaq );
+                if (jRadioButtonRelMPNumPerce.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosMaqPagamento(3,idMaq );
+                if (jRadioButtonRelMPAvarias.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosMaqPagamento(4,idMaq);
+            } catch (SQLException ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
+    }//GEN-LAST:event_jButtonRelMPGerarActionPerformed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * @param args the command line arguments
