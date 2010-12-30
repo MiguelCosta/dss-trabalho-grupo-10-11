@@ -1070,6 +1070,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rio"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRelFacGerarActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacPagDin">
                           <Properties>
