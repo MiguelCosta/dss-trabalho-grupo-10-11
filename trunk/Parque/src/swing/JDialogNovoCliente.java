@@ -216,7 +216,7 @@ public class JDialogNovoCliente extends javax.swing.JDialog {
             System.out.println(msgERRO);
 
             if (msgERRO.equalsIgnoreCase("") == false) {
-            JOptionPane.showMessageDialog(null, msgERRO, "Erro ao alterar produto", 1);
+            JOptionPane.showMessageDialog(null, msgERRO, "Erro ao criar cliente", 1);
             } else {
                 Query.adicionarCliente(idCliente, nomeCliente, Query.procuraModoEntradaPorNome(modo), matricula, nib);
              /* 
@@ -227,7 +227,7 @@ public class JDialogNovoCliente extends javax.swing.JDialog {
                 Query.adicionarMatricula(idCliente,matricula);
 
               */
-                JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!", "Produto alterado", 1);
+                JOptionPane.showMessageDialog(null, "Cliente adicionar com sucesso!", "Cliente adicionado", 1);
                 JDialogNovoCliente.this.dispose();
             }
 

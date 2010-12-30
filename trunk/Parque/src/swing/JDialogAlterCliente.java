@@ -231,7 +231,7 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
             System.out.println(msgERRO);
 
             if (msgERRO.equalsIgnoreCase("") == false) {
-            JOptionPane.showMessageDialog(null, msgERRO, "Erro ao alterar produto", 1);
+            JOptionPane.showMessageDialog(null, msgERRO, "Erro ao alterar cliente", 1);
             } else {
              /*   Query.alterarNomeCliente(idCliente, nomeCliente);
                 Query.alterarNib(idCliente, nib);
@@ -239,7 +239,7 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                 Query.alterarMatricula(idCliente,matricula);
 
               */
-                JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!", "Produto alterado", 1);
+                JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso!", "Cliente alterado", 1);
                 JDialogAlterCliente.this.dispose();
             }
 
