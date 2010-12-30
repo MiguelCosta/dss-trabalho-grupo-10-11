@@ -297,7 +297,17 @@ public class GestaoRelatorios {
         int totalClientes   = 0;
 
         ResultSet rSet      = null;
-        String sql          = "";
+        String sql          = "SELECT * FROM clientes WHERE clientes.id_cliente NOT IN (";
+        sql = sql + " SELECT registos_registados.id_cliente FROM clientes, registos_registados";
+        sql = sql + " WHERE to_char(registos_registados.data_hora_entrada, 'dd') = "+dia;
+        //sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'mm') = "+mes;
+        //sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'yyyy') = "+ano;
+        sql = sql + " AND clientes.id_cliente = registos_registados.id_cliente)";
+
+
+
+
+  
         
         rel = rel + "RELATORIO DIARIO DOS CLIENTES QUE NAO ESTIVERAM NO PARQUE\n";
         rel = rel + "DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
@@ -310,7 +320,7 @@ public class GestaoRelatorios {
         }
 
         rel = rel + "*****************************************************************************************\n";
-        rel = rel + "";
+        rel = rel + "TOTAL DE CLIENTES: "+totalClientes;
         return rel;
     }
 
