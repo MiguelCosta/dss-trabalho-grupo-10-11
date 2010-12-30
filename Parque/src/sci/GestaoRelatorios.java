@@ -18,7 +18,7 @@ public class GestaoRelatorios {
 
     public BaseDados _baseDados;
 
-    public String gerarRelatoriosDiarios(int relatorio, int dia, int niveis) throws SQLException {
+    public static String gerarRelatoriosDiarios(int relatorio, int dia, int niveis) throws SQLException {
         String rel = null;
 
         switch (relatorio) {
@@ -36,7 +36,7 @@ public class GestaoRelatorios {
         return rel;
     }
 
-    public void apresentaRelatorio(String aRelatorio) {
+    public static void apresentaRelatorio(String aRelatorio) {
         throw new UnsupportedOperationException();
     }
 
@@ -85,12 +85,12 @@ public class GestaoRelatorios {
         saidasTotal     = saidasBilhetes+saidasRegistados;
 
         rel = rel + "RELATORIO DIARIO DO DIA "+dia+"\n";
-        rel = rel + "*************************************************";
+        rel = rel + "*************************************************\n";
         rel = rel + "Total de entradas de clientes registados:   "+entradasRegistados+"\n";
         rel = rel + "Total de entradas de clientes com bilhetes: "+entradasBilhetes+"\n";
         rel = rel + "Total de saidas de clientes redistados:     "+saidasRegistados+"\n";
         rel = rel + "Total de saidas de clientes com bilhetes:   "+saidasBilhetes+"\n";
-        rel = rel + "*************************************************";
+        rel = rel + "*************************************************\n";
         rel = rel + "Total de entradas:                          "+entradasTotal+"\n";
         rel = rel + "Total de saidas:                            "+saidasTotal+"\n";
 
@@ -127,7 +127,7 @@ public class GestaoRelatorios {
         return rel;
     }
 
-    private String relatorioDiarioTemposEstacionamento(int niveis, int dia) throws SQLException {
+    private static String relatorioDiarioTemposEstacionamento(int niveis, int dia) throws SQLException {
         String rel                      = "";
         ResultSet rSet                  = null;
         float tempoMax                  = 0;
