@@ -8,13 +8,15 @@ drop table pisos                cascade constraints;
 drop table lugares              cascade constraints;
 drop table bilhetes             cascade constraints;
 drop table registos_lugares     cascade constraints;
+drop table pagamentos           cascade constraints;
+drop table registos_registados  cascade constraints;
 
 CREATE TABLE bilhetes (
   id_bilhete            varchar2(4),
   data_hora_entrada     date,
   data_hora_pagamento   date,
   data_hora_saida       date,
-  
+
   CONSTRAINT id_bilhete_pk
     PRIMARY KEY (id_bilhete)
 );
@@ -23,7 +25,7 @@ CREATE TABLE pisos (
   id_piso     varchar2(2),
   n_lugares   varchar2(3),
   estado      varchar2(2),
-  
+
   CONSTRAINT id_piso_pk
     PRIMARY KEY (id_piso)
 );
@@ -32,7 +34,7 @@ CREATE TABLE lugares (
   id_lugar    varchar2(4),
   id_piso     varchar2(2),
   estado      varchar2(2),
-  
+
   CONSTRAINT id_lugar_pk
     PRIMARY KEY (id_lugar),
   CONSTRAINT id_piso_fk
@@ -44,7 +46,7 @@ CREATE TABLE registos_lugares (
   id_lugar            varchar2(4),
   data_hora_ocupado   date,
   data_hora_livre     date,
-  
+
   CONSTRAINT id_lugar_fk
     FOREIGN KEY (id_lugar)
     REFERENCES lugares(id_lugar)
@@ -54,7 +56,7 @@ CREATE TABLE funcionarios (
   id_funcionario        varchar2(8),
   nome_funcionario      varchar2(100),
   palavra_chave         varchar2(8),
-  
+
   CONSTRAINT id_funcionario_pk
     PRIMARY KEY (id_funcionario)
 );
@@ -64,7 +66,7 @@ CREATE TABLE maquinas (
   id_piso               varchar2(8),
   localizacao           varchar2(100),
   montante              varchar2(5),
-  
+
   CONSTRAINT id_maquina_pk
     PRIMARY KEY (id_maquina),
   CONSTRAINT id_piso_maquina_fk
@@ -78,7 +80,7 @@ CREATE TABLE registos_manutencao (
   data_hora_manutencao  date,
   tempo_gasto           varchar2(10),
   id_funcionario        varchar2(8),
-  
+
   CONSTRAINT id_maquina_manut_pk
     FOREIGN KEY (id_maquina)
     REFERENCES maquinas(id_maquina),
@@ -90,7 +92,7 @@ CREATE TABLE registos_manutencao (
 CREATE TABLE modos_entrada (
   id_entrada      varchar2(4),
   modo_entrada    varchar2(100),
-  
+
   CONSTRAINT modos_entrada_pk
     PRIMARY KEY (id_entrada)
 );
@@ -101,7 +103,7 @@ CREATE TABLE clientes (
   id_entrada      varchar2(4),
   matricula       varchar2(9),
   nib             varchar2(22),
-  
+
   CONSTRAINT clientes_pk
     PRIMARY KEY (id_cliente),
   CONSTRAINT clientes_fk
@@ -109,6 +111,24 @@ CREATE TABLE clientes (
      REFERENCES modos_entrada(id_entrada)
 );
 
+CREATE TABLE pagamentos (
+  id_cliente            varchar2(8),
+  data_hora_pagamento   date,
+
+  CONSTRAINT id_cliente_fk
+    FOREIGN KEY (id_cliente)
+    REFERENCES clientes(id_cliente)
+);
+
+CREATE TABLE registos_registados (
+  id_cliente          varchar2(8),
+  data_hora_entrada   date,
+  data_hora_saida     date,
+
+  CONSTRAINT id_clienteRegistado_fk
+    FOREIGN KEY (id_cliente)
+    REFERENCES clientes(id_cliente)
+);
 
 /*
 
