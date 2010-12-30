@@ -1234,6 +1234,9 @@
                               <StringArray count="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxTabDistNivelActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try {&#xa;    rSet = sci.Query.queryPisos();&#xa;    &#xa;    while (rSet.next())&#xa;        jComboBoxTabDistNivel.addItem(rSet.getString(1));&#xa;}&#xa;catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }&#xa;"/>
                           </AuxValues>

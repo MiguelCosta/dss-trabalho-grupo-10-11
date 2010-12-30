@@ -809,6 +809,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jComboBoxTabDistNivel.addItem(rSet.getString(1));
         }
         catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }
+        jComboBoxTabDistNivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTabDistNivelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -1343,6 +1348,10 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         }
 
     }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    private void jComboBoxTabDistNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTabDistNivelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTabDistNivelActionPerformed
 
 
 
