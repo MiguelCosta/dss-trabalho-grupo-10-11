@@ -40,7 +40,7 @@ public class Query extends Model {
     }
 
     public static int totalPisos() throws SQLException{
-        String sql = "SELECT * FROM pisos;";
+        String sql = "SELECT * FROM pisos";
         int numPisos = 0;
 
         ResultSet rSet = null;
