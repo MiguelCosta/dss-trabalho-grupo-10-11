@@ -41,6 +41,14 @@ public class Query extends Model {
 
         return rSet;
     }
+    public static ResultSet procuraClientePorNome(String sel) throws SQLException{
+        String sql = "SELECT * FROM clientes WHERE nome ='";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + sel + "'");
+
+        return rSet;
+    }
 
     public static int totalPisos() throws SQLException{
         String sql = "SELECT * FROM pisos";
