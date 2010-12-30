@@ -163,7 +163,7 @@ public class GestaoRelatorios {
 
         int i = 1;
         rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
-        rel = rel + "************************************************************\n";
+        rel = rel + "****************************************************************************\n";
 
         while(i<=niveis){
             tempoTotal  = 0;
@@ -208,11 +208,7 @@ public class GestaoRelatorios {
             rel = rel + "Tempo minimo de estacionamento: "+tempoMin+"\n";
             rel = rel + "\n";
             i++;
-
-            
         }
-
-        
         return rel;
     }
 
