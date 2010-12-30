@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
 
         String data = "2010-01-14 09:14:10";
-        String data2 = "2010-01-14 09:15:10";
+        String data2 = "2010-01-14 09:15:40";
 
 
         int ano = LerDatas.getAno(data);
@@ -51,7 +51,7 @@ public class Main {
         System.out.println(""+sec2);
         GregorianCalendar dataG2 = new GregorianCalendar(ano2, mes2, dia2, hora2, min2, sec2);
 
-        long re = LerDatas.diferencaEntreDatas(dataG1, dataG2);
+        float re = LerDatas.diferencaEntreDatas(dataG1, dataG2);
         System.out.println("diferenca: "+re);
 
         
