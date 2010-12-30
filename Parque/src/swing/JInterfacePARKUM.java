@@ -785,6 +785,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jLabelTabDist2.setText("Escolha a hora do dia de que pretende obter o relatório");
 
+        try {
+            rSet = sci.Query.queryPisos();
+
+            while (rSet.next())
+            jComboBoxTabDistNivel.addItem(rSet.getString(1));
+        }
+        catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
