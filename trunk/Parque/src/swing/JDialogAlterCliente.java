@@ -50,7 +50,7 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
            if (rSet.getString(3).equalsIgnoreCase("RM")) modoEntrada = 1;
            if (rSet.getString(3).equalsIgnoreCase("VV")) modoEntrada = 2;
            if (rSet.getString(3).equalsIgnoreCase("CW")) modoEntrada = 3;
-           jComboBoxAltModo.setSelectedItem(modoEntrada);
+           jComboBoxAltModo.setSelectedIndex(modoEntrada);
            jTextFieldAltMat.setText(rSet.getString(4));
            jTextFieldAltNib.setText(rSet.getString(5));
         }
