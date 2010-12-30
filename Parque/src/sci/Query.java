@@ -23,6 +23,9 @@ public class Query extends Model {
         return Model.stmt.executeQuery("SELECT * FROM clientes");
     }
 
+    public static ResultSet queryPisos () throws SQLException{
+        return Model.stmt.executeQuery("SELECT * FROM pisos");
+    }
 
     /**
      * Procura um cliente pelo ID e devolve a linha
