@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
  */
 public class JDialogAlterCliente extends javax.swing.JFrame {
     ResultSet rSet = null;
+    ResultSet rSet1 = null;
     String cliente = null;
 
     /** Creates new form JDialogAlterCliente */
@@ -40,11 +41,12 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
         String matricula = null;
 
         rSet = Query.procuraClientePorID(sel);
-
+        String modoID=rSet.getString(3);
+        rSet1= Query.procuraModoEntradaPorID(modoID);
         while(rSet.next()){
            jTextFieldAltCod.setText(rSet.getString(1));
            jTextFieldAltNome.setText(rSet.getString(2));
-           jComboBoxAltModo.setSelectedItem(rSet.getString(3));
+           jComboBoxAltModo.setSelectedItem(rSet1.getString(2));
            jTextFieldAltMat.setText(rSet.getString(4));
            jTextFieldAltNib.setText(rSet.getString(5));
         }
@@ -89,6 +91,22 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
 
         jLabel4.setText("Modo de Entrada");
 
+        try {     
+            rSet = Query.queryModosEntrada(); 
+
+            while (rSet.next())         
+            jComboBoxAltModo.addItem(rSet.getString(2));     
+        }
+
+        catch (SQLException ex) { 
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); 
+        }
+        jComboBoxAltModo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxAltModoActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Matrícula do Veiculo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -105,20 +123,13 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldAltCod, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldAltNome, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldAltNib, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldAltMat, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxAltModo, 0, 276, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(jTextFieldAltCod, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldAltNome, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldAltNib, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                            .addComponent(jTextFieldAltMat, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxAltModo, 0, 276, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -243,6 +254,10 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
        jTextFieldAltNib.setText(null);
        jTextFieldAltNome.setText(null);
     }//GEN-LAST:event_jButtonLimparActionPerformed
+
+    private void jComboBoxAltModoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxAltModoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxAltModoActionPerformed
 
     /**
     * @param args the command line arguments
