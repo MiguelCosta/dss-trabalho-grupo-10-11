@@ -65,7 +65,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jButtonRegistarCliente = new javax.swing.JButton();
         jButtonEditar = new javax.swing.JButton();
         jButtonRemover = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        jComboBoxTipoCliente = new javax.swing.JComboBox();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         jLabelNumerroCliente = new javax.swing.JLabel();
@@ -271,7 +271,19 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos os Clientes" }));
+        jComboBoxTipoCliente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos os Clientes" }));
+        try {
+            rSet = sci.Query.queryModosEntrada();
+
+            while (rSet.next())
+            jComboBoxTipoCliente.addItem(rSet.getString(2));
+        }
+        catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }
+        jComboBoxTipoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTipoClienteActionPerformed(evt);
+            }
+        });
 
         jLabelNumerroCliente.setText("Número do Cliente");
 
@@ -347,6 +359,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTabbedPane3.addTab("Informações do Cliente", jPanel7);
 
         jButtonRelClienteGerarRel.setText("Gerar Relatório");
+        jButtonRelClienteGerarRel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRelClienteGerarRelActionPerformed(evt);
+            }
+        });
 
         jRadioButtonRelClienteNentrada.setText("Nº de entradas");
 
@@ -421,7 +438,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -442,7 +459,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBoxTipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1385,6 +1402,27 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         adicionarCliente.setVisible(true);
     }//GEN-LAST:event_jButtonRegistarClienteActionPerformed
 
+    private void jComboBoxTipoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTipoClienteActionPerformed
+
+    private void jButtonRelClienteGerarRelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelClienteGerarRelActionPerformed
+    String rel = "";
+    int idCliente = Integer.parseInt(jTextFieldidCliente.getText());
+
+      /*   try{
+       if (jRadioButtonRelClienteNentrada.isSelected() == true)        rel = GestaoRelatorios.gerarRelatoriosCliente(1, idCliente);
+        if (jRadioButtonRelClienteValorMensal.isSelected() == true)     rel = GestaoRelatorios.gerarRelatoriosCliente(2, idCliente);
+        if (jRadioButtonRelClienteTemposEstacion.isSelected() == true)  rel = GestaoRelatorios.gerarRelatoriosCliente(3, idCliente);
+
+        } catch (SQLException ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            }
+*/
+            JOptionPane.showMessageDialog(null, rel, "Relatorio",1);
+            System.out.println(rel);
+    }//GEN-LAST:event_jButtonRelClienteGerarRelActionPerformed
+
 
 
 
@@ -1432,9 +1470,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton jButtonRelMPGerar;
     private javax.swing.JButton jButtonRemover;
     private javax.swing.JButton jButtonTabDistGera;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBoxTabDistHora;
     private javax.swing.JComboBox jComboBoxTabDistNivel;
+    private javax.swing.JComboBox jComboBoxTipoCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
