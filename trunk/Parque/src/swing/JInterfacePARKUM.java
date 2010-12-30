@@ -1149,6 +1149,13 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         int dia             = 0;
         int mes             = 0;
         int ano             = 0;
+        int niveis          = 0;
+        try {
+            niveis = niveis = Query.totalPisos();
+        } catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         String msgErro      = "";
 
         // so aqui é que o dia, mes e ano fica com inteiro
@@ -1165,13 +1172,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         if (msgErro.equalsIgnoreCase("") == false) JOptionPane.showMessageDialog(null, msgErro, "Erro na data inserida!",1);
         else {
             try {
-                if (jRadioButtonRelDiaTotalEntSai.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, dia,mes,ano, 5);
-                if (jRadioButtonRelDiaOcupaNivel.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, dia,mes,ano, 5);
-                if (jRadioButtonRelDiaTempoEsta.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, dia,mes,ano, 5);
-                if (jRadioButtonRelDiaEntEst.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(4, dia,mes,ano, 5);
-                if (jRadioButtonRelDiaTemposPag.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(5, dia,mes,ano, 5);
-                if (jRadioButtonRelDiaNBilhete.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(6, dia,mes,ano, 5);
-                if (jRadioButtonRelDiaViaturas.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(7, dia,mes,ano, 5);
+                
+                if (jRadioButtonRelDiaTotalEntSai.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, dia,mes,ano, niveis);
+                if (jRadioButtonRelDiaOcupaNivel.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, dia,mes,ano, niveis);
+                if (jRadioButtonRelDiaTempoEsta.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, dia,mes,ano, niveis);
+                if (jRadioButtonRelDiaEntEst.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(4, dia,mes,ano, niveis);
+                if (jRadioButtonRelDiaTemposPag.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(5, dia,mes,ano, niveis);
+                if (jRadioButtonRelDiaNBilhete.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(6, dia,mes,ano, niveis);
+                if (jRadioButtonRelDiaViaturas.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(7, dia,mes,ano, niveis);
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             }
