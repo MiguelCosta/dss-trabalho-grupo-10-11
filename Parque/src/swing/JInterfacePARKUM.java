@@ -1155,13 +1155,13 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         if (msgErro.equalsIgnoreCase("") == false) JOptionPane.showMessageDialog(null, msgErro, "Erro na data inserida!",1);
         else {
             try {
-                if (jRadioButtonRelDiaTotalEntSai.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, dia, 5);
-                if (jRadioButtonRelDiaOcupaNivel.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, dia, 5);
-                if (jRadioButtonRelDiaTempoEsta.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, dia, 5);
-                if (jRadioButtonRelDiaEntEst.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(4, dia, 5);
-                if (jRadioButtonRelDiaTemposPag.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(5, dia, 5);
-                if (jRadioButtonRelDiaNBilhete.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(6, dia, 5);
-                if (jRadioButtonRelDiaViaturas.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(7, dia, 5);
+                if (jRadioButtonRelDiaTotalEntSai.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, dia,mes,ano, 5);
+                if (jRadioButtonRelDiaOcupaNivel.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, dia,mes,ano, 5);
+                if (jRadioButtonRelDiaTempoEsta.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, dia,mes,ano, 5);
+                if (jRadioButtonRelDiaEntEst.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(4, dia,mes,ano, 5);
+                if (jRadioButtonRelDiaTemposPag.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(5, dia,mes,ano, 5);
+                if (jRadioButtonRelDiaNBilhete.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(6, dia,mes,ano, 5);
+                if (jRadioButtonRelDiaViaturas.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(7, dia,mes,ano, 5);
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             }
