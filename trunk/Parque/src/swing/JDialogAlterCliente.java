@@ -233,12 +233,12 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
             if (msgERRO.equalsIgnoreCase("") == false) {
             JOptionPane.showMessageDialog(null, msgERRO, "Erro ao alterar cliente", 1);
             } else {
-             /*   Query.alterarNomeCliente(idCliente, nomeCliente);
+                Query.alterarNomeCliente(idCliente, nomeCliente);
                 Query.alterarNib(idCliente, nib);
                 Query.alterarModo(idCliente, modo );
                 Query.alterarMatricula(idCliente,matricula);
 
-              */
+              
                 JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso!", "Cliente alterado", 1);
                 JDialogAlterCliente.this.dispose();
             }
