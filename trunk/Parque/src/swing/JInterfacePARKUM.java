@@ -181,6 +181,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         });
 
         jButtonProcurar.setText("Procurar");
+        jButtonProcurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProcurarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -248,6 +253,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jButtonRegistarCliente.setText("Registar Novo Cliente");
 
         jButtonEditar.setText("Editar Cliente");
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
 
         jButtonRemover.setText("Remover Cliente");
 
@@ -1285,6 +1295,54 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private void jTextFieldidClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldidClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldidClienteActionPerformed
+
+    private void jButtonProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProcurarActionPerformed
+        String sel = jTextFieldProcurar.getText();
+        DefaultListModel model = new DefaultListModel();
+
+        try {
+            if (jRadioButtonNomeCliente.isSelected()) {
+                rSet = Query.procuraClientePorNome(sel);
+                while (rSet.next()) {
+                    model.addElement(rSet.getString(2));
+                }
+                jListClientesRegistados.setModel(model);
+            } else {
+                rSet = Query.procuraClientePorID(sel);
+                while (rSet.next()) {
+                    model.addElement(rSet.getString(1));
+                }
+                jListClientesRegistados.setModel(model);
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonProcurarActionPerformed
+
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+        if (jTextFieldNomeCliente.getText().equalsIgnoreCase("")) {
+           JOptionPane.showMessageDialog(null, "Seleccione o cliente que pretende alterar!", "Erro ao alterar cliente",1);
+       }
+       else {
+
+
+        String idCliente = jTextFieldidCliente.getText();
+        JDialogAlterCliente alterarProduto = null;
+        try {
+            alterarProduto = new JDialogAlterCliente(this, idCliente, true);
+        } 
+       /* catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+       catch (Exception ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       alterarProduto.setVisible(true);
+
+        }
+
+    }//GEN-LAST:event_jButtonEditarActionPerformed
 
 
 
