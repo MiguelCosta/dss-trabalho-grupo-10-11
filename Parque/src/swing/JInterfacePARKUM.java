@@ -1061,7 +1061,12 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         try {            
             if (jRadioButtonRelDiaTotalEntSai.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, 3, 5);
-            
+            if (jRadioButtonRelDiaOcupaNivel.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, 3, 5);
+            if (jRadioButtonRelDiaTempoEsta.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, 3, 5);
+            if (jRadioButtonRelDiaEntEst.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(4, 3, 5);
+            if (jRadioButtonRelDiaTemposPag.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(5, 3, 5);
+            if (jRadioButtonRelDiaNBilhete.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(6, 3, 5);
+            if (jRadioButtonRelDiaViaturas.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(7, 3, 5);
         } catch (SQLException ex) {
             Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
         }
