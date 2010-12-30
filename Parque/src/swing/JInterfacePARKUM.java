@@ -1150,11 +1150,6 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         int mes             = 0;
         int ano             = 0;
         int niveis          = 0;
-        try {
-            niveis = niveis = Query.totalPisos();
-        } catch (SQLException ex) {
-            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
         String msgErro      = "";
 
@@ -1172,7 +1167,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         if (msgErro.equalsIgnoreCase("") == false) JOptionPane.showMessageDialog(null, msgErro, "Erro na data inserida!",1);
         else {
             try {
-                
+                niveis = niveis = Query.totalPisos();
                 if (jRadioButtonRelDiaTotalEntSai.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, dia,mes,ano, niveis);
                 if (jRadioButtonRelDiaOcupaNivel.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, dia,mes,ano, niveis);
                 if (jRadioButtonRelDiaTempoEsta.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, dia,mes,ano, niveis);
