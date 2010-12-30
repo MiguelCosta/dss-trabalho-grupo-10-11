@@ -109,20 +109,25 @@ public class GestaoRelatorios {
         ResultSet rSet  = null;
         int totalNivel  = 0;
 
-        int i = 0;
+        int i = 1;
         rel = rel + "RELATORIO DIARIO DO DIA "+dia+" POR NIVEL\n";
-        rel = rel + "********************************************\n";
+        rel = rel + "*************************************************\n";
 
-        while(i<niveis){
+        while(i<=niveis){
             totalNivel = 0;
-            String sql = "SELECT * FROM lugares, registos_lugares WHERE lugares.id_lugar = "+i+" AND TO_CHAR(registos_lugares.data_hora_ocupado, 'dd') = "+dia+"\n";
+            String sql = "SELECT * FROM lugares, registos_lugares, pisos WHERE lugares.id_piso = "+i+" AND TO_CHAR(registos_lugares.data_hora_ocupado, 'dd') = "+dia;
+            sql = sql + " AND pisos.id_piso = lugares.id_piso";
+            sql = sql + " AND registos_lugares.id_lugar = lugares.id_lugar";
+
+            System.out.println(sql);
             rSet = Model.stmt.executeQuery(sql);
             while(rSet.next()){
                 totalNivel++;
             }
             rel = rel + "Total de clientes que estacionaram no nivel "+i+": "+totalNivel+"\n";
+            i++;
         }
-        rel = rel + "********************************************\n";
+        rel = rel + "*************************************************\n";
         System.out.println(rel);
         return rel;
     }
@@ -141,12 +146,15 @@ public class GestaoRelatorios {
         GregorianCalendar dataFim       = new GregorianCalendar();
         float diferenca                 = 0;
 
-        int i = 0;
+        int i = 1;
         rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO DIA "+dia+" POR NIVEL\n";
         rel = rel + "************************************************************\n";
 
-        while(i<niveis){
-            tempoTotal = 0;
+        while(i<=niveis){
+            tempoTotal  = 0;
+            tempoMax    = 0;
+            tempoMin    = 0;
+            tempoMedio  = 0;
             numeroEstacionametos = 0;
             String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
             sql = sql + " FROM registos_lugares, lugares ";
@@ -169,14 +177,22 @@ public class GestaoRelatorios {
                 tempoTotal = tempoTotal + diferenca;
                 numeroEstacionametos++;
                 if (diferenca>tempoMax) tempoMax = diferenca;
-                if (diferenca<tempoMin) tempoMin = diferenca;
+                if (diferenca<tempoMin && diferenca >0 ) tempoMin = diferenca;
+                System.out.println("max "+tempoMax);
+                System.out.println("min "+tempoMin);
+                System.out.println("dif "+diferenca);
+                
             }
             tempoMedio = tempoTotal/numeroEstacionametos;
-            rel = rel + "Piso "+i;
+            System.out.println("med"+tempoMin);
+            rel = rel + "Piso "+i+"\n";
             rel = rel + "Tempo medio de estacionamento:  "+tempoMedio+"\n";
             rel = rel + "Tempo máximo de estacionamento: "+tempoMax+"\n";
             rel = rel + "Tempo minimo de estacionamento: "+tempoMin+"\n";
             rel = rel + "\n";
+            i++;
+
+            ;
         }
 
         
