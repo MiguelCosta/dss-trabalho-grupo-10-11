@@ -1190,7 +1190,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             
             jTextFieldidCliente.setText(cliente.getIdCliente());
             jTextFieldNomeCliente.setText(cliente.getNomeCliente());
-            jTextFieldModoEntrada.setText(cliente.getCodigoEntrada());
+            jTextFieldModoEntrada.setText(Query.procuraModoEntradaPorID(cliente.getCodigoEntrada()));
             jTextFieldMatricula.setText(cliente.getMatricula());
             jTextFieldNib.setText(cliente.getNib());
             
