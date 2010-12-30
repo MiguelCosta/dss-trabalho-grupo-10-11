@@ -607,8 +607,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButtonRelDiaViaturas)
-                            .addComponent(jButtonRelDiaGerar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addComponent(jButtonRelDiaGerar)))
                     .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -704,6 +703,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTabbedPane2.addTab("Relatórios Máquinas de Pagamento", jPanel10);
 
         jButtonRelFacGerar.setText("Gerar Relatório");
+        jButtonRelFacGerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRelFacGerarActionPerformed(evt);
+            }
+        });
 
         jRadioButtonRelFacPagDin.setText("Facturanção de pagamentos com dinheiro");
         jRadioButtonRelFacPagDin.addActionListener(new java.awt.event.ActionListener() {
@@ -1197,7 +1201,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 if (jRadioButtonRelMPAvarias.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosMaqPagamento(4,idMaq);
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
-            }*/
+            }
+         */
     }//GEN-LAST:event_jButtonRelMPGerarActionPerformed
 
     private void jButtonTabDistGeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTabDistGeraActionPerformed
@@ -1205,7 +1210,26 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         int nivel = Integer.parseInt(jComboBoxTabDistNivel.getSelectedItem().toString());
         int hora = Integer.parseInt(jComboBoxTabDistHora.getSelectedItem().toString());
+/*
+        try {
+               rel = GestaoRelatorios.gerarRelatoriosTabelasDist(nivel,hora);
+            }
+        catch (SQLException ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);}*/
     }//GEN-LAST:event_jButtonTabDistGeraActionPerformed
+
+    private void jButtonRelFacGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelFacGerarActionPerformed
+        String rel="";
+/*
+         try {
+                if (jRadioButtonRelFacPagDin.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(1);
+                if (jRadioButtonRelFacpagCartao.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(2);
+                if (jRadioButtonRelFacPagCheque.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(3);
+            } catch (SQLException ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            }
+ */
+    }//GEN-LAST:event_jButtonRelFacGerarActionPerformed
 
 
 
