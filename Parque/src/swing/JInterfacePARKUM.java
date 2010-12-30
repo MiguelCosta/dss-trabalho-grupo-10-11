@@ -1128,20 +1128,44 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private void jButtonRelDiaGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelDiaGerarActionPerformed
         String rel = "";
 
-        try {            
-            if (jRadioButtonRelDiaTotalEntSai.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, 3, 5);
-            if (jRadioButtonRelDiaOcupaNivel.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, 3, 5);
-            if (jRadioButtonRelDiaTempoEsta.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, 3, 5);
-            if (jRadioButtonRelDiaEntEst.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(4, 3, 5);
-            if (jRadioButtonRelDiaTemposPag.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(5, 3, 5);
-            if (jRadioButtonRelDiaNBilhete.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(6, 3, 5);
-            if (jRadioButtonRelDiaViaturas.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(7, 3, 5);
-        } catch (SQLException ex) {
-            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        String dia_texto    = jTextFieldSelecDia.getText();
+        String mes_texto    = jTextFieldSelecMes.getText();
+        String ano_texto    = jTextFieldSelectAno.getText();
+        int dia             = 0;
+        int mes             = 0;
+        int ano             = 0;
+        String msgErro      = "";
 
-        JOptionPane.showMessageDialog(null, rel, "Relatorio",1);
-        System.out.println(rel);
+        // so aqui é que o dia, mes e ano fica com inteiro
+        if (Util.isNumber(dia_texto)) dia = Integer.parseInt(dia_texto); 
+        if (Util.isNumber(mes_texto)) mes = Integer.parseInt(mes_texto);
+        if (Util.isNumber(ano_texto)) ano = Integer.parseInt(ano_texto);
+
+        // aqui verifica se o dia, mes e ano são válidos
+        if (Util.isNumber(dia_texto) == false || dia > 31 || dia < 0)       msgErro = msgErro + "O dia inserido não é válido!\n";
+        if (Util.isNumber(mes_texto) == false || mes > 11 || mes < 0)       msgErro = msgErro + "O mes inserido não é válido!\n";
+        if (Util.isNumber(ano_texto) == false || ano < 2000 || ano > 2012)  msgErro = msgErro + "O ano inserido não é válido!\n";
+
+        // mostra msg de erro se for caso disso, se estiver tudo bem gera o relatorio
+        if (msgErro.equalsIgnoreCase("") == false) JOptionPane.showMessageDialog(null, msgErro, "Erro na data inserida!",1);
+        else {
+
+            try {
+                if (jRadioButtonRelDiaTotalEntSai.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, dia, 5);
+                if (jRadioButtonRelDiaOcupaNivel.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(2, dia, 5);
+                if (jRadioButtonRelDiaTempoEsta.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(3, dia, 5);
+                if (jRadioButtonRelDiaEntEst.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(4, dia, 5);
+                if (jRadioButtonRelDiaTemposPag.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(5, dia, 5);
+                if (jRadioButtonRelDiaNBilhete.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(6, dia, 5);
+                if (jRadioButtonRelDiaViaturas.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(7, dia, 5);
+            } catch (SQLException ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            JOptionPane.showMessageDialog(null, rel, "Relatorio",1);
+            System.out.println(rel);
+
+        }
 
     }//GEN-LAST:event_jButtonRelDiaGerarActionPerformed
 
