@@ -1041,20 +1041,20 @@
                                       <Component id="jRadioButtonRelFacPagDin" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButtonRelFacPagCheque" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButtonRelFacpagCartao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace pref="4" max="-2" attributes="0"/>
+                                          <Component id="jLabelRelFac1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="27" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace pref="379" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabelRelFac1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="406" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="85" max="32767" attributes="0"/>
+                                  <EmptySpace pref="55" max="32767" attributes="0"/>
                                   <Component id="jLabelRelFac1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jRadioButtonRelFacPagDin" min="-2" max="-2" attributes="0"/>
@@ -1062,7 +1062,7 @@
                                   <Component id="jRadioButtonRelFacpagCartao" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jRadioButtonRelFacPagCheque" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                   <Component id="jButtonRelFacGerar" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
