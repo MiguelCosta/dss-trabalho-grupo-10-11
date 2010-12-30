@@ -20,6 +20,7 @@ import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import sci.GestaoRelatorios;
 
 /**
@@ -1058,14 +1059,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private void jButtonRelDiaGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelDiaGerarActionPerformed
         String rel = "";
 
-        try {
-            
+        try {            
             if (jRadioButtonRelDiaTotalEntSai.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, 3, 5);
             
         } catch (SQLException ex) {
             Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        JOptionPane.showMessageDialog(null, rel, "Relatorio",1);
         System.out.println(rel);
 
     }//GEN-LAST:event_jButtonRelDiaGerarActionPerformed
