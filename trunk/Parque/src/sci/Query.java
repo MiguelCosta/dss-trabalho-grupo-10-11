@@ -8,6 +8,8 @@ package sci;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.GregorianCalendar;
+import parque.LerDatas;
 
 /**
  * Aqui serve para colocar os metodos para charmar as query
@@ -152,6 +154,35 @@ public class Query extends Model {
         String sql = "UPDATE clientes SET nib = '"+newNib+"' WHERE id_cliente = '"+idCliente+"'";
         Model.stmt.executeQuery(sql);
         commit2();
+    }
+
+    public static ResultSet listarPagamentosCliente (String idCliente) throws SQLException{
+        String sql = "SELECT * FROM pagamentos WHERE pagamentos.id_cliente = '";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql +idCliente + "'");
+
+        return rSet;
+    }
+
+    public static GregorianCalendar listarUltimaEntradaParque (String idCliente) throws SQLException {
+        String sql = "SELECT * FROM pagamentos WHERE pagamentos.id_cliente = '";
+        GregorianCalendar dataUltimoPagamento   = new GregorianCalendar();
+        GregorianCalendar dataTemp              = new GregorianCalendar();
+        String dataS                            = "";
+        float diferenca                         = 0;
+        ResultSet rSet = null;
+        
+        rSet = Model.stmt.executeQuery(sql +idCliente + "'");
+
+        while(rSet.next()){
+            dataS = rSet.getString(2);
+            dataTemp.set(LerDatas.getAno(dataS), LerDatas.getMes(dataS), LerDatas.getDia(dataS), LerDatas.getHora(dataS), LerDatas.getMin(dataS), LerDatas.getSec(dataS));
+            diferenca = LerDatas.diferencaEntreDatas(dataUltimoPagamento, dataTemp);
+            if (diferenca > 0) dataUltimoPagamento = dataTemp;
+        }
+
+        return dataUltimoPagamento;
     }
 
 
