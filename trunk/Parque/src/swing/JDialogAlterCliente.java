@@ -73,9 +73,9 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
         jComboBoxAltModo = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldAltMat = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonLimpar = new javax.swing.JButton();
         jButtonAlterarFicha = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,7 +147,12 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Limpar Campos");
+        jButtonLimpar.setText("Limpar Campos");
+        jButtonLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimparActionPerformed(evt);
+            }
+        });
 
         jButtonAlterarFicha.setText("Alterar");
         jButtonAlterarFicha.addActionListener(new java.awt.event.ActionListener() {
@@ -156,10 +161,10 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Cancelar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonCancelarActionPerformed(evt);
             }
         });
 
@@ -172,9 +177,9 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(jButtonLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)
+                        .addComponent(jButtonCancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtonAlterarFicha)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -186,9 +191,9 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jButtonLimpar)
                     .addComponent(jButtonAlterarFicha)
-                    .addComponent(jButton3))
+                    .addComponent(jButtonCancelar))
                 .addContainerGap())
         );
 
@@ -228,9 +233,16 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonAlterarFichaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        JDialogAlterCliente.this.dispose();
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
+       jTextFieldAltCod.setText(null);
+       jTextFieldAltMat.setText(null);
+       jTextFieldAltNib.setText(null);
+       jTextFieldAltNome.setText(null);
+    }//GEN-LAST:event_jButtonLimparActionPerformed
 
     /**
     * @param args the command line arguments
@@ -258,9 +270,9 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAlterarFicha;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonLimpar;
     private javax.swing.JComboBox jComboBoxAltModo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
