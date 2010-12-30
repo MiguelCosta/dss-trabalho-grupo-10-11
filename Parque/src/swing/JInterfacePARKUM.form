@@ -684,10 +684,10 @@
                                       <Component id="jRadioButtonRelDiaTempoEsta" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButtonRelDiaEntEst" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButtonRelDiaNBilhete" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButtonRelDiaViaturas" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButtonRelDiaTotalEntSai" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jRadioButtonRelDiaTemposPag" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabelRelDia1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jRadioButtonRelDiaViaturas" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -717,15 +717,15 @@
                                           <Component id="jRadioButtonRelDiaTemposPag" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jRadioButtonRelDiaNBilhete" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jRadioButtonRelDiaViaturas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jButtonRelDiaGerar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jButtonRelDiaGerar" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jRadioButtonRelDiaViaturas" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
