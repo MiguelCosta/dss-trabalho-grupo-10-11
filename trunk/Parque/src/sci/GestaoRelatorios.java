@@ -18,18 +18,18 @@ public class GestaoRelatorios {
 
     public BaseDados _baseDados;
 
-    public static String gerarRelatoriosDiarios(int relatorio, int dia, int niveis) throws SQLException {
+    public static String gerarRelatoriosDiarios(int relatorio, int dia, int mes, int ano, int niveis) throws SQLException {
         String rel = null;
 
         switch (relatorio) {
             case 1: 
-                rel = relatorioDiariototalEntradasSaidas(dia);
+                rel = relatorioDiariototalEntradasSaidas(dia,mes,ano);
                 break;
             case 2:
-                rel = relatorioDiarioOcupacaoPorNivel(niveis, dia);
+                rel = relatorioDiarioOcupacaoPorNivel(niveis, dia,mes,ano);
                 break;
             case 3:
-                rel = relatorioDiarioTemposEstacionamento(niveis, dia);
+                rel = relatorioDiarioTemposEstacionamento(niveis, dia,mes,ano);
                 break;
         }
         
@@ -46,7 +46,7 @@ public class GestaoRelatorios {
      * @return String - relatorio completo já com paragrafos
      * @throws SQLException
      */
-    public static String relatorioDiariototalEntradasSaidas(int dia) throws SQLException {
+    public static String relatorioDiariototalEntradasSaidas(int dia, int mes, int ano) throws SQLException {
 
         String rel              = "";
         int entradasBilhetes    = 0;
@@ -104,7 +104,7 @@ public class GestaoRelatorios {
      * @return
      * @throws SQLException
      */
-    public static String relatorioDiarioOcupacaoPorNivel(int niveis, int dia) throws SQLException{
+    public static String relatorioDiarioOcupacaoPorNivel(int niveis, int dia, int mes, int ano) throws SQLException{
         String rel      = "";
         ResultSet rSet  = null;
         int totalNivel  = 0;
@@ -132,7 +132,7 @@ public class GestaoRelatorios {
         return rel;
     }
 
-    private static String relatorioDiarioTemposEstacionamento(int niveis, int dia) throws SQLException {
+    private static String relatorioDiarioTemposEstacionamento(int niveis, int dia, int mes, int ano) throws SQLException {
         String rel                      = "";
         ResultSet rSet                  = null;
         float tempoMax                  = 0;
@@ -192,7 +192,7 @@ public class GestaoRelatorios {
             rel = rel + "\n";
             i++;
 
-            ;
+            
         }
 
         
