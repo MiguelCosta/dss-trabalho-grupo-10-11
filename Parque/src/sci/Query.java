@@ -27,6 +27,10 @@ public class Query extends Model {
         return Model.stmt.executeQuery("SELECT * FROM pisos");
     }
 
+    public static ResultSet queryModosEntrada() throws SQLException{
+        return Model.stmt.executeQuery("SELECT * FROM modos_entrada");
+    }
+
     /**
      * Procura um cliente pelo ID e devolve a linha
      * @param idCliente
@@ -41,8 +45,45 @@ public class Query extends Model {
 
         return rSet;
     }
+
+    /**
+     * Procura um cliente pelo nome e devolve a linha
+     * @param sel
+     * @return
+     * @throws SQLException
+     */
     public static ResultSet procuraClientePorNome(String sel) throws SQLException{
         String sql = "SELECT * FROM clientes WHERE nome ='";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + sel + "'");
+
+        return rSet;
+    }
+
+    /**
+     * Procura o modo de entrada pelo ID e devolve a linha
+     * @param sel
+     * @return
+     * @throws SQLException
+     */
+    public static ResultSet procuraModoEntradaPorID (String sel) throws SQLException{
+        String sql = "SELECT * FROM modos_entrada WHERE id_entrada ='";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + sel + "'");
+
+        return rSet;
+    }
+
+    /**
+     * Procura o modo de entrada pelo Nome e devolve a linha
+     * @param sel
+     * @return
+     * @throws SQLException
+     */
+    public static ResultSet procuraModoEntradaPorNome (String sel) throws SQLException {
+        String sql = "SELECT * FROM modos_entrada WHERE modo_entrada ='";
 
         ResultSet rSet = null;
         rSet = Model.stmt.executeQuery(sql + sel + "'");
