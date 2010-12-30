@@ -169,7 +169,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Procura de Clientes"));
 
-        jLabelProcura1.setText("A Procura será feita de acordo com o modo de ");
+        jLabelProcura1.setText("A procura será feita de acordo com o modo de ");
 
         jLabelProcura2.setText("visualização em que está!");
 
@@ -361,7 +361,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jRadioButtonRelClienteTemposEstacion.setText("Tempos médios de estacionamento");
 
-        jRadioButtonRelClienteValorMensal.setText("Valor Mensal a Facturar");
+        jRadioButtonRelClienteValorMensal.setText("Valor mensal a pagar");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -377,7 +377,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addComponent(jRadioButtonRelClienteValorMensal)
                         .addGap(220, 220, 220)
-                        .addComponent(jButtonRelClienteGerarRel, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)))
+                        .addComponent(jButtonRelClienteGerarRel, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
@@ -453,7 +453,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(11, 11, 11)
                         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonEditar)
                             .addComponent(jButtonRegistarCliente)))
@@ -498,14 +498,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jRadioButtonRelDiaOcupaNivel.setText("Ocupações por Nível");
+        jRadioButtonRelDiaOcupaNivel.setText("Ocupações por nível");
         jRadioButtonRelDiaOcupaNivel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelDiaOcupaNivelActionPerformed(evt);
             }
         });
 
-        jRadioButtonRelDiaTempoEsta.setText("Tempos de Estacionamento");
+        jRadioButtonRelDiaTempoEsta.setText("Tempos de estacionamento");
         jRadioButtonRelDiaTempoEsta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelDiaTempoEstaActionPerformed(evt);
@@ -526,14 +526,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jRadioButtonRelDiaNBilhete.setText("Número de Bilhetes Estraviados");
+        jRadioButtonRelDiaNBilhete.setText("Número de bilhetes estraviados");
         jRadioButtonRelDiaNBilhete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelDiaNBilheteActionPerformed(evt);
             }
         });
 
-        jRadioButtonRelDiaViaturas.setText("Viaturas que não entraram nem sairam (Relativamente aos clientes registados)");
+        jRadioButtonRelDiaViaturas.setText("Viaturas que não entraram nem sairam (relativamente aos clientes registados)");
         jRadioButtonRelDiaViaturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelDiaViaturasActionPerformed(evt);
@@ -608,16 +608,19 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jRadioButtonRelDiaNBilhete)
-                        .addComponent(jRadioButtonRelDiaTemposPag)
-                        .addComponent(jLabelRelDia1)
-                        .addComponent(jRadioButtonRelDiaViaturas))
-                    .addComponent(jRadioButtonRelDiaOcupaNivel, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonRelDiaTempoEsta, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonRelDiaEntEst, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonRelDiaTotalEntSai, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jRadioButtonRelDiaNBilhete)
+                                .addComponent(jRadioButtonRelDiaTemposPag)
+                                .addComponent(jLabelRelDia1))
+                            .addGap(70, 70, 70))
+                        .addComponent(jRadioButtonRelDiaOcupaNivel, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jRadioButtonRelDiaTempoEsta, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jRadioButtonRelDiaEntEst, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jRadioButtonRelDiaTotalEntSai, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jRadioButtonRelDiaViaturas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -643,11 +646,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                         .addComponent(jRadioButtonRelDiaTemposPag)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButtonRelDiaNBilhete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButtonRelDiaViaturas))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                         .addComponent(jButtonRelDiaGerar)))
                 .addContainerGap())
         );
@@ -661,28 +664,28 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jRadioButtonRelMPNpag.setText("Número de Pagamentos por tipo");
+        jRadioButtonRelMPNpag.setText("Número de pagamentos, por tipo");
         jRadioButtonRelMPNpag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelMPNpagActionPerformed(evt);
             }
         });
 
-        jRadioButtonRelMPTotal.setText("Total recebido por cada tipo de pagamento(Dinheiro ou Cartão Magnético)");
+        jRadioButtonRelMPTotal.setText("Total recebido por cada tipo de pagamento (dinheiro ou cartão magnético)");
         jRadioButtonRelMPTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelMPTotalActionPerformed(evt);
             }
         });
 
-        jRadioButtonRelMPNumPerce.setText("Número e percegem de recibos emitido e o seu total");
+        jRadioButtonRelMPNumPerce.setText("Número e percentagem de recibos emitido e o seu total");
         jRadioButtonRelMPNumPerce.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelMPNumPerceActionPerformed(evt);
             }
         });
 
-        jRadioButtonRelMPAvarias.setText("Número de Avarias e operações de manutenção registadas");
+        jRadioButtonRelMPAvarias.setText("Número de avarias e operações de manutenção registadas");
         jRadioButtonRelMPAvarias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelMPAvariasActionPerformed(evt);
@@ -749,7 +752,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jRadioButtonRelFacPagDin.setText("Facturanção de pagamentos com dinheiro");
+        jRadioButtonRelFacPagDin.setText("Facturação de pagamentos com dinheiro");
         jRadioButtonRelFacPagDin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonRelFacPagDinActionPerformed(evt);
@@ -820,9 +823,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jLabel12.setText("h");
 
-        jLabelTabDist1.setText("Escolha o nível que pretende opter relatório:");
+        jLabelTabDist1.setText("Escolha o nível que pretende obter o relatório:");
 
-        jLabelTabDist2.setText("Escolha a hora do dia de que pretende obter o relatório");
+        jLabelTabDist2.setText("Escolha a hora do dia que pretende obter o relatório");
 
         try {
             rSet = sci.Query.queryPisos();
@@ -856,7 +859,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                     .addComponent(jComboBoxTabDistHora, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(332, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -901,7 +904,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jLabel15.setText("Preencha os campos que se seguem para regitar a manutenção");
 
-        jLabel16.setText("Número da Máquina:");
+        jLabel16.setText("Identificação da máquina:");
 
         jButtonManRegista.setText("Registar Manutenção");
         jButtonManRegista.addActionListener(new java.awt.event.ActionListener() {
@@ -910,7 +913,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jLabel17.setText("Tempo Gasto (em minutos):");
+        jLabel17.setText("Tempo gasto (em minutos):");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -991,7 +994,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 723, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jLabelIniciarSessão)
