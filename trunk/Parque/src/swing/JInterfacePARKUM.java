@@ -36,6 +36,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     public JInterfacePARKUM() {
         //Util.centerOnScreen(this);
         initComponents();
+        jRadioButtonNCliente.setSelected(true);
 
     }
 
