@@ -20,6 +20,7 @@ import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import sci.GestaoRelatorios;
 
 /**
  *
@@ -436,6 +437,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTabbedPane1.addTab("Listagem de Pagamentos em Atraso", jPanel15);
 
         jButtonRelDiaGerar.setText("Gerar Relatório");
+        jButtonRelDiaGerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRelDiaGerarActionPerformed(evt);
+            }
+        });
 
         jRadioButtonRelDiaTotalEntSai.setText("Total de entradas e saidas");
         jRadioButtonRelDiaTotalEntSai.addActionListener(new java.awt.event.ActionListener() {
@@ -1048,6 +1054,21 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         }
 
     }//GEN-LAST:event_jListClientesRegistadosValueChanged
+
+    private void jButtonRelDiaGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelDiaGerarActionPerformed
+        String rel = "";
+
+        try {
+            
+            if (jRadioButtonRelDiaTotalEntSai.isEnabled() == true) rel = GestaoRelatorios.gerarRelatoriosDiarios(1, 3, 5);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        System.out.println(rel);
+
+    }//GEN-LAST:event_jButtonRelDiaGerarActionPerformed
 
     /**
      * @param args the command line arguments
