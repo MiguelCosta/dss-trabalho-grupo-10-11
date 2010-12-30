@@ -211,11 +211,14 @@ public class JDialogNovoCliente extends javax.swing.JDialog {
             if (nib.equalsIgnoreCase(""))                           msgERRO = msgERRO + "Falta inserir o NIB do cliente!\n";
             if (modo.equalsIgnoreCase(""))                          msgERRO = msgERRO + "Falta inserir o modo de entrada\n";
             if (matricula.equalsIgnoreCase(""))                     msgERRO = msgERRO + "Falta inserir a matrícula do veículo\n";
+            if (Util.isNumber(idCliente) == false)                  msgERRO = msgERRO + "O id do cliente apenas pode conter algarismos\n";
+            //if (Util.isNumber(nib) == false)                        msgERRO = msgERRO + "O nib do cliente apenas pode conter algarismos\n";
             System.out.println(msgERRO);
 
             if (msgERRO.equalsIgnoreCase("") == false) {
             JOptionPane.showMessageDialog(null, msgERRO, "Erro ao alterar produto", 1);
             } else {
+                Query.adicionarCliente(idCliente, nomeCliente, Query.procuraModoEntradaPorNome(modo), matricula, nib);
              /* 
               * Query.adicionarIDCliente(idCliente, idCliente);
                 Query.adicionarNomeCliente(idCliente, nomeCliente);
