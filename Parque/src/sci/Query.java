@@ -165,7 +165,7 @@ public class Query extends Model {
         return rSet;
     }
 
-    public static GregorianCalendar listarUltimaEntradaParque (String idCliente) throws SQLException {
+    public static GregorianCalendar listarUltimoPagamento (String idCliente) throws SQLException{
         String sql = "SELECT * FROM pagamentos WHERE pagamentos.id_cliente = '";
         GregorianCalendar dataUltimoPagamento   = new GregorianCalendar();
         GregorianCalendar dataTemp              = new GregorianCalendar();
@@ -183,7 +183,44 @@ public class Query extends Model {
         }
 
         return dataUltimoPagamento;
+
+
     }
 
+    public static GregorianCalendar listarUltimaEntradaParque (String idCliente) throws SQLException {
+        String sql = "SELECT * FROM pagamentos WHERE pagamentos.id_cliente = '";
+        GregorianCalendar dataUltimoEntrada     = new GregorianCalendar();
+        GregorianCalendar dataTemp              = new GregorianCalendar();
+        String dataS                            = "";
+        float diferenca                         = 0;
+        ResultSet rSet = null;
+        
+        rSet = Model.stmt.executeQuery(sql +idCliente + "'");
+
+        while(rSet.next()){
+            dataS = rSet.getString(2);
+            dataTemp.set(LerDatas.getAno(dataS), LerDatas.getMes(dataS), LerDatas.getDia(dataS), LerDatas.getHora(dataS), LerDatas.getMin(dataS), LerDatas.getSec(dataS));
+            diferenca = LerDatas.diferencaEntreDatas(dataUltimoEntrada, dataTemp);
+            if (diferenca > 0) dataUltimoEntrada = dataTemp;
+        }
+
+        return dataUltimoEntrada;
+    }
+
+    public static String pagamentoEmAtraso (String idCliente) throws SQLException{
+        GregorianCalendar dataUltimoPagamento   = new GregorianCalendar();
+        GregorianCalendar dataUltimaEntrada     = new GregorianCalendar();
+        GregorianCalendar dataPagar             = new GregorianCalendar();
+        String resultado                        = "";
+        float diferenca                         = 0;
+
+        dataUltimaEntrada   = listarUltimaEntradaParque(idCliente);
+        dataUltimoPagamento = listarUltimoPagamento(idCliente);
+
+        LerDatas.diferencaEntreDatas(dataUltimoPagamento, dataUltimaEntrada);
+        if (diferenca > 0) dataPagar = dataUltimaEntrada;
+
+        return resultado;
+    }
 
 }
