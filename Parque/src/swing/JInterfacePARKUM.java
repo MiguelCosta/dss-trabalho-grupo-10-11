@@ -279,6 +279,12 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jTextFieldModoEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldModoEntradaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -1352,6 +1358,10 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private void jComboBoxTabDistNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTabDistNivelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxTabDistNivelActionPerformed
+
+    private void jTextFieldModoEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModoEntradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldModoEntradaActionPerformed
 
 
 
