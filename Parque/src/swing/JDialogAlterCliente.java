@@ -33,20 +33,24 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
         initComponents();
         centerOnScreen(this);
         jTextFieldAltCod.setEnabled(false);
+        int modoEntrada = 0;
 
         String sel = idCliente;
         String nomeCliente = null;
         String nib = null;
-        String modoEntrada = null;
         String matricula = null;
 
         rSet = Query.procuraClientePorID(sel);
-        String modoID = rSet.getString(3);
-        rSet1= Query.procuraModoEntradaPorID(modoID);
+
+        
         while(rSet.next()){
            jTextFieldAltCod.setText(rSet.getString(1));
            jTextFieldAltNome.setText(rSet.getString(2));
-           jComboBoxAltModo.setSelectedItem(rSet1.getString(2));
+           if (rSet.getString(3).equalsIgnoreCase("CA")) modoEntrada = 0;
+           if (rSet.getString(3).equalsIgnoreCase("RM")) modoEntrada = 1;
+           if (rSet.getString(3).equalsIgnoreCase("VV")) modoEntrada = 2;
+           if (rSet.getString(3).equalsIgnoreCase("CW")) modoEntrada = 3;
+           jComboBoxAltModo.setSelectedItem(modoEntrada);
            jTextFieldAltMat.setText(rSet.getString(4));
            jTextFieldAltNib.setText(rSet.getString(5));
         }
