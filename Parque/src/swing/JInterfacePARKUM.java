@@ -509,6 +509,12 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jLabel3.setText("Dia:");
 
+        jTextFieldSelecDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSelecDiaActionPerformed(evt);
+            }
+        });
+
         jLabel4.setText("Mês:");
 
         jLabel5.setText("Ano:");
@@ -571,14 +577,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                             .addComponent(jRadioButtonRelDiaTemposPag)
                             .addComponent(jLabelRelDia1)
                             .addComponent(jRadioButtonRelDiaViaturas))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButtonRelDiaOcupaNivel)
                             .addComponent(jRadioButtonRelDiaTempoEsta)
                             .addComponent(jRadioButtonRelDiaEntEst)
                             .addComponent(jRadioButtonRelDiaTotalEntSai))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)))
                 .addGap(55, 55, 55))
@@ -736,8 +742,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                     .addComponent(jRadioButtonRelFacpagCartao)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabelRelFac1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabelRelFac1)))
                 .addContainerGap(379, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -1143,7 +1148,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         // aqui verifica se o dia, mes e ano são válidos
         if (Util.isNumber(dia_texto) == false || dia > 31 || dia < 0)       msgErro = msgErro + "O dia inserido não é válido!\n";
-        if (Util.isNumber(mes_texto) == false || mes > 12 || mes < 0)       msgErro = msgErro + "O mes inserido não é válido!\n";
+        if (Util.isNumber(mes_texto) == false || mes > 12 || mes < 0)       msgErro = msgErro + "O mês inserido não é válido!\n";
         if (Util.isNumber(ano_texto) == false || ano < 2000 || ano > 2012)  msgErro = msgErro + "O ano inserido não é válido!\n";
 
         // mostra msg de erro se for caso disso, se estiver tudo bem gera o relatorio
@@ -1166,6 +1171,10 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         }
     }//GEN-LAST:event_jButtonRelDiaGerarActionPerformed
+
+    private void jTextFieldSelecDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSelecDiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldSelecDiaActionPerformed
 
     /**
      * @param args the command line arguments
