@@ -766,6 +766,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTabbedPane2.addTab("Relatórios de Facturação", jPanel12);
 
         jButtonTabDistGera.setText("Gerar Relatório");
+        jButtonTabDistGera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTabDistGeraActionPerformed(evt);
+            }
+        });
 
         jComboBoxTabDistHora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
 
@@ -1194,6 +1199,13 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             }*/
     }//GEN-LAST:event_jButtonRelMPGerarActionPerformed
+
+    private void jButtonTabDistGeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTabDistGeraActionPerformed
+        String rel="";
+
+        Object nivel = jComboBoxTabDistNivel.getSelectedItem();
+        Object hora = jComboBoxTabDistHora.getSelectedItem();
+    }//GEN-LAST:event_jButtonTabDistGeraActionPerformed
 
 
 
