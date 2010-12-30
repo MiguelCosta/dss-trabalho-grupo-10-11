@@ -137,7 +137,7 @@ public class Query extends Model {
     }
 
     public static void alterarModo(String idCliente, String newModo) throws SQLException, Exception{
-        String sql = "UPDATE clientes SET id_entrada = '"+newModo+"' WHERE id_cliente = '"+idCliente+"'";
+        String sql = "UPDATE clientes SET id_entrada = '"+procuraModoEntradaPorNome(newModo)+"' WHERE id_cliente = '"+idCliente+"'";
         Model.stmt.executeQuery(sql);
         commit2();
     }
