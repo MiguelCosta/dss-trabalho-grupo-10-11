@@ -36,7 +36,7 @@ public class GestaoRelatorios {
             case 5:
                 rel = relatorioDiarioDiferencaPagamentoBilheteSaidaParque(dia,mes,ano);
                 break;
-            case 6:
+            case 7:
                 rel = relatorioDiarioViaturasQueNaoEntraramNemSairam(dia,mes,ano);
                 break;
         }
@@ -304,7 +304,7 @@ public class GestaoRelatorios {
         //sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'yyyy') = "+ano;
         sql = sql + " AND clientes.id_cliente = registos_registados.id_cliente)";
 
-
+        // este select está parcialmente correcto
 
 
   
