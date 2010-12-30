@@ -36,6 +36,9 @@ public class GestaoRelatorios {
             case 5:
                 rel = relatorioDiarioDiferencaPagamentoBilheteSaidaParque(dia,mes,ano);
                 break;
+            case 6:
+                rel = relatorioDiarioViaturasQueNaoEntraramNemSairam(dia,mes,ano);
+                break;
         }
         
         return rel;
@@ -285,6 +288,29 @@ public class GestaoRelatorios {
 
         rel = rel + "*****************************************************************************************\n";
 
+        return rel;
+    }
+
+    
+    private static String relatorioDiarioViaturasQueNaoEntraramNemSairam(int dia, int mes, int ano) throws SQLException {
+        String rel          = "";
+        int totalClientes   = 0;
+
+        ResultSet rSet      = null;
+        String sql          = "";
+        
+        rel = rel + "RELATORIO DIARIO DOS CLIENTES QUE NAO ESTIVERAM NO PARQUE\n";
+        rel = rel + "DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
+        rel = rel + "*****************************************************************************************\n";
+
+        rSet = Model.stmt.executeQuery(sql);
+        while(rSet.next()){
+            rel = rel + rSet.getString(1) + " " + rSet.getString(2) +"\n";
+            totalClientes++;
+        }
+
+        rel = rel + "*****************************************************************************************\n";
+        rel = rel + "";
         return rel;
     }
 
