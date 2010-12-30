@@ -219,6 +219,7 @@ public class Query extends Model {
 
         LerDatas.diferencaEntreDatas(dataUltimoPagamento, dataUltimaEntrada);
         if (diferenca > 0) dataPagar = dataUltimaEntrada;
+        resultado = dataUltimaEntrada.getTime().toString();
 
         return resultado;
     }
