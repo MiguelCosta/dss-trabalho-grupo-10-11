@@ -149,11 +149,11 @@ public class GestaoRelatorios {
             tempoTotal = 0;
             numeroEstacionametos = 0;
             String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
-            sql = sql + "FROM registos_lugares, lugares ";
-            sql = sql + "WHERE to_char(data_hora_ocupado, 'dd') = "+dia;
-            sql = sql + "AND to_char(data_hora_livre, 'dd') > 0 ";
-            sql = sql + "AND registos_lugares.id_lugar = lugares.id_lugar ";
-            sql = sql + "AND lugares.id_piso = "+i;
+            sql = sql + " FROM registos_lugares, lugares ";
+            sql = sql + " WHERE to_char(data_hora_ocupado, 'dd') = "+dia;
+            sql = sql + " AND to_char(data_hora_livre, 'dd') > 0 ";
+            sql = sql + " AND registos_lugares.id_lugar = lugares.id_lugar ";
+            sql = sql + " AND lugares.id_piso = "+i;
             System.out.println(sql);
 
             rSet = Model.stmt.executeQuery(sql);
