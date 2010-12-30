@@ -62,33 +62,40 @@ public class Query extends Model {
     }
 
     /**
-     * Procura o modo de entrada pelo ID e devolve a linha
+     * Procura o modo de entrada pelo ID e devolve o nome
      * @param sel
      * @return
      * @throws SQLException
      */
-    public static ResultSet procuraModoEntradaPorID (String sel) throws SQLException{
+    public static String procuraModoEntradaPorID (String sel) throws SQLException{
         String sql = "SELECT * FROM modos_entrada WHERE id_entrada ='";
-
+        String r   = "";
         ResultSet rSet = null;
         rSet = Model.stmt.executeQuery(sql + sel + "'");
+        while(rSet.next()){
+            r = rSet.getString(2);
+        }
 
-        return rSet;
+        return r;
     }
 
     /**
-     * Procura o modo de entrada pelo Nome e devolve a linha
+     * Procura o modo de entrada pelo Nome e devolve o ID
      * @param sel
      * @return
      * @throws SQLException
      */
-    public static ResultSet procuraModoEntradaPorNome (String sel) throws SQLException {
+    public static String procuraModoEntradaPorNome (String sel) throws SQLException {
         String sql = "SELECT * FROM modos_entrada WHERE modo_entrada ='";
+        String r   = "";
 
         ResultSet rSet = null;
         rSet = Model.stmt.executeQuery(sql + sel + "'");
 
-        return rSet;
+        while(rSet.next()){
+            r = rSet.getString(1);
+        }
+        return r;
     }
 
     public static int totalPisos() throws SQLException{
