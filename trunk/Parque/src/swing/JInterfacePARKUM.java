@@ -251,6 +251,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         );
 
         jButtonRegistarCliente.setText("Registar Novo Cliente");
+        jButtonRegistarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistarClienteActionPerformed(evt);
+            }
+        });
 
         jButtonEditar.setText("Editar Cliente");
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -260,6 +265,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         });
 
         jButtonRemover.setText("Remover Cliente");
+        jButtonRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRemoverActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos os Clientes" }));
 
@@ -1362,6 +1372,18 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private void jTextFieldModoEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModoEntradaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldModoEntradaActionPerformed
+
+    private void jButtonRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverActionPerformed
+
+
+
+
+    }//GEN-LAST:event_jButtonRemoverActionPerformed
+
+    private void jButtonRegistarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistarClienteActionPerformed
+        JDialogNovoCliente adicionarCliente = new JDialogNovoCliente(this, true);
+        adicionarCliente.setVisible(true);
+    }//GEN-LAST:event_jButtonRegistarClienteActionPerformed
 
 
 

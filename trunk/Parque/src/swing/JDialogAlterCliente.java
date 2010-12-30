@@ -129,11 +129,11 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldAltCod, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldAltNome, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldAltNib, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                            .addComponent(jTextFieldAltMat, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxAltModo, 0, 276, Short.MAX_VALUE))))
+                            .addComponent(jComboBoxAltModo, 0, 276, Short.MAX_VALUE)
+                            .addComponent(jTextFieldAltNome, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                            .addComponent(jTextFieldAltCod, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                            .addComponent(jTextFieldAltMat, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -253,7 +253,6 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
-       jTextFieldAltCod.setText(null);
        jTextFieldAltMat.setText(null);
        jTextFieldAltNib.setText(null);
        jTextFieldAltNome.setText(null);
