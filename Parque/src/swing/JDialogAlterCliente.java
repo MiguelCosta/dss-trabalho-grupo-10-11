@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -73,7 +74,7 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextFieldAltMat = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonAlterarFicha = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -148,9 +149,19 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
 
         jButton1.setText("Limpar Campos");
 
-        jButton2.setText("Alterar");
+        jButtonAlterarFicha.setText("Alterar");
+        jButtonAlterarFicha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAlterarFichaActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Cancelar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,7 +176,7 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(jButtonAlterarFicha)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -176,13 +187,50 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(jButtonAlterarFicha)
                     .addComponent(jButton3))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAlterarFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarFichaActionPerformed
+         try {
+            String idCliente    = jTextFieldAltCod.getText();
+            String nomeCliente  = jTextFieldAltNome.getText();
+            String nib          = jTextFieldAltNib.getText();
+            String modo         = jComboBoxAltModo.getSelectedItem().toString();
+            String matricula    = jTextFieldAltMat.getText();
+
+            String msgERRO = "";
+            if (nomeCliente.equalsIgnoreCase(""))                   msgERRO = msgERRO + "Falta inserir o nome do Cliente\n";
+            if (nib.equalsIgnoreCase(""))                           msgERRO = msgERRO + "Falta inserir o NIB do cliente!\n";
+            if (modo.equalsIgnoreCase(""))                          msgERRO = msgERRO + "Falta inserir o modo de entrada\n";
+            if (matricula.equalsIgnoreCase(""))                     msgERRO = msgERRO + "Falta inserir a matrícula do veículo\n";
+            System.out.println(msgERRO);
+
+            if (msgERRO.equalsIgnoreCase("") == false) {
+            JOptionPane.showMessageDialog(null, msgERRO, "Erro ao alterar produto", 1);
+            } else {
+             /*   Query.alterarNomeCliente(idCliente, nomeCliente);
+                Query.alterarNib(idCliente, nib);
+                Query.alterarModo(idCliente, modo );
+                Query.alterarMatricula(idCliente,matricula);
+
+              */
+                JOptionPane.showMessageDialog(null, "Produto alterado com sucesso!", "Produto alterado", 1);
+                JDialogAlterCliente.this.dispose();
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(JDialogAlterCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonAlterarFichaActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -211,8 +259,8 @@ public class JDialogAlterCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonAlterarFicha;
     private javax.swing.JComboBox jComboBoxAltModo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
