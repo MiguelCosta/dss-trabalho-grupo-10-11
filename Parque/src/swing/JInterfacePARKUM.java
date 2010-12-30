@@ -1051,6 +1051,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_jTextFieldProcurarActionPerformed
 
     private void jRadioButtonNClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNClienteActionPerformed
+        jRadioButtonNCliente.setSelected(true);
         jRadioButtonNomeCliente.setSelected(false);
         jListClientesRegistados.removeAll();
         try {
@@ -1087,6 +1088,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_jButtonManRegistaActionPerformed
 
     private void jRadioButtonNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNomeClienteActionPerformed
+        jRadioButtonNomeCliente.setSelected(true);
         jRadioButtonNCliente.setSelected(false);
         jListClientesRegistados.removeAll();
         try {
