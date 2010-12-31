@@ -11,6 +11,7 @@ drop table registos_lugares     cascade constraints;
 drop table pagamentos           cascade constraints;
 drop table registos_registados  cascade constraints;
 drop table modos_pagamentos     cascade constraints;
+drop table pagamentos_maquinas  cascade constraints;
 
 CREATE TABLE modos_pagamentos (
   id_modo_pagamento     varchar2(3),
@@ -146,6 +147,20 @@ CREATE TABLE registos_registados (
   CONSTRAINT id_clienteRegistado_fk
     FOREIGN KEY (id_cliente)
     REFERENCES clientes(id_cliente)
+);
+
+CREATE TABLE pagamentos_maquinas (
+  id_maquina          varchar2(8),
+  montante_recebido   varchar2(8),
+  id_modo_pagamento   varchar2(3),
+  data_pagamento      date,
+  
+  CONSTRAINT id_maq_fk
+    FOREIGN KEY (id_maquina)
+    REFERENCES maquinas(id_maquina),
+  CONSTRAINT modo_pagamento_fk
+    FOREIGN KEY (id_modo_pagamento)
+    REFERENCES modos_pagamentos(id_modo_pagamento)
 );
 
 /*
