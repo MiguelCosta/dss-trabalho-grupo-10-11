@@ -10,15 +10,29 @@ drop table bilhetes             cascade constraints;
 drop table registos_lugares     cascade constraints;
 drop table pagamentos           cascade constraints;
 drop table registos_registados  cascade constraints;
+drop table modos_pagamentos     cascade constraints;
+
+CREATE TABLE modos_pagamentos (
+  id_modo_pagamento     varchar2(3),
+  modo_pagamento        varchar2(50),
+  
+  CONSTRAINT id_modo_pagamento_pk
+    PRIMARY KEY (id_modo_pagamento)
+
+);
 
 CREATE TABLE bilhetes (
   id_bilhete            varchar2(4),
   data_hora_entrada     date,
   data_hora_pagamento   date,
   data_hora_saida       date,
+  id_modo_pagamento     varchar2(3),
 
   CONSTRAINT id_bilhete_pk
-    PRIMARY KEY (id_bilhete)
+    PRIMARY KEY (id_bilhete),
+  CONSTRAINT id_modo_pagamento_fk
+    FOREIGN KEY (id_modo_pagamento)
+    REFERENCES modos_pagamentos(id_modo_pagamento)
 );
 
 CREATE TABLE pisos (
@@ -114,10 +128,14 @@ CREATE TABLE clientes (
 CREATE TABLE pagamentos (
   id_cliente            varchar2(8),
   data_hora_pagamento   date,
+  id_modo_pagamento     varchar2(3),
 
   CONSTRAINT id_cliente_fk
     FOREIGN KEY (id_cliente)
-    REFERENCES clientes(id_cliente)
+    REFERENCES clientes(id_cliente),
+  CONSTRAINT id_modo_pagam_fk
+    FOREIGN KEY (id_modo_pagamento)
+    REFERENCES modos_pagamentos(id_modo_pagamento)
 );
 
 CREATE TABLE registos_registados (
