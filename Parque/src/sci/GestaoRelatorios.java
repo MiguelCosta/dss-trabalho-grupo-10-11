@@ -488,18 +488,16 @@ public class GestaoRelatorios {
         GregorianCalendar dataFim       = new GregorianCalendar();
         float diferenca                 = 0;
 
-        int i = 1;
-        rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO CLIENTE " + idCliente + " \n";
+        rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAMENTO DO CLIENTE " + idCliente + " \n";
         rel = rel + "****************************************************************************\n";
 
             tempoMedio  = 0;
             String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
-            sql = sql + " FROM registos_lugares, lugares ";
+            sql = sql + " FROM registos_lugares";
             sql = sql + " WHERE id_Cliente='";
-            System.out.println(sql);
 
             rSet = Model.stmt.executeQuery(sql+idCliente+"'");
-            
+
             while(rSet.next()){
                 data_inicio = rSet.getString(1);
                 data_fim = rSet.getString(2);
@@ -509,10 +507,11 @@ public class GestaoRelatorios {
 
                 diferenca = LerDatas.diferencaEntreDatas(dataInicio, dataFim);
                 tempoTotal = tempoTotal + diferenca;
-                numeroEstacionametos++;                
+                numeroEstacionametos++;
             }
             if(numeroEstacionametos>0) tempoMedio = tempoTotal/numeroEstacionametos;
-            System.out.println("med "+tempoMedio);
+
+
             rel = rel + "Tempo medio de estacionamento:  "+tempoMedio+"\n";
             rel = rel + "\n";
             return rel;
