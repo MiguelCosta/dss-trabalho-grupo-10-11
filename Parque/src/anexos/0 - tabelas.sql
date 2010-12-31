@@ -130,6 +130,7 @@ CREATE TABLE pagamentos (
   id_cliente            varchar2(8),
   data_hora_pagamento   date,
   id_modo_pagamento     varchar2(3),
+  montante              varchar2(4),
 
   CONSTRAINT id_cliente_fk
     FOREIGN KEY (id_cliente)
