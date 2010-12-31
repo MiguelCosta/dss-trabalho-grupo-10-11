@@ -66,8 +66,6 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jListClientesRegistados = new javax.swing.JList();
         jPanel6 = new javax.swing.JPanel();
         jLabelProcura1 = new javax.swing.JLabel();
         jTextFieldProcurar = new javax.swing.JTextField();
@@ -99,6 +97,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel14 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jListPagamentosAtrasoCliente = new javax.swing.JList();
+        jPanel25 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jListClientesRegistados = new javax.swing.JList();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jListPagamentosAtraso = new javax.swing.JList();
@@ -185,25 +186,6 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jListClientesRegistados.setBackground(java.awt.SystemColor.control);
-        jListClientesRegistados.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes Registados"));
-        try {
-            rSet = sci.Query.queryClientes();
-            DefaultListModel model = new DefaultListModel();
-            while (rSet.next())
-            model.addElement(rSet.getString(1));
-            jListClientesRegistados.setModel(model);
-        }
-        catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }
-        jListClientesRegistados.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jListClientesRegistadosValueChanged(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jListClientesRegistados);
-
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 190, 310));
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Procura de Clientes"));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -433,6 +415,40 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTabbedPane3.addTab("Lista de Pagamentos em Atraso do Cliente", jPanel14);
 
         jPanel3.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 650, -1));
+
+        jPanel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes Registados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+
+        jListClientesRegistados.setBackground(java.awt.SystemColor.control);
+        try {
+            rSet = sci.Query.queryClientes();
+            DefaultListModel model = new DefaultListModel();
+            while (rSet.next())
+            model.addElement(rSet.getString(1));
+            jListClientesRegistados.setModel(model);
+        }
+        catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }
+        jListClientesRegistados.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jListClientesRegistadosValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jListClientesRegistados);
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 310));
 
         jTabbedPane1.addTab("Gestão de Clientes", jPanel3);
 
@@ -1537,6 +1553,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
