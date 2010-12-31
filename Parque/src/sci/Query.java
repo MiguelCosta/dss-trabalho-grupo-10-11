@@ -68,6 +68,8 @@ public class Query extends Model {
         return rSet;
     }
 
+
+
     /**
      * Procura um cliente pelo nome e devolve a linha
      * @param sel

@@ -453,7 +453,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(11, 11, 11)
                         .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonEditar)
                             .addComponent(jButtonRegistarCliente)))
@@ -650,7 +650,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                         .addComponent(jRadioButtonRelDiaViaturas))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                         .addComponent(jButtonRelDiaGerar)))
                 .addContainerGap())
         );
@@ -976,7 +976,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 677, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -1394,7 +1394,49 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_jButtonRegistarClienteActionPerformed
 
     private void jComboBoxTipoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoClienteActionPerformed
-        // TODO add your handling code here:
+        String modo_texto = jComboBoxTipoCliente.getSelectedItem().toString();
+        jListClientesRegistados.removeAll();
+        ResultSet rSet;
+        try {
+            if(modo_texto.equals("Todos os Clientes")){
+                DefaultListModel model = new DefaultListModel();
+                if(jRadioButtonNCliente.isSelected()==true){
+                    rSet = Query.queryClientes();
+                    while (rSet.next()) {
+                        model.addElement(rSet.getString(1));
+                    }
+
+                }
+                else{
+
+                    rSet = Query.queryClientes();
+                        while (rSet.next()) {
+                            model.addElement(rSet.getString(2));
+                        }
+                }
+                jListClientesRegistados.setModel(model);
+            }
+            else{
+            String modo;
+            modo=Query.procuraModoEntradaPorNome(modo_texto);
+            rSet = Query.filtraLista(modo);
+            DefaultListModel model = new DefaultListModel();
+            while(rSet.next()){
+                if(jRadioButtonNCliente.isSelected()==true){
+                    model.addElement(rSet.getString(1));}
+                else {
+                    model.addElement(rSet.getString(2));
+                }
+
+              }
+             jListClientesRegistados.setModel(model);
+            }
+           
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jComboBoxTipoClienteActionPerformed
 
     private void jButtonRelClienteGerarRelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelClienteGerarRelActionPerformed
