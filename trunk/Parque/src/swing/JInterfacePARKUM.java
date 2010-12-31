@@ -1258,7 +1258,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
           try{
           if (jRadioButtonRelClienteNentrada.isSelected() == true)        rel = GestaoRelatorios.gerarRelatoriosCliente(1, idCliente);
-       // if (jRadioButtonRelClienteValorMensal.isSelected() == true)     rel = GestaoRelatorios.gerarRelatoriosCliente(2, idCliente);
+          if (jRadioButtonRelClienteValorMensal.isSelected() == true)     rel = GestaoRelatorios.gerarRelatoriosCliente(2, idCliente);
        // if (jRadioButtonRelClienteTemposEstacion.isSelected() == true)  rel = GestaoRelatorios.gerarRelatoriosCliente(3, idCliente);
 
         } catch (SQLException ex) {
