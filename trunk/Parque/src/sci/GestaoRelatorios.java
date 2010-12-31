@@ -284,7 +284,7 @@ public class GestaoRelatorios {
         rel = rel + "Tempo medio:  "+tempoMedio+"\n";
         rel = rel + "Tempo máximo: "+tempoMax+"\n";
         rel = rel + "Tempo minimo: "+tempoMin+"\n";
-        rel = rel + "Numero de bilhete: "+numeroBilhetes+"\n";
+        rel = rel + "Numero de bilhetes: "+numeroBilhetes+"\n";
 
         rel = rel + "*****************************************************************************************\n";
 
