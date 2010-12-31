@@ -438,7 +438,7 @@ public class GestaoRelatorios {
                 rel = relatorioNumeroEntradas(idCliente);
                 break;
             case 2:
-             //   rel = relatorioTemposMediosEstacionamento(idCliente);
+                rel = relatorioTemposMediosEstacionamento(idCliente);
                 break;
             case 3:
            //     rel = relatorioValorMensalPagar(idCliente);
@@ -475,4 +475,58 @@ public class GestaoRelatorios {
 
         return rel;
     }
+ private static String relatorioTemposMediosEstacionamento(String idCliente) throws SQLException {
+       
+	String rel                      = "";
+        ResultSet rSet                  = null;
+        float tempoMedio                = 0;
+        float tempoTotal                = 0;
+        int numeroEstacionametos        = 0;
+        String data_inicio              = "";
+        String data_fim                 = "";
+        GregorianCalendar dataInicio    = new GregorianCalendar();
+        GregorianCalendar dataFim       = new GregorianCalendar();
+        float diferenca                 = 0;
+
+        int i = 1;
+        rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAETO DO CLIENTE " + idCliente + " \n";
+        rel = rel + "****************************************************************************\n";
+
+            tempoMedio  = 0;
+            String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
+            sql = sql + " FROM registos_lugares, lugares ";
+            sql = sql + " WHERE id_Cliente='";
+            System.out.println(sql);
+
+            rSet = Model.stmt.executeQuery(sql+idCliente+"'");
+            
+            while(rSet.next()){
+                data_inicio = rSet.getString(1);
+                data_fim = rSet.getString(2);
+
+                dataInicio.set(LerDatas.getAno(data_inicio), LerDatas.getMes(data_inicio) , LerDatas.getDia(data_inicio), LerDatas.getHora(data_inicio), LerDatas.getMin(data_inicio), LerDatas.getSec(data_inicio));
+                dataFim.set(LerDatas.getAno(data_fim), LerDatas.getMes(data_fim) , LerDatas.getDia(data_fim), LerDatas.getHora(data_fim), LerDatas.getMin(data_fim), LerDatas.getSec(data_fim));
+
+                diferenca = LerDatas.diferencaEntreDatas(dataInicio, dataFim);
+                tempoTotal = tempoTotal + diferenca;
+                numeroEstacionametos++;                
+            }
+            if(numeroEstacionametos>0) tempoMedio = tempoTotal/numeroEstacionametos;
+            System.out.println("med "+tempoMedio);
+            rel = rel + "Tempo medio de estacionamento:  "+tempoMedio+"\n";
+            rel = rel + "\n";
+            return rel;
+        }
+        
+    
+
+
+
+
+
+
+
+
+
+
 }
