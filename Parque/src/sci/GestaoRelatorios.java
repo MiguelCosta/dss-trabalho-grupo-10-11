@@ -383,9 +383,9 @@ public class GestaoRelatorios {
         rel = rel + "TOTAL PAGAMENTOS POR MULTIBACO: "+numMultibanco+"\n";
         rel = rel + "TOTAL PAGAMENTOS: "+totalPagamentos+"\n";
         rel = rel + "***************************************************\n";
-        rel = rel + "MONTANTE TOTAL RECEBIDO EM DINHEIRO: "+montanteDinehiro+"\n";
-        rel = rel + "MONTANTE TOTAL RECEBIDO POR MULTIBANCO: "+montanteMultibanco+"\n";
-        rel = rel + "MONTANTE TOTAL RECEBIDO: "+montanteTotal+"\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO EM DINHEIRO: "+montanteDinehiro+"€\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO POR MULTIBANCO: "+montanteMultibanco+"€\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO: "+montanteTotal+"€\n";
         rel = rel + "***************************************************\n";
 
 
