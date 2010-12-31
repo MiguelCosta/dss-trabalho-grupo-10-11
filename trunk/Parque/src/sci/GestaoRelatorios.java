@@ -334,7 +334,7 @@ public class GestaoRelatorios {
                 rel = relatorioMaqPagamentoNumeroPagamanentoTipo(idMaq);
                 break;
             case 2:
-             //   rel = relatorioMaqPagamentoTotalRecebidoPorCadaPagamento(idMaq);
+                rel = relatorioMaqPagamentoTotalRecebidoPorCadaPagamento(idMaq);
                 break;
             case 3:
              //   rel = relatorioMaqPagamentoNumeroPercentagemBilhetes(idMaq);
@@ -358,7 +358,7 @@ public class GestaoRelatorios {
         float montanteMultibanco= 0;
 
 
-        rel = rel + "PAGAMENTOS POR TIPO DA MÁQUINA "+idMaq+"\n";
+        rel = rel + "NUMERO PAGAMENTOS POR TIPO DA MÁQUINA "+idMaq+"\n";
         rel = rel + "***************************************************\n";
 
         ResultSet rSet = null;
@@ -383,12 +383,50 @@ public class GestaoRelatorios {
         rel = rel + "TOTAL PAGAMENTOS POR MULTIBACO: "+numMultibanco+"\n";
         rel = rel + "TOTAL PAGAMENTOS: "+totalPagamentos+"\n";
         rel = rel + "***************************************************\n";
+        /*
         rel = rel + "MONTANTE TOTAL RECEBIDO EM DINHEIRO: "+montanteDinehiro+"€\n";
         rel = rel + "MONTANTE TOTAL RECEBIDO POR MULTIBANCO: "+montanteMultibanco+"€\n";
         rel = rel + "MONTANTE TOTAL RECEBIDO: "+montanteTotal+"€\n";
         rel = rel + "***************************************************\n";
-
+*/
 
      return rel;
    }
+
+     private static String relatorioMaqPagamentoTotalRecebidoPorCadaPagamento(String idMaq) throws SQLException{
+        String rel              = "";
+        String sql              = "SELECT * FROM pagamentos_maquinas WHERE id_maquina = '";
+        float montanteTotal     = 0;
+        float montanteDinehiro  = 0;
+        float montanteMultibanco= 0;
+        float percentagemDinhe  = 0;
+        float percentagemMulti  = 0;
+
+        rel = rel + "NUMERO PAGAMENTOS POR TIPO DA MÁQUINA "+idMaq+"\n";
+        rel = rel + "***************************************************\n";
+
+         ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + idMaq + "'");
+
+        while(rSet.next()){
+            if (rSet.getString(4).equalsIgnoreCase("1")) {
+                montanteDinehiro = montanteDinehiro + Float.parseFloat(rSet.getString(3));
+            }
+
+            if (rSet.getString(4).equalsIgnoreCase("3")) {
+                montanteMultibanco = montanteMultibanco + Float.parseFloat(rSet.getString(3));
+            }
+
+            montanteTotal = montanteTotal + Float.parseFloat(rSet.getString(3));
+        }
+        if (montanteTotal>0) percentagemDinhe = (montanteDinehiro/montanteTotal)*100;
+        if (montanteTotal>0) percentagemMulti = (montanteMultibanco/montanteTotal)*100;
+
+        rel = rel + "MONTANTE TOTAL RECEBIDO EM DINHEIRO: "+montanteDinehiro+"€ ("+percentagemDinhe+"%)\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO POR MULTIBANCO: "+montanteDinehiro+"€ ("+percentagemMulti+"%)\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO: "+montanteTotal+"€\n";
+        rel = rel + "***************************************************\n";
+
+        return rel;
+     }
 }
