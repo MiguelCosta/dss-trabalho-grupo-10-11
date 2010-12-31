@@ -326,7 +326,7 @@ public class GestaoRelatorios {
     }
 
 
-     public static String gerarRelatoriosMaqPagamento(int relatorio, int idMaq) throws SQLException {
+     public static String gerarRelatoriosMaqPagamento(int relatorio, String idMaq) throws SQLException {
         String rel = null;
 
         switch (relatorio) {
@@ -347,10 +347,46 @@ public class GestaoRelatorios {
         return rel;
     }
 
-     private static String relatorioMaqPagamentoNumeroPagamanentoTipo(int idMaq) throws SQLException {
-        String rel = "";
+     private static String relatorioMaqPagamentoNumeroPagamanentoTipo(String idMaq) throws SQLException {
+        String rel              = "";
+        String sql              = "SELECT * FROM pagamentos_maquinas WHERE id_maquina = '";
+        int numDinheiro         = 0;
+        int numMultibanco       = 0;
+        int totalPagamentos     = 0;
+        float montanteTotal     = 0;
+        float montanteDinehiro  = 0;
+        float montanteMultibanco= 0;
 
-        String sql = "";
+
+        rel = rel + "PAGAMENTOS POR TIPO DA MÁQUINA "+idMaq+"\n";
+        rel = rel + "***************************************************\n";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + idMaq + "'");
+
+        while(rSet.next()){
+            if (rSet.getString(4).equalsIgnoreCase("1")) {
+                numDinheiro++;
+                montanteDinehiro = montanteDinehiro + Float.parseFloat(rSet.getString(3));
+            }
+            
+            if (rSet.getString(4).equalsIgnoreCase("3")) {
+                numMultibanco++;
+                montanteMultibanco = montanteMultibanco + Float.parseFloat(rSet.getString(3));
+            }
+            
+            totalPagamentos++;
+            montanteTotal = montanteTotal + Float.parseFloat(rSet.getString(3));
+        }
+
+        rel = rel + "TOTAL PAGAMENTOS EM DINHEIRO: "+numDinheiro+"\n";
+        rel = rel + "TOTAL PAGAMENTOS POR MULTIBACO: "+numMultibanco+"\n";
+        rel = rel + "TOTAL PAGAMENTOS: "+totalPagamentos+"\n";
+        rel = rel + "***************************************************\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO EM DINHEIRO: "+montanteDinehiro+"\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO POR MULTIBANCO: "+montanteMultibanco+"\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO: "+montanteTotal+"\n";
+        rel = rel + "***************************************************\n";
 
 
      return rel;
