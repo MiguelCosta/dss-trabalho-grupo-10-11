@@ -429,4 +429,50 @@ public class GestaoRelatorios {
 
         return rel;
      }
+
+     public static String gerarRelatoriosCliente(int relatorio, String idCliente) throws SQLException {
+        String rel = null;
+
+        switch (relatorio) {
+            case 1:
+                rel = relatorioNumeroEntradas(idCliente);
+                break;
+            case 2:
+             //   rel = relatorioTemposMediosEstacionamento(idCliente);
+                break;
+            case 3:
+           //     rel = relatorioValorMensalPagar(idCliente);
+                break;
+        }
+
+        return rel;
+    }
+
+
+
+
+
+    public static String relatorioNumeroEntradas(String idCliente) throws SQLException{
+
+	String rel= "";
+	int nEntradas = 0;
+	ResultSet rSet;
+
+	String sql = "SELECT * FROM registos_registados WHERE id_cliente='";
+	rSet = Model.stmt.executeQuery(sql + idCliente + "'");
+
+
+	while( rSet.next() ){
+		nEntradas++;
+	}
+
+	rel = rel + "NUMERO ENTRADAS DO CLINTE "+idCliente+"\n";
+        rel = rel + "***************************************************\n";
+	rel = rel + "O cliente entrou no parque:\n";
+	rel = rel + " \n";
+	rel = rel + "      "+nEntradas+ "\n";
+	rel = rel + "***************************************************\n";
+
+        return rel;
+    }
 }
