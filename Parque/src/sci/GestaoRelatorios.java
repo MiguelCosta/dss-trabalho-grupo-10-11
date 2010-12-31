@@ -297,12 +297,13 @@ public class GestaoRelatorios {
         int totalClientes   = 0;
 
         ResultSet rSet      = null;
-        String sql          = "SELECT * FROM clientes WHERE clientes.id_cliente NOT IN (";
-        sql = sql + " SELECT registos_registados.id_cliente FROM clientes, registos_registados";
+
+        String sql = "SELECT * FROM clientes WHERE clientes.id_cliente NOT IN (";
+        sql = sql + " SELECT registos_registados.id_cliente FROM registos_registados";
         sql = sql + " WHERE to_char(registos_registados.data_hora_entrada, 'dd') = "+dia;
-        //sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'mm') = "+mes;
-        //sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'yyyy') = "+ano;
-        sql = sql + " AND clientes.id_cliente = registos_registados.id_cliente)";
+        sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'mm') = "+mes;
+        sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'yyyy') = "+ano;
+        sql = sql + " GROUP BY registos_registados.id_cliente)";
 
         // este select está parcialmente correcto
 
