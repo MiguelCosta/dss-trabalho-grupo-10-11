@@ -468,10 +468,10 @@ public class GestaoRelatorios {
 
 	rel = rel + "NUMERO ENTRADAS DO CLINTE "+idCliente+"\n";
         rel = rel + "***************************************************\n";
-	rel = rel + "O cliente entrou no parque:\n";
 	rel = rel + " \n";
-	rel = rel + "      "+nEntradas+ "\n";
-	rel = rel + "***************************************************\n";
+        rel = rel + "O cliente entrou no parque: " +nEntradas+ " vezes \n";
+	rel = rel + " \n";
+        rel = rel + "***************************************************\n";
 
         return rel;
     }
