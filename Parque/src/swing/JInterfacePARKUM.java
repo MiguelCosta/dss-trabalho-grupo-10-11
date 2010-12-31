@@ -58,6 +58,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -141,14 +142,18 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jLabelTabDist2 = new javax.swing.JLabel();
         jComboBoxTabDistNivel = new javax.swing.JComboBox();
         jPanel5 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jTextFieldManNumMaq = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextFieldManTempo = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jButtonManRegista = new javax.swing.JButton();
+        jPanel21 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPaneManDescri = new javax.swing.JTextPane();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jTextFieldManNumMaq = new javax.swing.JTextField();
-        jButtonManRegista = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        jTextFieldManTempo = new javax.swing.JTextField();
         jPanel17 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -778,12 +783,35 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jTabbedPane1.addTab("Relatórios", jPanel4);
 
-        jTextPaneManDescri.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição da Manutenção"));
-        jScrollPane3.setViewportView(jTextPaneManDescri);
+        jPanel5.setLayout(new java.awt.GridBagLayout());
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipady = -69;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 10, 11, 21);
+        jPanel5.add(jPanel18, gridBagConstraints);
+
+        jPanel22.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setText("Preencha os campos que se seguem para regitar a manutenção");
+        jPanel22.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jLabel16.setText("Identificação da máquina:");
+
+        jLabel17.setText("Tempo gasto (em minutos):");
 
         jButtonManRegista.setText("Registar Manutenção");
         jButtonManRegista.addActionListener(new java.awt.event.ActionListener() {
@@ -792,49 +820,59 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
-        jLabel17.setText("Tempo gasto (em minutos):");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextFieldManNumMaq, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(jTextFieldManTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonManRegista, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16)
                 .addGap(10, 10, 10)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(jTextFieldManNumMaq, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)
-                            .addComponent(jTextFieldManTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonManRegista, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(966, 966, 966))
+                .addComponent(jTextFieldManNumMaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17)
+                .addGap(16, 16, 16)
+                .addComponent(jTextFieldManTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jButtonManRegista, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel15)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel16)
-                        .addGap(10, 10, 10)
-                        .addComponent(jTextFieldManNumMaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel17)
-                        .addGap(16, 16, 16)
-                        .addComponent(jTextFieldManTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(jButtonManRegista, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)))
-                .addGap(22, 22, 22))
+
+        jPanel22.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 210, -1));
+
+        jTextPaneManDescri.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição da Manutenção"));
+        jScrollPane3.setViewportView(jTextPaneManDescri);
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
+        );
+
+        jPanel22.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 31, -1, 220));
+
+        jPanel5.add(jPanel22, new java.awt.GridBagConstraints());
 
         jTabbedPane1.addTab("Manutenção", jPanel5);
 
@@ -1475,8 +1513,12 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
