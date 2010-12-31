@@ -4,3 +4,12 @@
     registos_registados -> tabela onde diz quando um cliente registado entrou e sai do parque, já existe a tabela registos
                            mas é para os que entram com bilhetes, por isso é necessário esta
 
+
+
+
+
+- Adicionar montante ao pagamento
+
+-pagamentos em atraso so cliente e global
+
+-ver metodos pagamentos cliente
