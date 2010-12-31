@@ -151,6 +151,7 @@ CREATE TABLE registos_registados (
 
 CREATE TABLE pagamentos_maquinas (
   id_maquina          varchar2(8),
+  id_bilhete          varchar2(4),
   montante_recebido   varchar2(8),
   id_modo_pagamento   varchar2(3),
   data_pagamento      date,
@@ -160,7 +161,10 @@ CREATE TABLE pagamentos_maquinas (
     REFERENCES maquinas(id_maquina),
   CONSTRAINT modo_pagamento_fk
     FOREIGN KEY (id_modo_pagamento)
-    REFERENCES modos_pagamentos(id_modo_pagamento)
+    REFERENCES modos_pagamentos(id_modo_pagamento),
+  CONSTRAINT id_bilhete_fk
+    FOREIGN KEY (id_bilhete)
+    REFERENCES bilhetes(id_bilhete)
 );
 
 /*
