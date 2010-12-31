@@ -349,7 +349,7 @@ public class GestaoRelatorios {
      private static String relatorioMaqPagamentoNumeroPagamanentoTipo(int idMaq) throws SQLException {
         String rel = "";
 
-
+        String pagamentosTipo = "";
 
 
      return rel;
