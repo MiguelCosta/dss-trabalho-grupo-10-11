@@ -324,4 +324,34 @@ public class GestaoRelatorios {
         return rel;
     }
 
+
+     public static String gerarRelatoriosMaqPagamento(int relatorio, int idMaq) throws SQLException {
+        String rel = null;
+
+        switch (relatorio) {
+            case 1:
+                rel = relatorioMaqPagamentoNumeroPagamanentoTipo(idMaq);
+                break;
+            case 2:
+             //   rel = relatorioMaqPagamentoTotalRecebidoPorCadaPagamento(idMaq);
+                break;
+            case 3:
+             //   rel = relatorioMaqPagamentoNumeroPercentagemBilhetes(idMaq);
+                break;
+            case 4:
+             //   rel = relatorioMaqPagamentoNumAvariasOperaçõesManutencao(idMaq);
+                break;
+        }
+
+        return rel;
+    }
+
+     private static String relatorioMaqPagamentoNumeroPagamanentoTipo(int idMaq) throws SQLException {
+        String rel = "";
+
+
+
+
+     return rel;
+   }
 }
