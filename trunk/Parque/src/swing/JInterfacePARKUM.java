@@ -46,6 +46,10 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         }
         initComponents();
         jRadioButtonNCliente.setSelected(true);
+        jRadioButtonRelClienteNentrada.setSelected(true);
+        jRadioButtonRelDiaTotalEntSai.setSelected(true);
+        jRadioButtonRelFacPagDin.setSelected(true);
+        jRadioButtonRelMPNpag.setSelected(true);
         jTextFieldNomeCliente.setEditable(false);
         jTextFieldidCliente.setEditable(false);
         jTextFieldNib.setEditable(false);
@@ -1440,15 +1444,18 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_jListClientesRegistadosValueChanged
 
     private void jRadioButtonRelClienteNentradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelClienteNentradaActionPerformed
-        // TODO add your handling code here:
+         jRadioButtonRelClienteTemposEstacion.setSelected(false);
+         jRadioButtonRelClienteValorMensal.setSelected(false);
     }//GEN-LAST:event_jRadioButtonRelClienteNentradaActionPerformed
 
     private void jRadioButtonRelClienteValorMensalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelClienteValorMensalActionPerformed
-        // TODO add your handling code here:
+        jRadioButtonRelClienteTemposEstacion.setSelected(false);
+         jRadioButtonRelClienteNentrada.setSelected(false);
     }//GEN-LAST:event_jRadioButtonRelClienteValorMensalActionPerformed
 
     private void jRadioButtonRelClienteTemposEstacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelClienteTemposEstacionActionPerformed
-        // TODO add your handling code here:
+         jRadioButtonRelClienteValorMensal.setSelected(false);
+         jRadioButtonRelClienteNentrada.setSelected(false);
     }//GEN-LAST:event_jRadioButtonRelClienteTemposEstacionActionPerformed
 
 
