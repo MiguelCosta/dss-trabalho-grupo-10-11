@@ -1129,6 +1129,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             }
+
+        JOptionPane.showMessageDialog(null, rel, "Relatorio",1);
+        System.out.println(rel);
          
 }//GEN-LAST:event_jButtonRelMPGerarActionPerformed
 
