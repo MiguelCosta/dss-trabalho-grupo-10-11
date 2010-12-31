@@ -1119,11 +1119,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         String rel = "";
 
-        String idMaq_texto = jTextFieldRelMPIdMaq.getText();
+        String idMaq = jTextFieldRelMPIdMaq.getText();
 
-        int idMaq;
-        if (Util.isNumber(idMaq_texto)) idMaq = Integer.parseInt(idMaq_texto);
-        /*
             try {
                 if (jRadioButtonRelMPNpag.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosMaqPagamento(1,idMaq);
                 if (jRadioButtonRelMPTotal.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosMaqPagamento(2,idMaq );
@@ -1132,7 +1129,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             }
-         */
+         
 }//GEN-LAST:event_jButtonRelMPGerarActionPerformed
 
     private void jTextFieldSelecDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSelecDiaActionPerformed
