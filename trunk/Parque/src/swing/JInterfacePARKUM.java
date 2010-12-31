@@ -46,8 +46,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         }
         initComponents();
         jRadioButtonNCliente.setSelected(true);
-
-
+        jTextFieldNomeCliente.setEditable(false);
+        jTextFieldidCliente.setEditable(false);
+        jTextFieldNib.setEditable(false);
+        jTextFieldMatricula.setEditable(false);
+        jTextFieldModoEntrada.setEditable(false);
     }
 
     /** This method is called from within the constructor to
