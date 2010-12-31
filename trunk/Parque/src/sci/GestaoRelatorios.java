@@ -494,7 +494,7 @@ public class GestaoRelatorios {
             tempoMedio  = 0;
             String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
             sql = sql + " FROM registos_lugares";
-            sql = sql + " WHERE id_Cliente='";
+            sql = sql + " WHERE id_cliente='";
 
             rSet = Model.stmt.executeQuery(sql+idCliente+"'");
 
