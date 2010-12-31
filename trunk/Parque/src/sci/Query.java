@@ -57,6 +57,17 @@ public class Query extends Model {
         return rSet;
     }
 
+
+    public static ResultSet filtraLista(String sel) throws SQLException{
+        String sql = "SELECT * FROM clientes WHERE id_entrada='";
+
+        ResultSet rSet = null;
+
+        rSet=Model.stmt.executeQuery(sql+sel+"'");
+
+        return rSet;
+    }
+
     /**
      * Procura um cliente pelo nome e devolve a linha
      * @param sel
@@ -223,5 +234,6 @@ public class Query extends Model {
 
         return resultado;
     }
+
 
 }
