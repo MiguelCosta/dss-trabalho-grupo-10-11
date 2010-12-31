@@ -21,6 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import sci.GestaoRelatorios;
 
 /**
@@ -35,8 +37,16 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     /** Creates new form JInterfacePARKUM */
     public JInterfacePARKUM() {
         //Util.centerOnScreen(this);
+         try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }   catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Não foi possível carregar o \"Skin\" padrão. Definindo o padrão original.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
         initComponents();
         jRadioButtonNCliente.setSelected(true);
+
 
     }
 
@@ -79,8 +89,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTextFieldMatricula = new javax.swing.JTextField();
         jPanel13 = new javax.swing.JPanel();
         jRadioButtonRelClienteNentrada = new javax.swing.JRadioButton();
-        jRadioButtonRelClienteTemposEstacion = new javax.swing.JRadioButton();
         jRadioButtonRelClienteValorMensal = new javax.swing.JRadioButton();
+        jRadioButtonRelClienteTemposEstacion = new javax.swing.JRadioButton();
         jButtonRelClienteGerarRel = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -139,6 +149,17 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jButtonManRegista = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jTextFieldManTempo = new javax.swing.JTextField();
+        jPanel17 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabelIniciarSessão = new javax.swing.JLabel();
         jLabelUserLogin = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -226,7 +247,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jButtonRegistarClienteActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonRegistarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, -1, -1));
+        jPanel3.add(jButtonRegistarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, -1, -1));
 
         jButtonEditar.setText("Editar Cliente");
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -319,21 +340,31 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldNib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Informações do Cliente", jPanel7);
 
-        jPanel13.setLayout(new java.awt.GridLayout(1, 0));
-
         jRadioButtonRelClienteNentrada.setText("Nº de entradas");
-        jPanel13.add(jRadioButtonRelClienteNentrada);
-
-        jRadioButtonRelClienteTemposEstacion.setText("Tempos médios de estacionamento");
-        jPanel13.add(jRadioButtonRelClienteTemposEstacion);
+        jRadioButtonRelClienteNentrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonRelClienteNentradaActionPerformed(evt);
+            }
+        });
 
         jRadioButtonRelClienteValorMensal.setText("Valor mensal a pagar");
-        jPanel13.add(jRadioButtonRelClienteValorMensal);
+        jRadioButtonRelClienteValorMensal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonRelClienteValorMensalActionPerformed(evt);
+            }
+        });
+
+        jRadioButtonRelClienteTemposEstacion.setText("Tempos médios de estacionamento");
+        jRadioButtonRelClienteTemposEstacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonRelClienteTemposEstacionActionPerformed(evt);
+            }
+        });
 
         jButtonRelClienteGerarRel.setText("Gerar Relatório");
         jButtonRelClienteGerarRel.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +372,31 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jButtonRelClienteGerarRelActionPerformed(evt);
             }
         });
-        jPanel13.add(jButtonRelClienteGerarRel);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jRadioButtonRelClienteNentrada, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButtonRelClienteTemposEstacion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jRadioButtonRelClienteValorMensal, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonRelClienteGerarRel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonRelClienteGerarRel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonRelClienteValorMensal)
+                    .addComponent(jRadioButtonRelClienteNentrada)
+                    .addComponent(jRadioButtonRelClienteTemposEstacion)))
+        );
 
         jTabbedPane3.addTab("Relatórios sobre o Cliente", jPanel13);
 
@@ -360,7 +415,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -548,9 +603,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                             .addComponent(jRadioButtonRelMPTotal)
                             .addComponent(jRadioButtonRelMPNumPerce)
                             .addComponent(jRadioButtonRelMPAvarias))))
-                .addGap(224, 224, 224)
+                .addGap(293, 293, 293)
                 .addComponent(jButtonRelMPGerar)
-                .addGap(79, 79, 79))
+                .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -571,7 +626,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                         .addComponent(jRadioButtonRelMPNumPerce)
                         .addGap(17, 17, 17)
                         .addComponent(jRadioButtonRelMPAvarias))
-                    .addComponent(jButtonRelMPGerar, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
+                    .addComponent(jButtonRelMPGerar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -612,7 +667,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addGap(957, 957, 957)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelRelFac1)
                     .addComponent(jRadioButtonRelFacPagDin)
@@ -782,6 +837,81 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         );
 
         jTabbedPane1.addTab("Manutenção", jPanel5);
+
+        jPanel17.setLayout(new java.awt.GridBagLayout());
+
+        jLabel7.setText("Registe um novo pagamento preenchendo os campos que se seguem");
+
+        jLabel8.setText("Número do Cliente");
+
+        jLabel9.setText("Forma de Pagamento");
+
+        jLabel10.setText("Montante a Pagar");
+
+        jLabel11.setText("Euros");
+
+        jButton1.setText("Registar Pagamento");
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                .addContainerGap(172, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addContainerGap(255, Short.MAX_VALUE))
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel19Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(32, 32, 32)
+                        .addComponent(jTextField1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel19Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel11))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel7)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(38, 38, 38)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel17.add(jPanel19, new java.awt.GridBagConstraints());
+
+        jTabbedPane1.addTab("Registar Pagamento", jPanel17);
 
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 880, 366));
 
@@ -1239,6 +1369,18 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         }
     }//GEN-LAST:event_jListClientesRegistadosValueChanged
 
+    private void jRadioButtonRelClienteNentradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelClienteNentradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonRelClienteNentradaActionPerformed
+
+    private void jRadioButtonRelClienteValorMensalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelClienteValorMensalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonRelClienteValorMensalActionPerformed
+
+    private void jRadioButtonRelClienteTemposEstacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelClienteTemposEstacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonRelClienteTemposEstacionActionPerformed
+
 
 
 
@@ -1276,6 +1418,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonManRegista;
     private javax.swing.JButton jButtonProcurar;
@@ -1285,10 +1428,13 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton jButtonRelFacGerar;
     private javax.swing.JButton jButtonRelMPGerar;
     private javax.swing.JButton jButtonTabDistGera;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBoxTabDistHora;
     private javax.swing.JComboBox jComboBoxTabDistNivel;
     private javax.swing.JComboBox jComboBoxTipoCliente;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1298,6 +1444,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelIniciarSessão;
     private javax.swing.JLabel jLabelMatricula;
     private javax.swing.JLabel jLabelModoEntrada;
@@ -1325,6 +1474,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1362,6 +1513,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldManNumMaq;
     private javax.swing.JTextField jTextFieldManTempo;
     private javax.swing.JTextField jTextFieldMatricula;
