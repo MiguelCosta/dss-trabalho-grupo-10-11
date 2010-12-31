@@ -98,6 +98,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JList" name="jListClientesRegistados">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="f0" green="f0" id="Control" palette="2" red="f0" type="palette"/>
+                        </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                             <TitledBorder title="Clientes Registados"/>
@@ -921,29 +924,38 @@
                         </Constraint>
                       </Constraints>
 
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="957" pref="957" max="-2" attributes="0"/>
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JPanel" name="jPanel24">
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="137" ipadY="7" insetsTop="30" insetsLeft="112" insetsBottom="31" insetsRight="136" anchor="18" weightX="0.0" weightY="0.0"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+                          <SubComponents>
+                            <Container class="javax.swing.JPanel" name="jPanel23">
+
+                              <Layout>
+                                <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabelRelFac1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButtonRelFacPagDin" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButtonRelFacpagCartao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jRadioButtonRelFacPagCheque" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabelRelFac1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jRadioButtonRelFacPagDin" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jRadioButtonRelFacpagCartao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jRadioButtonRelFacPagCheque" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="143" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="480" max="32767" attributes="0"/>
-                                  <Component id="jButtonRelFacGerar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabelRelFac1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="36" pref="36" max="36" attributes="0"/>
                                           <Component id="jRadioButtonRelFacPagDin" min="-2" max="-2" attributes="0"/>
@@ -951,55 +963,53 @@
                                           <Component id="jRadioButtonRelFacpagCartao" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="27" pref="27" max="27" attributes="0"/>
                                           <Component id="jRadioButtonRelFacPagCheque" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jButtonRelFacGerar" pref="288" max="32767" attributes="0"/>
+                                          <EmptySpace pref="14" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                      <SubComponents>
-                        <Component class="javax.swing.JButton" name="jButtonRelFacGerar">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rio"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRelFacGerarActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacPagDin">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Factura&#xe7;&#xe3;o de pagamentos com dinheiro"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelFacPagDinActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacpagCartao">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Factura&#xe7;&#xe3;o de pagamentos com cart&#xe3;o magn&#xe9;tico"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelFacpagCartaoActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacPagCheque">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Factura&#xe7;&#xe3;o de pagamentos com cheque"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelFacPagChequeActionPerformed"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabelRelFac1">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Selecione o tipo de relat&#xf3;rio que pretende obter:"/>
-                          </Properties>
-                        </Component>
+                                </DimensionLayout>
+                              </Layout>
+                              <SubComponents>
+                                <Component class="javax.swing.JLabel" name="jLabelRelFac1">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Selecione o tipo de relat&#xf3;rio que pretende obter:"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacPagDin">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Factura&#xe7;&#xe3;o de pagamentos com dinheiro"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelFacPagDinActionPerformed"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacpagCartao">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Factura&#xe7;&#xe3;o de pagamentos com cart&#xe3;o magn&#xe9;tico"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelFacpagCartaoActionPerformed"/>
+                                  </Events>
+                                </Component>
+                                <Component class="javax.swing.JRadioButton" name="jRadioButtonRelFacPagCheque">
+                                  <Properties>
+                                    <Property name="text" type="java.lang.String" value="Factura&#xe7;&#xe3;o de pagamentos com cheque"/>
+                                  </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonRelFacPagChequeActionPerformed"/>
+                                  </Events>
+                                </Component>
+                              </SubComponents>
+                            </Container>
+                            <Component class="javax.swing.JButton" name="jButtonRelFacGerar">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rio"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRelFacGerarActionPerformed"/>
+                              </Events>
+                            </Component>
+                          </SubComponents>
+                        </Container>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel11">
@@ -1298,6 +1308,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JTextPane" name="jTextPaneManDescri">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f0" green="f0" id="Control" palette="2" red="f0" type="palette"/>
+                                </Property>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder title="Descri&#xe7;&#xe3;o da Manuten&#xe7;&#xe3;o"/>
