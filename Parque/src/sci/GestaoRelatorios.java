@@ -305,11 +305,6 @@ public class GestaoRelatorios {
         sql = sql + " AND to_char(registos_registados.data_hora_entrada, 'yyyy') = "+ano;
         sql = sql + " GROUP BY registos_registados.id_cliente)";
 
-        // este select está parcialmente correcto
-
-
-  
-        
         rel = rel + "RELATORIO DIARIO DOS CLIENTES QUE NAO ESTIVERAM NO PARQUE\n";
         rel = rel + "DIA "+dia+"-"+mes+"-"+ano+" POR NIVEL\n";
         rel = rel + "*****************************************************************************************\n";
@@ -340,7 +335,7 @@ public class GestaoRelatorios {
                 rel = relatorioMaqPagamentoNumeroPercentagemRecibos(idMaq);
                 break;
             case 4:
-             //   rel = relatorioMaqPagamentoNumAvariasOperaçõesManutencao(idMaq);
+                rel = relatorioMaqPagamentoNumAvariasOperaçõesManutencao(idMaq);
                 break;
         }
 
@@ -458,6 +453,27 @@ public class GestaoRelatorios {
         return rel;
      }
 
+
+     public static String relatorioMaqPagamentoNumAvariasOperaçõesManutencao(String idMaq) throws SQLException {
+        String rel             = "";
+        String sql             = "SELECT * FROM registos_manutencao WHERE id_maquina = '";
+        int numManutencoes     = 0;
+
+        rel = rel + "NUMERO DE AVARIAS E OPERACOES DE MANUTENCAO DA MAQUINA "+idMaq+"\n";
+        rel = rel + "******************************************************************\n";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + idMaq + "'");
+
+        while (rSet.next()){
+            numManutencoes++;
+        }
+
+        rel = rel + "TOTAL: "+numManutencoes+"\n";
+        rel = rel + "******************************************************************\n";
+
+        return rel;
+     }
 
 
      public static String gerarRelatoriosCliente(int relatorio, String idCliente) throws SQLException {
