@@ -576,7 +576,7 @@ public class GestaoRelatorios {
 
         return rel;
     }
- private static String relatorioTemposMediosEstacionamento(String idCliente) throws SQLException {
+    public static String relatorioTemposMediosEstacionamento(String idCliente) throws SQLException {
        
 	String rel                      = "";
         ResultSet rSet                  = null;
@@ -620,9 +620,94 @@ public class GestaoRelatorios {
         }
         
     
+     public static String gerarRelatoriosFacturacao(int relatorio) throws SQLException {
+        String rel = null;
+
+        switch (relatorio) {
+            case 1:
+                rel = relatorioFacDinheiro();
+                break;
+            case 2:
+                rel = relatorioFacCheq();
+                break;
+            case 3:
+                rel = relatorioFacCartao();
+                break;
+        }
+
+        return rel;
+    }
 
 
+    public static String relatorioFacDinheiro() throws SQLException{
+    String rel = "";
 
+    String sql = "SELECT * FROM Pagamentos WHERE ID_MODO_PAGAMENTO = 1";
+
+    ResultSet rSet = null;
+    float montanteTotal = 0;
+
+    rSet = Model.stmt.executeQuery(sql);
+
+    rel = rel + "RELATORIO DE FACTURACAO POR DINHEIRO\n";
+    rel = rel + "***************************************************\n";
+
+    while(rSet.next()){
+	montanteTotal = montanteTotal + Float.parseFloat(rSet.getString(4));
+        }
+
+    rel = rel + "MONTANTE FACTURADO: " + montanteTotal + "\n";
+    rel = rel + "***************************************************\n";
+
+    return rel;
+
+    }
+
+    public static String relatorioFacCheq()throws SQLException{
+
+    String rel = "";
+    String sql = "SELECT * FROM Pagamentos WHERE ID_MODO_PAGAMENTO = 2";
+
+    ResultSet rSet = null;
+
+    float montanteTotal = 0;
+
+    rSet = Model.stmt.executeQuery(sql);
+
+    rel = rel + "RELATORIO DE FACTURACAO POR CHEQUE\n";
+    rel = rel + "***************************************************\n";
+
+    while(rSet.next()){
+	montanteTotal = montanteTotal + Float.parseFloat(rSet.getString(4));
+        }
+
+
+    rel = rel + "MONTANTE FACTURADO: " + montanteTotal + "\n";
+    rel = rel + "***************************************************\n";
+
+    return rel;
+ }
+
+    public static String relatorioFacCartao()throws SQLException{
+
+    String rel = "";
+    String sql = "SELECT * FROM Pagamentos WHERE ID_MODO_PAGAMENTO = 3";
+
+    ResultSet rSet = null;
+    float montanteTotal = 0;
+
+    rSet = Model.stmt.executeQuery(sql);
+
+    rel = rel + "RELATORIO DE FACTURACAO POR CARTAO MULTIBANCO\n";
+    rel = rel + "***************************************************\n";
+
+    while(rSet.next()){
+	montanteTotal = montanteTotal + Float.parseFloat(rSet.getString(4));
+        }
+   rel = rel + "MONTANTE FACTURADO: " + montanteTotal + "\n";
+   rel = rel + "***************************************************\n";
+    return rel;
+    }
 
 
 
