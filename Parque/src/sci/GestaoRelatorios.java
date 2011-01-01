@@ -735,6 +735,22 @@ public class GestaoRelatorios {
         return rSet;
     }
 
+    public static ResultSet lugaresLivresPorNivel(String nivel, String hora, String dia, String mes, String ano) throws SQLException{
+        String sql  = "SELECT ID_LUGAR FROM LUGARES WHERE LUGARES.ID_LUGAR NOT IN (";
+        sql         = sql + " SELECT ID_LUGAR FROM REGISTOS_LUGARES";
+        sql         = sql + " WHERE to_char(registos_lugares.data_hora_ocupado, 'hh24') = '"+hora+"'";
+        sql         = sql + " AND to_char(registos_lugares.data_hora_ocupado, 'yyyy') = '"+ano+"'";
+        sql         = sql + " AND to_char(registos_lugares.data_hora_ocupado, 'mm') = '"+mes+"'";
+        sql         = sql + " AND to_char(registos_lugares.data_hora_ocupado, 'dd') = '"+dia+"'";
+        sql         = sql + " GROUP BY ID_LUGAR)";
+        sql         = sql + " AND lugares.ID_PISO = '"+nivel+"'";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql);
+
+        return rSet;
+
+    }
 
 
 
