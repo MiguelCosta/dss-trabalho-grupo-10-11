@@ -158,7 +158,7 @@ public class Query extends Model {
         int min = date.get(Calendar.MINUTE);
         int sec = date.get(Calendar.SECOND);
         String hora_manutencao = ""+ano+"-"+mes+"-"+dia+" "+hora+":"+min+":"+sec+"";
-        String sql = "INSERT INTO clientes  VALUES ('"+id_Maquina+"','"+desc+"','"+hora_manutencao+"','"+tempo_Manutencao+"','"+id_funcionario+"')";
+        String sql = "INSERT INTO REGISTOS_MANUTENCAO  VALUES ('"+id_Maquina+"','"+desc+"','"+hora_manutencao+"','"+tempo_Manutencao+"','"+id_funcionario+"')";
         System.out.println(sql);
         Model.stmt.executeQuery(sql);
         commit2();
