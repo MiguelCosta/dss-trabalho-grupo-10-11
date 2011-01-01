@@ -499,7 +499,7 @@ public class GestaoRelatorios {
         if (montanteTotal>0) percentagemMulti = (montanteMultibanco/montanteTotal)*100;
 
         rel = rel + "MONTANTE TOTAL RECEBIDO EM DINHEIRO: "+montanteDinehiro+"€ ("+percentagemDinhe+"%)\n";
-        rel = rel + "MONTANTE TOTAL RECEBIDO POR MULTIBANCO: "+montanteDinehiro+"€ ("+percentagemMulti+"%)\n";
+        rel = rel + "MONTANTE TOTAL RECEBIDO POR MULTIBANCO: "+montanteMultibanco+"€ ("+percentagemMulti+"%)\n";
         rel = rel + "MONTANTE TOTAL RECEBIDO: "+montanteTotal+"€\n";
         rel = rel + "***************************************************\n";
 
@@ -530,7 +530,12 @@ public class GestaoRelatorios {
             if (rSet.getString(6).equalsIgnoreCase("1")) numRecibos ++;
             totalPagamentos ++;
         }
-        if (totalPagamentos > 0) percentagemRecibo = numRecibos/totalPagamentos;
+
+        if (totalPagamentos > 0) percentagemRecibo = (numRecibos/totalPagamentos)*100;
+
+        System.out.println("totalPagamento :"+totalPagamentos);
+        System.out.println("numRecibos: "+numRecibos);
+        System.out.println("%: "+percentagemRecibo);
         
         rel = rel + "TOTAL DE RECIBOS: "+numRecibos+"\n";
         rel = rel + "PERCENTAGEM RECIBOS: "+percentagemRecibo+"\n";
