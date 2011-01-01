@@ -1112,15 +1112,16 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
     private void jButtonRelFacGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRelFacGerarActionPerformed
         String rel="";
-/*
+
          try {
                 if (jRadioButtonRelFacPagDin.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(1);
-                if (jRadioButtonRelFacpagCartao.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(2);
-                if (jRadioButtonRelFacPagCheque.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(3);
+                if (jRadioButtonRelFacpagCartao.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(3);
+                if (jRadioButtonRelFacPagCheque.isSelected() == true) rel = GestaoRelatorios.gerarRelatoriosFacturacao(2);
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             }
- */
+        JOptionPane.showMessageDialog(null, rel, "Relatorio",1);
+        System.out.println(rel);
 }//GEN-LAST:event_jButtonRelFacGerarActionPerformed
 
     private void jRadioButtonRelMPAvariasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelMPAvariasActionPerformed
