@@ -492,8 +492,8 @@ public class GestaoRelatorios {
         rel = rel + "****************************************************************************\n";
 
             tempoMedio  = 0;
-            String sql = "SELECT to_char(data_hora_ocupado, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_livre, 'yyyy-mm-dd hh24:mi:ss')";
-            sql = sql + " FROM registos_lugares";
+            String sql = "SELECT to_char(data_hora_saida, 'yyyy-mm-dd hh24:mi:ss'), to_char(data_hora_entrada, 'yyyy-mm-dd hh24:mi:ss')";
+            sql = sql + " FROM registos_registados";
             sql = sql + " WHERE id_cliente='";
 
             rSet = Model.stmt.executeQuery(sql+idCliente+"'");
@@ -509,6 +509,7 @@ public class GestaoRelatorios {
                 tempoTotal = tempoTotal + diferenca;
                 numeroEstacionametos++;
             }
+            
             if(numeroEstacionametos>0) tempoMedio = tempoTotal/numeroEstacionametos;
 
 
