@@ -250,7 +250,10 @@ public class GestaoRelatorios {
         sql = sql + " SELECT ID_BILHETE FROM BILHETES";
         sql = sql + " WHERE TO_CHAR(DATA_HORA_SAIDA, 'dd') = '"+dia+"'";
         sql = sql + " AND TO_CHAR(DATA_HORA_SAIDA, 'mm') = '"+mes+"'";
-        sql = sql + " AND TO_CHAR(DATA_HORA_SAIDA, 'yyyy') = '"+ano+"')";
+        sql = sql + " AND TO_CHAR(DATA_HORA_SAIDA, 'yyyy') = '"+ano+"'";
+        sql = sql + " AND TO_CHAR(DATA_HORA_ENTRADA, 'dd') = '"+dia+"'";
+        sql = sql + " AND TO_CHAR(DATA_HORA_ENTRADA, 'mm') = '"+mes+"'";
+        sql = sql + " AND TO_CHAR(DATA_HORA_ENTRADA, 'yyyy') = '"+ano+"')";
 
         String rel = "";
         ResultSet rSet = null;
