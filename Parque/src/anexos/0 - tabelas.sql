@@ -156,6 +156,7 @@ CREATE TABLE pagamentos_maquinas (
   montante_recebido   varchar2(8),
   id_modo_pagamento   varchar2(3),
   data_pagamento      date,
+  recibo              varchar2(2),
   
   CONSTRAINT id_maq_fk
     FOREIGN KEY (id_maquina)
