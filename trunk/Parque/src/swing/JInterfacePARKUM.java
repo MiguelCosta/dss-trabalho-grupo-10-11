@@ -1488,21 +1488,6 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
          jRadioButtonRelClienteNentrada.setSelected(false);
     }//GEN-LAST:event_jRadioButtonRelClienteTemposEstacionActionPerformed
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * @param args the command line arguments
      */
