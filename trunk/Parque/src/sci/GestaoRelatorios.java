@@ -337,7 +337,7 @@ public class GestaoRelatorios {
                 rel = relatorioMaqPagamentoTotalRecebidoPorCadaPagamento(idMaq);
                 break;
             case 3:
-             //   rel = relatorioMaqPagamentoNumeroPercentagemBilhetes(idMaq);
+                rel = relatorioMaqPagamentoNumeroPercentagemRecibos(idMaq);
                 break;
             case 4:
              //   rel = relatorioMaqPagamentoNumAvariasOperaçõesManutencao(idMaq);
@@ -405,7 +405,7 @@ public class GestaoRelatorios {
         rel = rel + "NUMERO PAGAMENTOS POR TIPO DA MÁQUINA "+idMaq+"\n";
         rel = rel + "***************************************************\n";
 
-         ResultSet rSet = null;
+        ResultSet rSet = null;
         rSet = Model.stmt.executeQuery(sql + idMaq + "'");
 
         while(rSet.next()){
@@ -429,6 +429,36 @@ public class GestaoRelatorios {
 
         return rel;
      }
+
+
+     public static String relatorioMaqPagamentoNumeroPercentagemRecibos (String idMaq) throws SQLException{
+        String rel              = "";
+        String sql              = "SELECT * FROM pagamentos_maquinas WHERE id_maquina = '";
+        int numRecibos          = 0;
+        int totalPagamentos     = 0;
+        float percentagemRecibo = 0;
+
+        rel = rel + "NUMERO/PERCENTAGEM RECIBOS EMITOS DA MÁQUINA "+idMaq+"\n";
+        rel = rel + "******************************************************************\n";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + idMaq + "'");
+
+        while(rSet.next()){
+            if (rSet.getString(6).equalsIgnoreCase("1")) numRecibos ++;
+            totalPagamentos ++;
+        }
+        if (totalPagamentos > 0) percentagemRecibo = numRecibos/totalPagamentos;
+        
+        rel = rel + "TOTAL DE RECIBOS: "+numRecibos+"\n";
+        rel = rel + "PERCENTAGEM RECIBOS: "+percentagemRecibo+"\n";
+        rel = rel + "TOTAL DE PAGAMENTOS: "+totalPagamentos+"\n";
+        rel = rel + "******************************************************************\n";
+
+        return rel;
+     }
+
+
 
      public static String gerarRelatoriosCliente(int relatorio, String idCliente) throws SQLException {
         String rel = null;
@@ -488,7 +518,7 @@ public class GestaoRelatorios {
         GregorianCalendar dataFim       = new GregorianCalendar();
         float diferenca                 = 0;
 
-        rel = rel + "RELATORIO DIARIO DOS TEMPOS DE ESTACIONAMENTO DO CLIENTE " + idCliente + " \n";
+        rel = rel + "RELATORIO DOS TEMPOS DE ESTACIONAMENTO DO CLIENTE " + idCliente + " \n";
         rel = rel + "****************************************************************************\n";
 
             tempoMedio  = 0;
@@ -499,8 +529,8 @@ public class GestaoRelatorios {
             rSet = Model.stmt.executeQuery(sql+idCliente+"'");
 
             while(rSet.next()){
-                data_inicio = rSet.getString(1);
-                data_fim = rSet.getString(2);
+                data_inicio = rSet.getString(2);
+                data_fim = rSet.getString(1);
 
                 dataInicio.set(LerDatas.getAno(data_inicio), LerDatas.getMes(data_inicio) , LerDatas.getDia(data_inicio), LerDatas.getHora(data_inicio), LerDatas.getMin(data_inicio), LerDatas.getSec(data_inicio));
                 dataFim.set(LerDatas.getAno(data_fim), LerDatas.getMes(data_fim) , LerDatas.getDia(data_fim), LerDatas.getHora(data_fim), LerDatas.getMin(data_fim), LerDatas.getSec(data_fim));
