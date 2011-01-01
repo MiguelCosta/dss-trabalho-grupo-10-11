@@ -8,6 +8,8 @@ package sci;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import parque.LerDatas;
 
@@ -145,6 +147,22 @@ public class Query extends Model {
         commit2();
     }
 
+    public static void adicionarManutencao (String id_Maquina, String desc,String tempo_Manutencao,String id_funcionario) throws SQLException, Exception{
+
+        GregorianCalendar date = new GregorianCalendar();
+
+        int dia = date.get(Calendar.DAY_OF_MONTH);
+        int mes = date.get(Calendar.MONTH);
+        int ano = date.get(Calendar.YEAR);
+        int hora = date.get(Calendar.HOUR_OF_DAY);
+        int min = date.get(Calendar.MINUTE);
+        int sec = date.get(Calendar.SECOND);
+        String hora_manutencao = ""+ano+"-"+mes+"-"+dia+" "+hora+":"+min+":"+sec+"";
+        String sql = "INSERT INTO clientes  VALUES ('"+id_Maquina+"','"+desc+"','"+hora_manutencao+"','"+tempo_Manutencao+"','"+id_funcionario+"')";
+        System.out.println(sql);
+        Model.stmt.executeQuery(sql);
+        commit2();
+    }
     public static void alterarNomeCliente(String idCliente, String newNome) throws SQLException, Exception{
         String sql = "UPDATE clientes SET nome = '"+newNome+"' WHERE id_cliente = '"+idCliente+"'";
         Model.stmt.executeQuery(sql);
