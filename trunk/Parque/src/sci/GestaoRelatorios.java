@@ -552,7 +552,12 @@ public class GestaoRelatorios {
 
 
 
-
+    /**
+     * Gera o relatorio do numero de entradas dos clientes
+     * @param idCliente
+     * @return
+     * @throws SQLException
+     */
     public static String relatorioNumeroEntradas(String idCliente) throws SQLException{
 
 	String rel= "";
@@ -576,6 +581,12 @@ public class GestaoRelatorios {
 
         return rel;
     }
+    /**
+     * Gera o relatorio do tempo medio de estacionamento
+     * @param idCliente
+     * @return
+     * @throws SQLException
+     */
     public static String relatorioTemposMediosEstacionamento(String idCliente) throws SQLException {
        
 	String rel                      = "";
@@ -703,12 +714,26 @@ public class GestaoRelatorios {
 
     while(rSet.next()){
 	montanteTotal = montanteTotal + Float.parseFloat(rSet.getString(4));
-        }
-   rel = rel + "MONTANTE FACTURADO: " + montanteTotal + "\n";
-   rel = rel + "***************************************************\n";
+    }
+    rel = rel + "MONTANTE FACTURADO: " + montanteTotal + "\n";
+    rel = rel + "***************************************************\n";
     return rel;
     }
 
+    public static ResultSet lugaresOcupadosPorNivel(String nivel, String hora, String dia, String mes, String ano) throws SQLException{
+        String sql  = "SELECT LUGARES.ID_LUGAR FROM lugares, registos_lugares";
+        sql         = sql + " WHERE registos_lugares.id_lugar = LUGARES.ID_LUGAR";
+        sql         = sql + " AND to_char(registos_lugares.data_hora_ocupado, 'hh24') = '"+hora+"'";
+        sql         = sql + " AND to_char(registos_lugares.data_hora_ocupado, 'yyyy') = '"+ano+"'";
+        sql         = sql + " AND to_char(registos_lugares.data_hora_ocupado, 'mm') = '"+mes+"'";
+        sql         = sql + " AND to_char(registos_lugares.data_hora_ocupado, 'dd') = '"+dia+"'";
+        sql         = sql + " AND lugares.ID_PISO = '"+nivel+"'";
+
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql);
+
+        return rSet;
+    }
 
 
 
