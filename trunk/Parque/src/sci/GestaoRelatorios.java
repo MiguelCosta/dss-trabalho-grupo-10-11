@@ -46,6 +46,9 @@ public class GestaoRelatorios {
             case 5:
                 rel = relatorioDiarioDiferencaPagamentoBilheteSaidaParque(dia,mes,ano);
                 break;
+            case 6:
+                rel = relatorioDiarioNumeroBilhetesEstraviados(dia, mes, ano);
+                break;
             case 7:
                 rel = relatorioDiarioViaturasQueNaoEntraramNemSairam(dia,mes,ano);
                 break;
@@ -237,6 +240,35 @@ public class GestaoRelatorios {
             rel = rel + "\n";
             i++;
         }
+        return rel;
+    }
+
+
+    public static String relatorioDiarioNumeroBilhetesEstraviados(int dia, int mes, int ano) throws SQLException{
+
+        String sql = "SELECT * FROM BILHETES WHERE BILHETES.ID_BILHETE NOT IN (";
+        sql = sql + " SELECT ID_BILHETE FROM BILHETES";
+        sql = sql + " WHERE TO_CHAR(DATA_HORA_SAIDA, 'dd') = '"+dia+"'";
+        sql = sql + " AND TO_CHAR(DATA_HORA_SAIDA, 'mm') = '"+mes+"'";
+        sql = sql + " AND TO_CHAR(DATA_HORA_SAIDA, 'yyyy') = '"+ano+"')";
+
+        String rel = "";
+        ResultSet rSet = null;
+
+        rSet = Model.stmt.executeQuery(sql);
+
+        rel = rel + "NUMERO BILHETES ESTRAVIADOS\n";
+        rel = rel + "****************************************\n";
+
+        int nBilhetes = 0;
+
+        while(rSet.next()){
+            nBilhetes++;
+        }
+
+        rel = rel + "Foram estraviados: " + nBilhetes + "\n";
+        rel = rel + "****************************************";
+
         return rel;
     }
 
@@ -752,34 +784,6 @@ public class GestaoRelatorios {
 
     }
 
-
-    public static String relatorioDiarioNumeroBilhetesEstraviados(int dia, int mes, int ano) throws SQLException{
-
-        String sql = "SELECT * FROM BILHETES WHERE BILHETES.ID_BILHETE NOT IN (";
-        sql = sql + " SELECT ID_BILHETE FROM BILHETES";
-        sql = sql + " WHERE TO_CHAR(DATA_HORA_SAIDA, 'dd') = '"+dia+"'";
-        sql = sql + " AND TO_CHAR(DATA_HORA_SAIDA, 'mm') = '"+mes+"'";
-        sql = sql + " AND TO_CHAR(DATA_HORA_SAIDA, 'yyyy') = '"+ano+"')";
-
-        String rel = "";
-        ResultSet rSet = null;
-
-        rSet = Model.stmt.executeQuery(sql);
-
-        rel = rel + "NUMERO BILHETES ESTRAVIADOS\n";
-        rel = rel + "****************************************\n";
-
-        int nBilhetes=0;
-
-        while(rSet.next()){
-            nBilhetes++;
-        }
-
-        rel = rel + "Foram estraviados: " + nBilhetes + "\n";
-        rel = rel + "****************************************";
-
-        return rel;
-    }
 
 
 
