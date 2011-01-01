@@ -21,6 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import sci.GestaoRelatorios;
@@ -164,6 +166,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTextFieldManTempo = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jButtonManRegista = new javax.swing.JButton();
+        jTextFieldIDFuncionario = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPaneManDescri = new javax.swing.JTextPane();
@@ -178,8 +182,6 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTextField2 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabelIniciarSessão = new javax.swing.JLabel();
-        jLabelUserLogin = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListNotificacoes = new javax.swing.JList();
@@ -883,6 +885,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         });
 
+        jLabel13.setText("Identificação do Funcionário");
+
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
@@ -890,51 +894,60 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldManTempo, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                    .addComponent(jButtonManRegista, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                    .addComponent(jLabel13)
+                    .addComponent(jTextFieldIDFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                     .addComponent(jLabel16)
-                    .addComponent(jTextFieldManNumMaq, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextFieldManTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonManRegista, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTextFieldManNumMaq, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                    .addComponent(jLabel17))
+                .addContainerGap())
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextFieldIDFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jTextFieldManNumMaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(13, 13, 13)
                 .addComponent(jLabel17)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextFieldManTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jButtonManRegista, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonManRegista, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel22.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 210, -1));
 
+        jPanel21.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição da Manutenção"));
+
         jTextPaneManDescri.setBackground(java.awt.SystemColor.control);
-        jTextPaneManDescri.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição da Manutenção"));
+        jTextPaneManDescri.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jScrollPane3.setViewportView(jTextPaneManDescri);
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel22.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 31, -1, 220));
+        jPanel22.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 41, -1, 210));
 
         jPanel5.add(jPanel22, new java.awt.GridBagConstraints());
 
@@ -1017,13 +1030,6 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 880, 366));
 
-        jLabelIniciarSessão.setText("Iniciou Sessão como");
-        jPanel1.add(jLabelIniciarSessão, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, -1, -1));
-
-        jLabelUserLogin.setFont(new java.awt.Font("Tahoma", 1, 11));
-        jLabelUserLogin.setText("Exemplo");
-        jPanel1.add(jLabelUserLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 540, -1, -1));
-
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Notificações"));
 
         jScrollPane1.setViewportView(jListNotificacoes);
@@ -1066,16 +1072,43 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonManRegistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonManRegistaActionPerformed
-        // TODO add your handling code here:
+
+        String idFuncionario = jTextFieldIDFuncionario.getText();
+        String idMaquina = jTextFieldManNumMaq.getText();
+        String tempoMan = jTextFieldManTempo.getText();
+        String desc = jTextPaneManDescri.getText();
+
+        String msgERRO = "";
+            if (idFuncionario.equalsIgnoreCase(""))                 msgERRO = msgERRO + "Falta inserir o número do Funcionário\n";
+            if (idMaquina.equalsIgnoreCase(""))                     msgERRO = msgERRO + "Falta inserir o número da Máquina\n";
+            if (tempoMan.equalsIgnoreCase(""))                      msgERRO = msgERRO + "Falta inserir o tempo da manutenção\n";
+            if (desc.equalsIgnoreCase(""))                          msgERRO = msgERRO + "Falta inserir a operação efectuada\n";
+            System.out.println(msgERRO);
+
+        if (msgERRO.equalsIgnoreCase("") == false) {
+            JOptionPane.showMessageDialog(null, msgERRO, "Erro ao registar manutenção", 1);
+            }
+        else {
+            try {
+                Query.adicionarManutencao(idMaquina, desc, tempoMan, idFuncionario);
+            } catch (SQLException ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+                JOptionPane.showMessageDialog(null, "Manuetenção adicionada com sucesso!", "manutenção adicionada", 1);
+                JInterfacePARKUM.this.dispose();
+
+            }
 }//GEN-LAST:event_jButtonManRegistaActionPerformed
 
     private void jComboBoxTabDistNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTabDistNivelActionPerformed
@@ -1562,6 +1595,7 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1573,7 +1607,6 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelIniciarSessão;
     private javax.swing.JLabel jLabelMatricula;
     private javax.swing.JLabel jLabelModoEntrada;
     private javax.swing.JLabel jLabelNomeCliente;
@@ -1585,7 +1618,6 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JLabel jLabelRelMP2;
     private javax.swing.JLabel jLabelTabDist1;
     private javax.swing.JLabel jLabelTabDist2;
-    private javax.swing.JLabel jLabelUserLogin;
     private javax.swing.JList jListClientesRegistados;
     private javax.swing.JList jListNotificacoes;
     private javax.swing.JList jListPagamentosAtraso;
@@ -1651,6 +1683,7 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextFieldIDFuncionario;
     private javax.swing.JTextField jTextFieldManNumMaq;
     private javax.swing.JTextField jTextFieldManTempo;
     private javax.swing.JTextField jTextFieldMatricula;
