@@ -153,7 +153,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jComboBoxTabDistNivel = new javax.swing.JComboBox();
         jPanel26 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jListTabelaDistribuicoes = new javax.swing.JList();
         jPanel5 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
@@ -771,7 +771,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jPanel26.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabela de Distribuição de Lugar", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
-        jScrollPane6.setViewportView(jList1);
+        jScrollPane6.setViewportView(jListTabelaDistribuicoes);
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -1083,16 +1083,50 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 }//GEN-LAST:event_jComboBoxTabDistNivelActionPerformed
 
     private void jButtonTabDistGeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTabDistGeraActionPerformed
-        String rel="";
 
-        int nivel = Integer.parseInt(jComboBoxTabDistNivel.getSelectedItem().toString());
-        int hora = Integer.parseInt(jComboBoxTabDistHora.getSelectedItem().toString());
+        String nivel = jComboBoxTabDistNivel.getSelectedItem().toString();
+        String hora = jComboBoxTabDistHora.getSelectedItem().toString();
+        String dia = "03";
+        String mes = "12";
+        String ano = "2010";
+        try {
+            
+            DefaultListModel model = new DefaultListModel();
+
+            rSet = GestaoRelatorios.lugaresOcupadosPorNivel(nivel, hora, dia, mes, ano);
+            while(rSet.next()){
+                model.addElement("LUGAR: "+rSet.getString(1)+"     ESTADA: OCUPADO");
+            }
+
+            rSet = GestaoRelatorios.lugaresLivresPorNivel(nivel, hora, dia, mes, ano);
+            while(rSet.next()){
+                model.addElement("LUGAR: "+rSet.getString(1)+"     ESTADO: LIVRE");
+            }
+
+            jListTabelaDistribuicoes.setModel(model);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
 /*
         try {
-               rel = GestaoRelatorios.gerarRelatoriosTabelasDist(nivel,hora);
-            }
-        catch (SQLException ex) {
-                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);}*/
+    rSet = sci.Query.queryClientes();
+    DefaultListModel model = new DefaultListModel();
+    while (rSet.next())
+        model.addElement(rSet.getString(1));
+    jListClientesRegistados.setModel(model);
+}
+catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex); }
+*/
+
+
+
+
+
+
+
 }//GEN-LAST:event_jButtonTabDistGeraActionPerformed
 
     private void jRadioButtonRelFacPagChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRelFacPagChequeActionPerformed
@@ -1552,11 +1586,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabelTabDist1;
     private javax.swing.JLabel jLabelTabDist2;
     private javax.swing.JLabel jLabelUserLogin;
-    private javax.swing.JList jList1;
     private javax.swing.JList jListClientesRegistados;
     private javax.swing.JList jListNotificacoes;
     private javax.swing.JList jListPagamentosAtraso;
     private javax.swing.JList jListPagamentosAtrasoCliente;
+    private javax.swing.JList jListTabelaDistribuicoes;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
