@@ -20,6 +20,16 @@ public class GestaoRelatorios {
 
     public BaseDados _baseDados;
 
+    /**
+     * Gera Relatorios diarios, recebe o inteiro que corresponde ao relatorio pertendido e a data que se pertende
+     * @param relatorio
+     * @param dia
+     * @param mes
+     * @param ano
+     * @param niveis
+     * @return
+     * @throws SQLException
+     */
     public static String gerarRelatoriosDiarios(int relatorio, int dia, int mes, int ano, int niveis) throws SQLException {
         String rel = null;
 
@@ -291,7 +301,14 @@ public class GestaoRelatorios {
         return rel;
     }
 
-    
+    /**
+     * Mostra o relatoria diario dos clientes com viaturas que nao entraram nem sairam no parque
+     * @param dia
+     * @param mes
+     * @param ano
+     * @return
+     * @throws SQLException
+     */
     private static String relatorioDiarioViaturasQueNaoEntraramNemSairam(int dia, int mes, int ano) throws SQLException {
         String rel          = "";
         int totalClientes   = 0;
@@ -321,6 +338,13 @@ public class GestaoRelatorios {
     }
 
 
+    /**
+     * Gera Relatorios das Maquinas de Pagamnto,em ue recebe o inteiro que corresponde ao relatorio pertendido e o ID da maquina
+     * @param relatorio
+     * @param idMaq
+     * @return
+     * @throws SQLException
+     */
      public static String gerarRelatoriosMaqPagamento(int relatorio, String idMaq) throws SQLException {
         String rel = null;
 
@@ -342,6 +366,12 @@ public class GestaoRelatorios {
         return rel;
     }
 
+     /**
+      * Gera o relatorio de pagamentos por tipo na maquina de pagamentos
+      * @param idMaq
+      * @return
+      * @throws SQLException
+      */
      private static String relatorioMaqPagamentoNumeroPagamanentoTipo(String idMaq) throws SQLException {
         String rel              = "";
         String sql              = "SELECT * FROM pagamentos_maquinas WHERE id_maquina = '";
@@ -388,6 +418,12 @@ public class GestaoRelatorios {
      return rel;
    }
 
+     /**
+      * Gera o relatorio que mostra o montante de pagamentos por tipo de pagamentos
+      * @param idMaq
+      * @return
+      * @throws SQLException
+      */
      private static String relatorioMaqPagamentoTotalRecebidoPorCadaPagamento(String idMaq) throws SQLException{
         String rel              = "";
         String sql              = "SELECT * FROM pagamentos_maquinas WHERE id_maquina = '";
@@ -426,6 +462,12 @@ public class GestaoRelatorios {
      }
 
 
+     /**
+      * Gera o relatorio relativo recibos emitidos
+      * @param idMaq
+      * @return
+      * @throws SQLException
+      */
      public static String relatorioMaqPagamentoNumeroPercentagemRecibos (String idMaq) throws SQLException{
         String rel              = "";
         String sql              = "SELECT * FROM pagamentos_maquinas WHERE id_maquina = '";
@@ -454,6 +496,12 @@ public class GestaoRelatorios {
      }
 
 
+     /**
+      * Gera o relatorio que informa as operacoes efectuadas na maquina
+      * @param idMaq
+      * @return
+      * @throws SQLException
+      */
      public static String relatorioMaqPagamentoNumAvariasOperaçõesManutencao(String idMaq) throws SQLException {
         String rel             = "";
         String sql             = "SELECT * FROM registos_manutencao WHERE id_maquina = '";
@@ -476,6 +524,13 @@ public class GestaoRelatorios {
      }
 
 
+     /**
+      * Gera os relatorios dos clientes, recebendo o inteiro do relatorio pertendido e o id do cliente
+      * @param relatorio
+      * @param idCliente
+      * @return
+      * @throws SQLException
+      */
      public static String gerarRelatoriosCliente(int relatorio, String idCliente) throws SQLException {
         String rel = null;
 
