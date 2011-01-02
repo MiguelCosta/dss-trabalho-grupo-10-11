@@ -98,7 +98,7 @@ public class BaseDados {
         return existe;
     }
 
-    public void registarPagamentoDeMulta(String idBlhete) throws SQLException {
+    public static void registarPagamentoDeMulta(String idBlhete) throws SQLException {
         ResultSet rSet = null;
         String sql = "SELECT * FROM BILHETES WHERE ID_BILHETE = '" +idBlhete+"'";
         rSet=Model.stmt.executeQuery(sql);
@@ -119,13 +119,13 @@ public class BaseDados {
         Model.stmt.executeQuery(sql1);
     }
 
-    public void registaSaidaCliBilhete(String aIdB, String dataSaida) throws SQLException{
+    public static void registaSaidaCliBilhete(String aIdB, String dataSaida) throws SQLException{
         String sql = "UPDATE BILHETES SET DATA_HORA_SAIDA = '"+dataSaida+"' WHERE ID_BILHETE ='"+aIdB+"'";
         Model.stmt.executeQuery(sql);
 
     }
 
-    public void registaSaidaCliRegistado(String ident, String dataSaida) throws SQLException {
+    public static void registaSaidaCliRegistado(String ident, String dataSaida) throws SQLException {
        String sql = "UPDATE REGISTOS_REGISTADOS SET DATA_HORA_SAIDA = '"+dataSaida+"' WHERE ID_CLIENTE ='"+ident+"'";
        Model.stmt.executeQuery(sql);
 
