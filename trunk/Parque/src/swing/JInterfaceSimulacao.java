@@ -35,34 +35,8 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListNotificacoes = new javax.swing.JList();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        jPanelRegistarEntradaModosEntrada = new javax.swing.JPanel();
-        jRadioButtonRegistarEntradaBilhete = new javax.swing.JRadioButton();
-        jRadioButtonRegistarEntradaCliente = new javax.swing.JRadioButton();
-        jPanelModoEntradaClienteRegistado = new javax.swing.JPanel();
-        jTextFieldRegistarEntradaIDCliente = new javax.swing.JTextField();
-        jButtonRegistarEntradaCliente = new javax.swing.JButton();
-        jButtonRegistarSaidaCliente = new javax.swing.JButton();
-        jPanelRegistarEntradaBilhete = new javax.swing.JPanel();
-        jTextFieldRegistarEntradaBilhete = new javax.swing.JTextField();
-        jButtonRegistarEntradaBilhete = new javax.swing.JButton();
-        jButtonRegistarSaidaBilhete = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jPanelPagamentosModosEntrada = new javax.swing.JPanel();
-        jRadioButtonPagamentoBilhete = new javax.swing.JRadioButton();
-        jRadioButtonPagamentoCliente1 = new javax.swing.JRadioButton();
-        jPanelPagamentoClienteRegistado = new javax.swing.JPanel();
-        jTextFieldPagamentoIDCliente = new javax.swing.JTextField();
-        jButtonRegistarPagamentoCliente = new javax.swing.JButton();
-        jTextFieldPagamentoMontanteClienteRegistado = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jPanelPagamentoBilhete = new javax.swing.JPanel();
-        jTextFieldPagamentoBilhete = new javax.swing.JTextField();
-        jButtonRegistarPagamentoBilhete = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextFieldPagamentoMontanteBilhete = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +49,7 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -83,103 +57,7 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
 
-        jPanelRegistarEntradaModosEntrada.setBorder(javax.swing.BorderFactory.createTitledBorder("Modo Acesso"));
-
-        jRadioButtonRegistarEntradaBilhete.setText("Bilhete");
-        jRadioButtonRegistarEntradaBilhete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonRegistarEntradaBilheteActionPerformed(evt);
-            }
-        });
-
-        jRadioButtonRegistarEntradaCliente.setText("Cliente Registado");
-        jRadioButtonRegistarEntradaCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonRegistarEntradaClienteActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelRegistarEntradaModosEntradaLayout = new javax.swing.GroupLayout(jPanelRegistarEntradaModosEntrada);
-        jPanelRegistarEntradaModosEntrada.setLayout(jPanelRegistarEntradaModosEntradaLayout);
-        jPanelRegistarEntradaModosEntradaLayout.setHorizontalGroup(
-            jPanelRegistarEntradaModosEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRegistarEntradaModosEntradaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRegistarEntradaModosEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonRegistarEntradaBilhete)
-                    .addComponent(jRadioButtonRegistarEntradaCliente))
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
-        jPanelRegistarEntradaModosEntradaLayout.setVerticalGroup(
-            jPanelRegistarEntradaModosEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRegistarEntradaModosEntradaLayout.createSequentialGroup()
-                .addComponent(jRadioButtonRegistarEntradaBilhete)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButtonRegistarEntradaCliente)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
-
-        jPanelModoEntradaClienteRegistado.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente Registado"));
-
-        jTextFieldRegistarEntradaIDCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("ID Cliente"));
-
-        jButtonRegistarEntradaCliente.setText("Registar Entada");
-
-        jButtonRegistarSaidaCliente.setText("Registar Saida");
-
-        javax.swing.GroupLayout jPanelModoEntradaClienteRegistadoLayout = new javax.swing.GroupLayout(jPanelModoEntradaClienteRegistado);
-        jPanelModoEntradaClienteRegistado.setLayout(jPanelModoEntradaClienteRegistadoLayout);
-        jPanelModoEntradaClienteRegistadoLayout.setHorizontalGroup(
-            jPanelModoEntradaClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModoEntradaClienteRegistadoLayout.createSequentialGroup()
-                .addGroup(jPanelModoEntradaClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldRegistarEntradaIDCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                    .addGroup(jPanelModoEntradaClienteRegistadoLayout.createSequentialGroup()
-                        .addComponent(jButtonRegistarEntradaCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonRegistarSaidaCliente)))
-                .addContainerGap())
-        );
-        jPanelModoEntradaClienteRegistadoLayout.setVerticalGroup(
-            jPanelModoEntradaClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModoEntradaClienteRegistadoLayout.createSequentialGroup()
-                .addComponent(jTextFieldRegistarEntradaIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelModoEntradaClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRegistarEntradaCliente)
-                    .addComponent(jButtonRegistarSaidaCliente))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        jPanelRegistarEntradaBilhete.setBorder(javax.swing.BorderFactory.createTitledBorder("Bilhete"));
-
-        jTextFieldRegistarEntradaBilhete.setBorder(javax.swing.BorderFactory.createTitledBorder("Numero Bilhete"));
-
-        jButtonRegistarEntradaBilhete.setText("Registar Entrada");
-
-        jButtonRegistarSaidaBilhete.setText("Registar Saida");
-
-        javax.swing.GroupLayout jPanelRegistarEntradaBilheteLayout = new javax.swing.GroupLayout(jPanelRegistarEntradaBilhete);
-        jPanelRegistarEntradaBilhete.setLayout(jPanelRegistarEntradaBilheteLayout);
-        jPanelRegistarEntradaBilheteLayout.setHorizontalGroup(
-            jPanelRegistarEntradaBilheteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextFieldRegistarEntradaBilhete, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-            .addGroup(jPanelRegistarEntradaBilheteLayout.createSequentialGroup()
-                .addComponent(jButtonRegistarEntradaBilhete)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonRegistarSaidaBilhete)
-                .addGap(6, 6, 6))
-        );
-        jPanelRegistarEntradaBilheteLayout.setVerticalGroup(
-            jPanelRegistarEntradaBilheteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRegistarEntradaBilheteLayout.createSequentialGroup()
-                .addComponent(jTextFieldRegistarEntradaBilhete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelRegistarEntradaBilheteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRegistarEntradaBilhete)
-                    .addComponent(jButtonRegistarSaidaBilhete))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
+        jButton1.setText("Simular");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -187,175 +65,16 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelRegistarEntradaModosEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelModoEntradaClienteRegistado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelRegistarEntradaBilhete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addComponent(jButton1)
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelRegistarEntradaModosEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelModoEntradaClienteRegistado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelRegistarEntradaBilhete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(jButton1)
+                .addContainerGap(158, Short.MAX_VALUE))
         );
-
-        jTabbedPane1.addTab("Regitar Entradas e Saidas", jPanel1);
-
-        jPanelPagamentosModosEntrada.setBorder(javax.swing.BorderFactory.createTitledBorder("Modo Acesso"));
-
-        jRadioButtonPagamentoBilhete.setText("Bilhete");
-        jRadioButtonPagamentoBilhete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonPagamentoBilheteActionPerformed(evt);
-            }
-        });
-
-        jRadioButtonPagamentoCliente1.setText("Cliente Registado");
-        jRadioButtonPagamentoCliente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonPagamentoCliente1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelPagamentosModosEntradaLayout = new javax.swing.GroupLayout(jPanelPagamentosModosEntrada);
-        jPanelPagamentosModosEntrada.setLayout(jPanelPagamentosModosEntradaLayout);
-        jPanelPagamentosModosEntradaLayout.setHorizontalGroup(
-            jPanelPagamentosModosEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPagamentosModosEntradaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelPagamentosModosEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonPagamentoBilhete)
-                    .addComponent(jRadioButtonPagamentoCliente1))
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
-        jPanelPagamentosModosEntradaLayout.setVerticalGroup(
-            jPanelPagamentosModosEntradaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPagamentosModosEntradaLayout.createSequentialGroup()
-                .addComponent(jRadioButtonPagamentoBilhete)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButtonPagamentoCliente1)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
-
-        jPanelPagamentoClienteRegistado.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente Registado"));
-
-        jTextFieldPagamentoIDCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("ID Cliente"));
-
-        jButtonRegistarPagamentoCliente.setText("Registar Pagamento");
-        jButtonRegistarPagamentoCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRegistarPagamentoClienteActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Montante:");
-
-        javax.swing.GroupLayout jPanelPagamentoClienteRegistadoLayout = new javax.swing.GroupLayout(jPanelPagamentoClienteRegistado);
-        jPanelPagamentoClienteRegistado.setLayout(jPanelPagamentoClienteRegistadoLayout);
-        jPanelPagamentoClienteRegistadoLayout.setHorizontalGroup(
-            jPanelPagamentoClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPagamentoClienteRegistadoLayout.createSequentialGroup()
-                .addGroup(jPanelPagamentoClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldPagamentoIDCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                    .addGroup(jPanelPagamentoClienteRegistadoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelPagamentoClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonRegistarPagamentoCliente)
-                            .addComponent(jTextFieldPagamentoMontanteClienteRegistado, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))))
-                .addContainerGap())
-        );
-        jPanelPagamentoClienteRegistadoLayout.setVerticalGroup(
-            jPanelPagamentoClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPagamentoClienteRegistadoLayout.createSequentialGroup()
-                .addComponent(jTextFieldPagamentoIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelPagamentoClienteRegistadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldPagamentoMontanteClienteRegistado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(jButtonRegistarPagamentoCliente))
-        );
-
-        jPanelPagamentoBilhete.setBorder(javax.swing.BorderFactory.createTitledBorder("Bilhete"));
-
-        jTextFieldPagamentoBilhete.setBorder(javax.swing.BorderFactory.createTitledBorder("Numero Bilhete"));
-
-        jButtonRegistarPagamentoBilhete.setText("Registar Pagamento");
-
-        jLabel2.setText("Montante:");
-
-        javax.swing.GroupLayout jPanelPagamentoBilheteLayout = new javax.swing.GroupLayout(jPanelPagamentoBilhete);
-        jPanelPagamentoBilhete.setLayout(jPanelPagamentoBilheteLayout);
-        jPanelPagamentoBilheteLayout.setHorizontalGroup(
-            jPanelPagamentoBilheteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextFieldPagamentoBilhete, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-            .addGroup(jPanelPagamentoBilheteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelPagamentoBilheteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonRegistarPagamentoBilhete)
-                    .addComponent(jTextFieldPagamentoMontanteBilhete, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanelPagamentoBilheteLayout.setVerticalGroup(
-            jPanelPagamentoBilheteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPagamentoBilheteLayout.createSequentialGroup()
-                .addComponent(jTextFieldPagamentoBilhete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelPagamentoBilheteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldPagamentoMontanteBilhete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(jButtonRegistarPagamentoBilhete))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelPagamentosModosEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelPagamentoClienteRegistado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelPagamentoBilhete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanelPagamentoClienteRegistado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelPagamentoBilhete, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelPagamentosModosEntrada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Pagamentos", jPanel2);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 772, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 151, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel4);
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -364,88 +83,40 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(45, 45, 45))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(55, Short.MAX_VALUE))))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jRadioButtonRegistarEntradaBilheteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRegistarEntradaBilheteActionPerformed
-        jRadioButtonRegistarEntradaBilhete.setSelected(true);
-        jRadioButtonRegistarEntradaCliente.setSelected(false);
-        jPanelModoEntradaClienteRegistado.setEnabled(false);
-        jTextFieldRegistarEntradaBilhete.setEditable(true);
-        jTextFieldRegistarEntradaIDCliente.setEditable(false);
-        jButtonRegistarEntradaBilhete.setEnabled(true);
-        jButtonRegistarSaidaBilhete.setEnabled(true);
-        jButtonRegistarEntradaCliente.setEnabled(false);
-        jButtonRegistarSaidaCliente.setEnabled(false);
-    }//GEN-LAST:event_jRadioButtonRegistarEntradaBilheteActionPerformed
-
-    private void jRadioButtonRegistarEntradaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonRegistarEntradaClienteActionPerformed
-        jRadioButtonRegistarEntradaBilhete.setSelected(false);
-        jRadioButtonRegistarEntradaCliente.setSelected(true);
-        jPanelModoEntradaClienteRegistado.setEnabled(true);
-        jPanelRegistarEntradaBilhete.setEnabled(false);
-        jTextFieldRegistarEntradaBilhete.setEditable(false);
-        jTextFieldRegistarEntradaIDCliente.setEditable(true);
-        jButtonRegistarEntradaBilhete.setEnabled(false);
-        jButtonRegistarSaidaBilhete.setEnabled(false);
-        jButtonRegistarEntradaCliente.setEnabled(true);
-        jButtonRegistarSaidaCliente.setEnabled(true);
-    }//GEN-LAST:event_jRadioButtonRegistarEntradaClienteActionPerformed
-
-    private void jRadioButtonPagamentoBilheteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPagamentoBilheteActionPerformed
-        jRadioButtonPagamentoBilhete.setSelected(true);
-        jRadioButtonPagamentoCliente1.setSelected(false);
-        jTextFieldPagamentoIDCliente.setEditable(false);
-        jTextFieldPagamentoBilhete.setEditable(true);
-        jTextFieldPagamentoMontanteBilhete.setEditable(true);
-        jTextFieldPagamentoMontanteClienteRegistado.setEditable(false);
-        jButtonRegistarPagamentoBilhete.setEnabled(true);
-        jButtonRegistarPagamentoCliente.setEnabled(false);
-    }//GEN-LAST:event_jRadioButtonPagamentoBilheteActionPerformed
-
-    private void jRadioButtonPagamentoCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPagamentoCliente1ActionPerformed
-        jRadioButtonPagamentoBilhete.setSelected(false);
-        jRadioButtonPagamentoCliente1.setSelected(true);
-        jTextFieldPagamentoIDCliente.setEditable(true);
-        jTextFieldPagamentoBilhete.setEditable(false);
-        jTextFieldPagamentoMontanteBilhete.setEditable(false);
-        jTextFieldPagamentoMontanteClienteRegistado.setEditable(true);
-        jButtonRegistarPagamentoBilhete.setEnabled(false);
-        jButtonRegistarPagamentoCliente.setEnabled(true);
-    }//GEN-LAST:event_jRadioButtonPagamentoCliente1ActionPerformed
-
-    private void jButtonRegistarPagamentoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistarPagamentoClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRegistarPagamentoClienteActionPerformed
 
     /**
     * @param args the command line arguments
@@ -459,38 +130,12 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonRegistarEntradaBilhete;
-    private javax.swing.JButton jButtonRegistarEntradaCliente;
-    private javax.swing.JButton jButtonRegistarPagamentoBilhete;
-    private javax.swing.JButton jButtonRegistarPagamentoCliente;
-    private javax.swing.JButton jButtonRegistarSaidaBilhete;
-    private javax.swing.JButton jButtonRegistarSaidaCliente;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JList jListNotificacoes;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanelModoEntradaClienteRegistado;
-    private javax.swing.JPanel jPanelPagamentoBilhete;
-    private javax.swing.JPanel jPanelPagamentoClienteRegistado;
-    private javax.swing.JPanel jPanelPagamentosModosEntrada;
-    private javax.swing.JPanel jPanelRegistarEntradaBilhete;
-    private javax.swing.JPanel jPanelRegistarEntradaModosEntrada;
-    private javax.swing.JRadioButton jRadioButtonPagamentoBilhete;
-    private javax.swing.JRadioButton jRadioButtonPagamentoCliente1;
-    private javax.swing.JRadioButton jRadioButtonRegistarEntradaBilhete;
-    private javax.swing.JRadioButton jRadioButtonRegistarEntradaCliente;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextFieldPagamentoBilhete;
-    private javax.swing.JTextField jTextFieldPagamentoIDCliente;
-    private javax.swing.JTextField jTextFieldPagamentoMontanteBilhete;
-    private javax.swing.JTextField jTextFieldPagamentoMontanteClienteRegistado;
-    private javax.swing.JTextField jTextFieldRegistarEntradaBilhete;
-    private javax.swing.JTextField jTextFieldRegistarEntradaIDCliente;
     // End of variables declaration//GEN-END:variables
 
 }
