@@ -118,6 +118,7 @@ CREATE TABLE clientes (
   id_entrada      varchar2(4),
   matricula       varchar2(9),
   nib             varchar2(22),
+  id_dispositivo  varchar2(10),
 
   CONSTRAINT clientes_pk
     PRIMARY KEY (id_cliente),
