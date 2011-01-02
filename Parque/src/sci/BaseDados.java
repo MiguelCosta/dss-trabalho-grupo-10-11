@@ -58,10 +58,12 @@ public class BaseDados {
         Query.adicionarPagamento(id_cliente, data, modo, montante);
     }
 
-    public static void registarPagamentoBilhete(String idBilhete, String dataPagamento){
+    public static void registarPagamentoBilhete(String idBilhete, String dataPagamento, String id_maq, String modoPag, String montante, String recibo) throws SQLException{
 
-        
-
+        String sql = "UPDATE BILHETES SET DATA_HORA_PAGAMENTO = TO_DATE('"+dataPagamento+"','yyyy-mm-dd hh24:mi:ss') WHERE ID_BILHETE = '" + idBilhete+"'";
+        Model.stmt.executeQuery(sql);
+        String sql1 = "INSERT INTO PAGAMENTOS_MAQUINAS VALUES('"+id_maq+"','"+idBilhete+"','"+montante+"','"+modoPag+"',TO_DATE('"+dataPagamento+"','yyyy-mm-dd hh24:mi:ss'),'"+recibo+"'";
+        Model.stmt.executeQuery(sql1);
     }
 
     /**
