@@ -18,7 +18,6 @@ public class Portal {
     public Monitor _monitor;
     public PainelGlobal  _painelGlobal;
 
-
     public Portal (int id_portal){
         this._id_portal = id_portal;
         _barreira = new Barreira();
@@ -43,7 +42,7 @@ public class Portal {
     }
 
     public void chamarFuncionario() {
-	throw new UnsupportedOperationException();
+	_monitor.mostrar("O funcionário foi contactado");
     }
 
     
