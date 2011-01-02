@@ -15,23 +15,25 @@ public class PARKUM_CS {
     private PainelGlobal _painelGlobal;
     private PainelInformacao _panelInfo;
     private ArrayList<SensorEstacionamento> _sensorEstacionamento = new ArrayList<SensorEstacionamento>();
+    
 
-    public int nViaturasNoParque(int nViaturas){
-        int contador=0;
-
+    public int nViaturasNoParque(){
+        int nTotalViaturas=0;
         for(SensorEstacionamento sensor: _sensorEstacionamento){
             if(sensor.getEstaOcupado()==true){
-                contador++;
+                nTotalViaturas++;
             }
         }
-        return contador;
+        return nTotalViaturas;
     }
 
-    public int incrementa(int aViaturasActuais) {
-        throw new UnsupportedOperationException();
+    public int incrementa() {
+        int nViaturas = nViaturasNoParque();
+        return nViaturas++;
     }
 
     public int decrementa(int aViaturasActuais) {
-        throw new UnsupportedOperationException();
+        int nViaturas = nViaturasNoParque();
+        return nViaturas--;
     }
 }

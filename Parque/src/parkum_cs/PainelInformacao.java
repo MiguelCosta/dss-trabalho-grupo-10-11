@@ -10,10 +10,20 @@ package parkum_cs;
  */
 public class PainelInformacao {
 
-    private Object _nVeiculosNivel;
-    public PARKUM_CS _unnamed_PARKUM_CS_;
+    private int _nivel;
+    private int _nVeiculosNivel;
 
-    public void actualizaInfo() {
-        throw new UnsupportedOperationException();
+    public PainelInformacao(){
+        _nivel = 1;
+        _nVeiculosNivel=0;
+    }
+
+    public PainelInformacao(int nivel, int nVeiculos){
+        _nivel=nivel;
+        _nVeiculosNivel=nVeiculos;
+    }
+
+    public void actualizaInfo(int nVeiculos) {
+        _nVeiculosNivel=nVeiculos;
     }
 }

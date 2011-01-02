@@ -4,6 +4,9 @@
  */
 package parkum_cs;
 
+import java.sql.SQLException;
+import sci.Model;
+
 /**
  *
  * @author Miguel
@@ -22,10 +25,20 @@ public class SensorEstacionamento {
     }
 
     public void actualizaSensor() {
-        throw new UnsupportedOperationException();
+        if(_estaOcupado==true)
+            _estaOcupado = false;
+        else _estaOcupado= true;
     }
 
-    public void comunicaEstacionamento() {
-        throw new UnsupportedOperationException();
+    public void comunicaEstacionamento(String data) throws SQLException {
+        String sql="";
+        if(_estaOcupado == false){
+
+             sql= sql + "INSERT INTO REGISTOS_LUGARES VALUES('"+_idSensor+"',TO_DATE('"+data+"','yyyy-mm-dd hh24:mi:ss'),''";
+        }
+        else {
+            sql = sql + "UPDATE REGISTOS_LUGARES SET DATA_HORA_LIVRE = TO_DATE('"+data+"','yyyy-mm-dd hh24:mi:ss')";
+        }
+        Model.stmt.executeQuery(sql);
     }
 }
