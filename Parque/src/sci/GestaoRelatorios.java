@@ -18,8 +18,6 @@ public class GestaoRelatorios {
 
 
 
-    public BaseDados _baseDados;
-
     /**
      * Gera Relatorios diarios, recebe o inteiro que corresponde ao relatorio pertendido e a data que se pertende
      * @param relatorio
@@ -531,14 +529,14 @@ public class GestaoRelatorios {
             totalPagamentos ++;
         }
 
-        if (totalPagamentos > 0) percentagemRecibo = (numRecibos/totalPagamentos)*100;
+        if (totalPagamentos > 0) percentagemRecibo = ((float)  numRecibos/totalPagamentos)*100;
 
         System.out.println("totalPagamento :"+totalPagamentos);
         System.out.println("numRecibos: "+numRecibos);
         System.out.println("%: "+percentagemRecibo);
         
         rel = rel + "TOTAL DE RECIBOS: "+numRecibos+"\n";
-        rel = rel + "PERCENTAGEM RECIBOS: "+percentagemRecibo+"\n";
+        rel = rel + "PERCENTAGEM RECIBOS: "+percentagemRecibo+" %\n";
         rel = rel + "TOTAL DE PAGAMENTOS: "+totalPagamentos+"\n";
         rel = rel + "******************************************************************\n";
 
