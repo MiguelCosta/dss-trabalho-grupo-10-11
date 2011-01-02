@@ -1150,7 +1150,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         else {
             try {
-                BaseDados.registarManutencao(idMaquina, desc, hora_manutencao, hora_manutencao, idFuncionario);
+                BaseDados.registarManutencao(idMaquina, desc, hora_manutencao, tempoMan, idFuncionario);
                 //Query.adicionarManutencao(idMaquina, desc, hora_manutencao, tempoMan, idFuncionario);
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
