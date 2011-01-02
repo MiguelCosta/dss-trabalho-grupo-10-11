@@ -13,8 +13,8 @@ import sci.BaseDados;
 public class PortalSaida {
 
     public BaseDados _baseDados;
-    public BarreiraSaida _barreiraSaida;
-    public MonitorSaida _monitor;
+    public Barreira _barreiraSaida;
+    public Monitor _monitor;
 
     public Bilhete leBilhete() {
         throw new UnsupportedOperationException();
