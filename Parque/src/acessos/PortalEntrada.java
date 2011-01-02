@@ -17,19 +17,11 @@ import sci.Model;
  * @author Miguel
  */
 public class PortalEntrada extends Portal {
-        private int _portalID;
-	private boolean _estado;
         private int nBilhete=1;
 
         public PortalEntrada(int portalID){
             super(portalID);
-            _estado=false;
         }
-
-	public boolean estado() {
-		throw new UnsupportedOperationException();
-	}
-
 	public int verificarFormaEntrada() {
 
 
@@ -75,8 +67,8 @@ public class PortalEntrada extends Portal {
 	public Bilhete emiteBilhete() throws SQLException {
                 String dataEntrada = "" ; //Falta
                 String dataSaida = "a"; // Falta
-		Bilhete b = new Bilhete(nBilhete,dataEntrada,dataSaida,_portalID);
-                BaseDados.registaBilhete(nBilhete, dataEntrada);
+		Bilhete b = new Bilhete(nBilhete,dataEntrada,dataSaida,super.getID());
+                BaseDados.registarEntradaCliBilhete(""+nBilhete+"", dataEntrada);
                 nBilhete++;
                 
           return b;

@@ -18,7 +18,7 @@ import sci.Model;
  */
 public class Portal {
     private int _id_portal;
-
+    private boolean _estado; // false - fechado  true-aberto
     public Barreira _barreira;
     public Monitor _monitor;
     public PainelGlobal  _painelGlobal;
@@ -28,6 +28,7 @@ public class Portal {
         _barreira = new Barreira();
         _monitor = new Monitor();
         _painelGlobal = new PainelGlobal();
+        _estado = false;
     }
 
     public int getID(){
