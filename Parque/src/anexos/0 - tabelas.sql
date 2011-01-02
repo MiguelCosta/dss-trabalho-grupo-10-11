@@ -12,6 +12,7 @@ drop table pagamentos           cascade constraints;
 drop table registos_registados  cascade constraints;
 drop table modos_pagamentos     cascade constraints;
 drop table pagamentos_maquinas  cascade constraints;
+drop table pagamentos_multas    cascade constraints;
 
 CREATE TABLE modos_pagamentos (
   id_modo_pagamento     varchar2(3),
@@ -168,6 +169,16 @@ CREATE TABLE pagamentos_maquinas (
   CONSTRAINT id_bilhete_fk
     FOREIGN KEY (id_bilhete)
     REFERENCES bilhetes(id_bilhete)
+);
+
+CREATE TABLE pagamentos_multas (
+    id_bilhete                  varchar2(4),
+    montante                    varchar2(3),
+    data_hora_pag_multa         date,
+
+    CONSTRAINT id_bil_multa_fk
+        FOREIGN KEY (id_bilhete)
+        REFERENCES bilhetes(id_bilhete)
 );
 
 /*
