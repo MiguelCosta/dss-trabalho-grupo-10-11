@@ -67,7 +67,7 @@ public class PortalEntrada extends Portal {
 	public Bilhete emiteBilhete() throws SQLException {
                 String dataEntrada = "" ; //Falta
                 String dataSaida = "a"; // Falta
-		Bilhete b = new Bilhete(nBilhete,dataEntrada,dataSaida,super.getID());
+		Bilhete b = new Bilhete(nBilhete,dataEntrada,dataSaida);
                 BaseDados.registarEntradaCliBilhete(""+nBilhete+"", dataEntrada);
                 nBilhete++;
                 

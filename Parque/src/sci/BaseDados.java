@@ -8,6 +8,7 @@ import acessos.Bilhete;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.GregorianCalendar;
+import pagamentos.MaquinaPagamento;
 
 /**
  *
@@ -54,10 +55,6 @@ public class BaseDados {
     * @throws SQLException
     * @throws Exception
     */
-    public static void registarPagamento(String id_cliente, String data, String modo,String montante) throws SQLException, Exception {
-        Query.adicionarPagamento(id_cliente, data, modo, montante);
-    }
-
     public static void registarPagamentoBilhete(String idBilhete, String dataPagamento, String id_maq, String modoPag, String montante, String recibo) throws SQLException{
 
         String sql = "UPDATE BILHETES SET DATA_HORA_PAGAMENTO = TO_DATE('"+dataPagamento+"','yyyy-mm-dd hh24:mi:ss') WHERE ID_BILHETE = '" + idBilhete+"'";
@@ -101,8 +98,25 @@ public class BaseDados {
         return existe;
     }
 
-    public void registarPagamentoDeMulta(String aIdCliente, Object aValor_float) {
-        throw new UnsupportedOperationException();
+    public void registarPagamentoDeMulta(String idBlhete) throws SQLException {
+        ResultSet rSet = null;
+        String sql = "SELECT * FROM BILHETES WHERE ID_BILHETE = '" +idBlhete+"'";
+        rSet=Model.stmt.executeQuery(sql);
+
+        String idBi="", dataEntrada="", dataPagamento="", dataSaida="";
+        while(rSet.next()){
+            idBi=rSet.getString(1);
+            dataEntrada = rSet.getString(2);
+            dataPagamento= rSet.getString(3);
+            dataSaida = rSet.getString(4);
+        }
+
+        Bilhete aux = new Bilhete(Integer.parseInt(idBi), dataEntrada,dataSaida);
+        GregorianCalendar dataActual = new GregorianCalendar();
+
+        float montante = pagamentos.MaquinaPagamento.calculaMulta(aux);
+        String sql1 = "INSERT INTO PAGAMENTOS_MULTAS VALUES('"+aux.getIdBilhete()+"','"+montante+"',TO_DATE('"+dataActual+"','yyyy-mm-dd hh24:mi:ss')'";
+        Model.stmt.executeQuery(sql1);
     }
 
     public void registaSaidaCliBilhete(String aIdB, String dataSaida) throws SQLException{
