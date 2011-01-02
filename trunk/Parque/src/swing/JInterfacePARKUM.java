@@ -200,6 +200,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTextFieldRegisPagData = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jButtonRegistarPagamentomulta = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1064,15 +1067,41 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pagamentos Multas", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
+        jButtonRegistarPagamentomulta.setText("Registar Pagamento");
+        jButtonRegistarPagamentomulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistarPagamentomultaActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("ID Bilhete:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 313, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jButtonRegistarPagamentomulta, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                .addComponent(jButtonRegistarPagamentomulta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
         jPanel17.add(jPanel2, new java.awt.GridBagConstraints());
@@ -1615,6 +1644,10 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
         
     }//GEN-LAST:event_jButtonRegistarPagamentoActionPerformed
 
+    private void jButtonRegistarPagamentomultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistarPagamentomultaActionPerformed
+        
+    }//GEN-LAST:event_jButtonRegistarPagamentomultaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1646,6 +1679,7 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JButton jButtonProcurar;
     private javax.swing.JButton jButtonRegistarCliente;
     private javax.swing.JButton jButtonRegistarPagamento;
+    private javax.swing.JButton jButtonRegistarPagamentomulta;
     private javax.swing.JButton jButtonRelClienteGerarRel;
     private javax.swing.JButton jButtonRelDiaGerar;
     private javax.swing.JButton jButtonRelFacGerar;
@@ -1668,6 +1702,7 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1744,6 +1779,7 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldHora;
     private javax.swing.JTextField jTextFieldIDFuncionario;
     private javax.swing.JTextField jTextFieldManNumMaq;
