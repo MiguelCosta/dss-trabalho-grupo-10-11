@@ -80,4 +80,17 @@ public class FichaCliente {
     public void setNib(String nib){
         _nib = nib;
     }
+
+    @Override
+    public String toString (){
+        StringBuilder r = new StringBuilder();
+        r.append("Cliente Registado\n");
+        r.append("ID: ").append(_idCliente).append("\n");
+        r.append("Nome: ").append(_nomeCliente).append("\n");
+        r.append("Codigo Entrada: ").append(_codigoEntrada).append("\n");
+        r.append("Matricula: ").append(_matricula).append("\n");
+        r.append("Nib: ").append(getNib()).append("\n");
+
+        return r.toString();
+    }
 }

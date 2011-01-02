@@ -4,7 +4,7 @@
  */
 package clientes;
 
-import sci.BaseDados;
+import java.sql.SQLException;
 import pagamentos.Pagamento;
 
 /**
@@ -13,20 +13,23 @@ import pagamentos.Pagamento;
  */
 public class GestaoClientes {
 
-    public BaseDados _baseDados;
     public FichaCliente _fichaCliente;
     public Pagamento _unnamed_Pagamento_;
 
-    public boolean verificaPagEmAtraso() {
-        throw new UnsupportedOperationException();
+    public boolean verificaPagEmAtraso() throws SQLException {
+        boolean existe = false;
+        String resultado = sci.Query.pagamentoEmAtraso(_fichaCliente.getIdCliente());
+        if (resultado.equalsIgnoreCase("") == false || resultado.equalsIgnoreCase(null)==false) existe =  true;
+        return existe;
     }
 
-    public void comunicaErro(String aErro) {
-        throw new UnsupportedOperationException();
+    public String comunicaErro(String aErro) {
+        return aErro;
     }
 
-    public String apresentaListaPagEmAtraso() {
-        throw new UnsupportedOperationException();
+    public String apresentaListaPagEmAtraso() throws SQLException {
+        String resultado = sci.Query.pagamentoEmAtraso(_fichaCliente.getIdCliente());
+        return resultado;
     }
 
     public void pedeIdentificacaoDoCliente() {
@@ -38,15 +41,20 @@ public class GestaoClientes {
     }
 
     public void mostraFicha(int aIdCliente) {
-        throw new UnsupportedOperationException();
+        _fichaCliente.toString();
     }
 
     public boolean validaDados(String aDadosNovos) {
-        throw new UnsupportedOperationException();
+        if (_fichaCliente.getIdCliente().equalsIgnoreCase(null)) return false ;
+        if (_fichaCliente.getCodigoEntrada().equalsIgnoreCase(null)) return false;
+        if (_fichaCliente.getMatricula().equalsIgnoreCase(null)) return false;
+        if (_fichaCliente.getNib().equalsIgnoreCase(null)) return false;
+        if (_fichaCliente.getNomeCliente().equalsIgnoreCase(null)) return false;
+        return true;
     }
 
     public void actualizaDadosCliente(String aDadosNovos) {
-        throw new UnsupportedOperationException();
+        
     }
 
     public void confirmaSucessoOperacao() {
