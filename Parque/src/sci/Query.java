@@ -109,6 +109,19 @@ public class Query extends Model {
         return r;
     }
 
+
+    public static String procuraModoPagamentoPorNome(String sel) throws SQLException{
+        String sql = "SELECT * FROM modos_pagamentos WHERE MODO_PAGAMENTO ='";
+        String r = "";
+        ResultSet rSet = null;
+        rSet = Model.stmt.executeQuery(sql + sel + "'");
+        while(rSet.next()){
+            r= rSet.getString(1);
+        }
+        return r;
+    }
+
+
     /**
      * Procura o modo de entrada pelo Nome e devolve o ID
      * @param sel
@@ -154,6 +167,15 @@ public class Query extends Model {
     public static void adicionarManutencao (String id_Maquina, String desc,String hora_manutencao, String tempo_Manutencao,String id_funcionario) throws SQLException, Exception{
 
         String sql = "INSERT INTO REGISTOS_MANUTENCAO  VALUES ('"+id_Maquina+"','"+desc+"', to_date('"+hora_manutencao+"','yyyy-mm-dd hh24:mi:ss'),'"+tempo_Manutencao+"','"+id_funcionario+"')";
+        System.out.println(sql);
+        Model.stmt.executeQuery(sql);
+        commit2();
+    }
+
+    public static void adicionarPagamento (String id_cliente, String data, String modo,String montante) throws SQLException, Exception{
+
+
+        String sql = "INSERT INTO PAGAMENTOS  VALUES ('"+id_cliente+"', to_date('"+data+"','yyyy-mm-dd hh24:mi:ss'),'"+ procuraModoPagamentoPorNome(modo) +"','"+montante+"')";
         System.out.println(sql);
         Model.stmt.executeQuery(sql);
         commit2();
