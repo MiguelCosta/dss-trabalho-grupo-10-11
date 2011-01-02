@@ -5,11 +5,9 @@
 package sci;
 
 import acessos.Bilhete;
-import acessos.PortalEntrada;
-import acessos.PortalSaida;
-import clientes.GestaoClientes;
 import java.sql.SQLException;
 import pagamentos.MaquinaPagamento;
+import sci.Query;
 
 /**
  *
@@ -17,36 +15,25 @@ import pagamentos.MaquinaPagamento;
  */
 public class BaseDados {
 
-    public PortalEntrada _unnamed_PortalEntrada_;
-    public PortalSaida _unnamed_PortalSaida_;
-    public GestaoRelatorios _unnamed_GestaoRelatorios_;
-    public GestaoClientes _unnamed_GestaoClientes_;
-    
+   
 
-
-    public void registaBilhete(int aId, String dataEntrada) throws SQLException {
+    public static void registaBilhete(int aId, String dataEntrada) throws SQLException {
        Model.stmt.executeQuery("INSERT INTO BILHETES VALUES '"+aId+"','"+dataEntrada+"','','',''");
     }
 
-    public void registoEntradaAuto(int aCodDisp) {
-        throw new UnsupportedOperationException();
+    public static void registoEntradaAuto(int aCodDisp) {
+        
     }
 
-    public void registoEntradaBilhete(int aId) {
-        throw new UnsupportedOperationException();
+     public static void registoEntradaAvenca(int aNCliente) {
+    
     }
-
-    public void registoEntradaAvenca(int aNCliente) {
-        throw new UnsupportedOperationException();
-    }
-    public MaquinaPagamento _unnamed_MaquinaPagamento_;
-
     public void registarPagamento(Bilhete aBilhete) {
         throw new UnsupportedOperationException();
     }
 
-    public void registarManutencao(MaquinaPagamento aMaquina) {
-        throw new UnsupportedOperationException();
+    public void registarManutencao(String id_Maquina, String desc,String hora_manutencao, String tempo_Manutencao,String id_funcionario) throws SQLException, Exception{
+       Query.adicionarManutencao(id_Maquina, desc, hora_manutencao, tempo_Manutencao, id_funcionario);
     }
 
     public void existeCliente(int aIdCliente) {

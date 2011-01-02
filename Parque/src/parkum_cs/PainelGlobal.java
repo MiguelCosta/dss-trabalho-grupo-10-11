@@ -11,9 +11,15 @@ package parkum_cs;
 public class PainelGlobal {
 
     private int _nVeiculosTotal;
-    public PARKUM_CS _unnamed_PARKUM_CS_;
+    private boolean _estaLivre;
 
-    public void actualizaInfo() {
-        throw new UnsupportedOperationException();
+    public PainelGlobal(){
+        _nVeiculosTotal=0;
+        _estaLivre = true;
+    }
+
+    public void actualizaInfo(int nVeiculos, boolean estaLivre) {
+        _nVeiculosTotal=nVeiculos;
+        _estaLivre=estaLivre;
     }
 }

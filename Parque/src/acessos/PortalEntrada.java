@@ -36,27 +36,6 @@ public class PortalEntrada extends Portal {
             return 0;
 	}
 
-	public boolean existeDispositivo(String codDisp) throws SQLException {
-
-            ResultSet rSet = null;
-            ArrayList<String> codigos = new ArrayList<String>();
-            boolean encontrado = false;
-            String sql = "SELECT * FROM CLIENTES WHERE ID_DISPOSITIVO = '";
-            rSet=Model.stmt.executeQuery(sql+codDisp+"'");
-            while(rSet.next()){
-
-                String code = rSet.getString(6);
-                codigos.add(code);
-                }
-
-            for(String cod: codigos){
-                if(cod.equals(codDisp)){
-                encontrado = true;
-                }
-            }
-        return encontrado;
-    }
-
         public boolean verificaOcupacao() throws SQLException {
 
             ResultSet rSet = null;
@@ -93,12 +72,13 @@ public class PortalEntrada extends Portal {
 		throw new UnsupportedOperationException();
 	}
 
-	public Bilhete emiteBilhete() {
+	public Bilhete emiteBilhete() throws SQLException {
                 String dataEntrada = "" ; //Falta
                 String dataSaida = "a"; // Falta
 		Bilhete b = new Bilhete(nBilhete,dataEntrada,dataSaida,_portalID);
+                BaseDados.registaBilhete(nBilhete, dataEntrada);
                 nBilhete++;
-                /*Falta Registar bilhete e entrada mas nao estou a conseguir*/
+                
           return b;
 	}
 
