@@ -24,6 +24,14 @@ public class SensorEstacionamento {
         return _estaOcupado;
     }
 
+    public void setID(String id){
+        _idSensor =id;
+    }
+
+    public void setEstaOcupado(boolean estaOcupado){
+        _estaOcupado=estaOcupado;
+    }
+
     public void actualizaSensor() {
         if(_estaOcupado==true)
             _estaOcupado = false;
