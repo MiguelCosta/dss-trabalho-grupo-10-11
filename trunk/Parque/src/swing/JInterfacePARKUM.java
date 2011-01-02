@@ -178,13 +178,15 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel19 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldRegPagNCliente = new javax.swing.JTextField();
         jComboBoxRegisPagForma = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldRegPagMontante = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonRegistarPagamento = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jTextFieldRegisPagData = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListNotificacoes = new javax.swing.JList();
@@ -989,41 +991,56 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jLabel11.setText("Euros");
 
-        jButton1.setText("Registar Pagamento");
+        jButtonRegistarPagamento.setText("Registar Pagamento");
+        jButtonRegistarPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistarPagamentoActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Data do Pagamento  (aaaa-mm-dd hh:mm:ss)");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
-                .addContainerGap(172, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10)
-                .addContainerGap(255, Short.MAX_VALUE))
-            .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel19Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(32, 32, 32)
-                        .addComponent(jTextField1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel19Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel19Layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11))
-                            .addComponent(jComboBoxRegisPagForma, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(35, Short.MAX_VALUE))
-            .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel19Layout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addGap(32, 32, 32)
+                            .addComponent(jTextFieldRegPagNCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                            .addContainerGap(36, Short.MAX_VALUE))
+                        .addGroup(jPanel19Layout.createSequentialGroup()
+                            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel19Layout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel19Layout.createSequentialGroup()
+                                    .addGap(120, 120, 120)
+                                    .addComponent(jTextFieldRegPagMontante, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel11)))
+                            .addContainerGap(54, Short.MAX_VALUE))
+                        .addGroup(jPanel19Layout.createSequentialGroup()
+                            .addComponent(jLabel19)
+                            .addContainerGap(123, Short.MAX_VALUE))
+                        .addGroup(jPanel19Layout.createSequentialGroup()
+                            .addComponent(jLabel7)
+                            .addContainerGap())
+                        .addGroup(jPanel19Layout.createSequentialGroup()
+                            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextFieldRegisPagData, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel19Layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jComboBoxRegisPagForma, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addContainerGap(35, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                        .addComponent(jButtonRegistarPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1033,19 +1050,23 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                    .addComponent(jTextFieldRegPagNCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jComboBoxRegisPagForma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldRegPagMontante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addGap(38, 38, 38)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextFieldRegisPagData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonRegistarPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel17.add(jPanel19, new java.awt.GridBagConstraints());
@@ -1130,7 +1151,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-                JOptionPane.showMessageDialog(null, "Manuetenção adicionada com sucesso!", "manutenção adicionada", 1);
+                JOptionPane.showMessageDialog(null, "Manuetenção adicionada com sucesso!", "Manutenção adicionada", 1);
                 JInterfacePARKUM.this.dispose();
 
             }
@@ -1580,6 +1601,39 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
          jRadioButtonRelClienteNentrada.setSelected(false);
     }//GEN-LAST:event_jRadioButtonRelClienteTemposEstacionActionPerformed
 
+    private void jButtonRegistarPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistarPagamentoActionPerformed
+        String idCliente = jTextFieldRegPagNCliente.getText();
+        String modoPag = jComboBoxRegisPagForma.getSelectedItem().toString();
+        String montante = jTextFieldRegPagMontante.getText();
+        String data = jTextFieldRegisPagData.getText();
+        
+        String msgERRO = "";
+            if (idCliente.equalsIgnoreCase(""))                     msgERRO = msgERRO + "Falta inserir o número do Cliente\n";
+            if (modoPag.equalsIgnoreCase("Nao especificado"))       msgERRO = msgERRO + "Falta inserir o modo de pagamento\n";
+            if (montante.equalsIgnoreCase(""))                      msgERRO = msgERRO + "Falta inserir o tempo do pagamento\n";
+            if (data.equalsIgnoreCase(""))                          msgERRO = msgERRO + "Falta inserir a data do pagamento\n";
+
+            System.out.println(msgERRO);
+
+        if (msgERRO.equalsIgnoreCase("") == false) {
+            JOptionPane.showMessageDialog(null, msgERRO, "Erro ao registar Pagamento", 1);
+            }
+        else {
+            try {
+                Query.adicionarPagamento(idCliente,data, modoPag,montante);
+            } catch (SQLException ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+                JOptionPane.showMessageDialog(null, "Pagamento registado com sucesso!", "Pagamento registado", 1);
+                JInterfacePARKUM.this.dispose();
+
+            }
+        
+    }//GEN-LAST:event_jButtonRegistarPagamentoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1602,11 +1656,11 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonManRegista;
     private javax.swing.JButton jButtonProcurar;
     private javax.swing.JButton jButtonRegistarCliente;
+    private javax.swing.JButton jButtonRegistarPagamento;
     private javax.swing.JButton jButtonRelClienteGerarRel;
     private javax.swing.JButton jButtonRelDiaGerar;
     private javax.swing.JButton jButtonRelFacGerar;
@@ -1626,6 +1680,7 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1708,8 +1763,6 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldHora;
     private javax.swing.JTextField jTextFieldIDFuncionario;
     private javax.swing.JTextField jTextFieldManNumMaq;
@@ -1719,6 +1772,9 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JTextField jTextFieldNib;
     private javax.swing.JTextField jTextFieldNomeCliente;
     private javax.swing.JTextField jTextFieldProcurar;
+    private javax.swing.JTextField jTextFieldRegPagMontante;
+    private javax.swing.JTextField jTextFieldRegPagNCliente;
+    private javax.swing.JTextField jTextFieldRegisPagData;
     private javax.swing.JTextField jTextFieldRelMPIdMaq;
     private javax.swing.JTextField jTextFieldSelecDia;
     private javax.swing.JTextField jTextFieldSelecMes;
