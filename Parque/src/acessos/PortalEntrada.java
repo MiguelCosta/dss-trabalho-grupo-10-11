@@ -5,29 +5,27 @@
 
 package acessos;
 
-import sci.BaseDados;
-
 
 /**
  *
  * @author Miguel
  */
-public class PortalEntrada {
-    private int _portalID;
+public class PortalEntrada extends Portal {
+        private int _portalID;
 	private boolean _estado;
 	private int _codDisp;
-	public MonitorEntrada _monitor;
+	
 	public Bilhete _bilhete;
-	public BarreiraEntrada _barreiraEntrada;
-	public BaseDados _baseDados;
+
+        public PortalEntrada(int portalID){
+            super(portalID);
+        }
 
 	public boolean estado() {
 		throw new UnsupportedOperationException();
 	}
 
-	public void chamarFuncionario() {
-		throw new UnsupportedOperationException();
-	}
+	
 
 	public void imprimeBilhete() {
 		throw new UnsupportedOperationException();
