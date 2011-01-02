@@ -39,6 +39,5 @@ public class Recibo {
         System.out.println("Contribuinte Nº:\n");
         System.out.println("Morada:\n");
 
-        throw new UnsupportedOperationException();
     }
 }
