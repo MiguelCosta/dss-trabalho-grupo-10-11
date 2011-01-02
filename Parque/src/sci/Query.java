@@ -274,4 +274,11 @@ public class Query extends Model {
     }
 
 
+    public static void registarEntradaBilhete (String idBilhete){
+        String sql = "";
+        
+    }
+
+    
+
 }
