@@ -16,6 +16,17 @@ public class SensorEstacionamento {
     private String _idSensor;
     private boolean _estaOcupado;
 
+    public SensorEstacionamento(){
+        _idSensor = "0";
+        _estaOcupado = false;
+    }
+
+    public SensorEstacionamento(String idSensor, boolean estaOcu){
+        _idSensor = idSensor;
+        _estaOcupado = estaOcu;
+    }
+
+
     public String getId(){
         return _idSensor;
     }

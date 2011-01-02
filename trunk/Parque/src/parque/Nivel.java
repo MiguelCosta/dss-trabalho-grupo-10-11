@@ -5,6 +5,8 @@
 
 package parque;
 
+import parkum_cs.PainelInformacao;
+
 /**
  *
  * @author Hugo
@@ -14,17 +16,20 @@ public class Nivel {
     private int _idNivel;
     private int _nLugares;
     private boolean _estaLivre;
+    private PainelInformacao _painelI;
 
     public void Nivel() {
-        _idNivel = 0;
+        _idNivel = 1;
         _nLugares = 0;
         _estaLivre = true;
+        _painelI = new PainelInformacao(1,0);
     }
 
     public void Nivel(int idNivel,int nLugares,boolean estaLivre){
         _idNivel=idNivel;
         _nLugares=nLugares;
         _estaLivre=estaLivre;
+        _painelI = new PainelInformacao(idNivel, 0);
     }
 
     public int getIdNivel(){
