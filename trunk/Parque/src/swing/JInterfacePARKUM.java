@@ -202,7 +202,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel2 = new javax.swing.JPanel();
         jButtonRegistarPagamentomulta = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldMultaBilhete = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1089,7 +1089,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                         .addContainerGap()
                         .addComponent(jLabel22)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)))
+                        .addComponent(jTextFieldMultaBilhete, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -1098,7 +1098,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldMultaBilhete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
                 .addComponent(jButtonRegistarPagamentomulta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
@@ -1645,7 +1645,12 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     }//GEN-LAST:event_jButtonRegistarPagamentoActionPerformed
 
     private void jButtonRegistarPagamentomultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistarPagamentomultaActionPerformed
-        
+            String id_bilhete = jTextFieldMultaBilhete.toString();
+        try {
+            BaseDados.registarPagamentoDeMulta(id_bilhete);
+        } catch (SQLException ex) {
+            Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonRegistarPagamentomultaActionPerformed
 
     /**
@@ -1779,13 +1784,13 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextFieldHora;
     private javax.swing.JTextField jTextFieldIDFuncionario;
     private javax.swing.JTextField jTextFieldManNumMaq;
     private javax.swing.JTextField jTextFieldManTempo;
     private javax.swing.JTextField jTextFieldMatricula;
     private javax.swing.JTextField jTextFieldModoEntrada;
+    private javax.swing.JTextField jTextFieldMultaBilhete;
     private javax.swing.JTextField jTextFieldNib;
     private javax.swing.JTextField jTextFieldNomeCliente;
     private javax.swing.JTextField jTextFieldProcurar;
