@@ -5,6 +5,12 @@
 
 package acessos;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import sci.BaseDados;
+import sci.Model;
+
 
 /**
  *
@@ -13,6 +19,7 @@ package acessos;
 public class PortalEntrada extends Portal {
         private int _portalID;
 	private boolean _estado;
+        private int nBilhete=1;
 
         public PortalEntrada(int portalID){
             super(portalID);
@@ -24,17 +31,52 @@ public class PortalEntrada extends Portal {
 	}
 
 	public int verificarFormaEntrada() {
+
+
             return 0;
 	}
 
-	public boolean existeDispositivo() {
-            return true;
-	}
+	public boolean existeDispositivo(String codDisp) throws SQLException {
 
-	public boolean verificaOcupacao() {
-		throw new UnsupportedOperationException();
-	}
+            ResultSet rSet = null;
+            ArrayList<String> codigos = new ArrayList<String>();
+            boolean encontrado = false;
+            String sql = "SELECT * FROM CLIENTES WHERE ID_DISPOSITIVO = '";
+            rSet=Model.stmt.executeQuery(sql+codDisp+"'");
+            while(rSet.next()){
 
+                String code = rSet.getString(6);
+                codigos.add(code);
+                }
+
+            for(String cod: codigos){
+                if(cod.equals(codDisp)){
+                encontrado = true;
+                }
+            }
+        return encontrado;
+    }
+
+        public boolean verificaOcupacao() throws SQLException {
+
+            ResultSet rSet = null;
+            ArrayList<String> estadosPisos = new ArrayList<String>();
+            boolean ocupado = true;
+            rSet=Model.stmt.executeQuery("SELECT * FROM PISOS");
+            while(rSet.next()){
+                String estado = rSet.getString(3);
+                estadosPisos.add(estado);
+                }
+
+            for(String estado: estadosPisos){
+                if(estado.equals("0")){
+                ocupado = false;
+                }
+            }
+
+
+            return ocupado;
+	}
 	public void devolveCartaoAvenca() {
 		throw new UnsupportedOperationException();
 	}
@@ -52,7 +94,12 @@ public class PortalEntrada extends Portal {
 	}
 
 	public Bilhete emiteBilhete() {
-		throw new UnsupportedOperationException();
+                String dataEntrada = "" ; //Falta
+                String dataSaida = "a"; // Falta
+		Bilhete b = new Bilhete(nBilhete,dataEntrada,dataSaida,_portalID);
+                nBilhete++;
+                /*Falta Registar bilhete e entrada mas nao estou a conseguir*/
+          return b;
 	}
 
 

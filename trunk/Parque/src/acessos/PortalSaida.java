@@ -4,7 +4,10 @@
  */
 package acessos;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import sci.BaseDados;
+import sci.Model;
 
 /**
  *
@@ -20,8 +23,29 @@ public class PortalSaida {
         throw new UnsupportedOperationException();
     }
 
-    public boolean verificaValidadeBilhete(Bilhete aBilhete) {
-        throw new UnsupportedOperationException();
+    public boolean verificaValidadeBilhete(Bilhete aBilhete) throws SQLException {
+        
+        // Rever por causa das datas
+
+        ResultSet rSet = null;
+        int idBilhete = aBilhete.getIdBilhete();
+        String data = aBilhete.getHoraEntrada();
+        String dataHoraPagamento="", modoPagmanto = "";
+        Boolean valido = false;
+
+        String sql = "SELECT * WHERE ID_BILHETE = '"+idBilhete+"'";
+        sql = sql +" AND DATA_HORA_ENTRADA = '"+data+"'";
+        rSet=Model.stmt.executeQuery(sql);
+
+        while(rSet.next()){
+           dataHoraPagamento = rSet.getString(3);
+           modoPagmanto= rSet.getString(5);
+        }
+
+        if (!dataHoraPagamento.equals("") && !modoPagmanto.equals("")){
+            valido = true;
+        }
+        return valido;
     }
 
     public void devolveBilhete() {

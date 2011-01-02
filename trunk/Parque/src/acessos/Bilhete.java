@@ -12,7 +12,7 @@ public class Bilhete {
     private int _idBilhete;
     private String _dataHoraEntrada;
     private String _dataHoraSaida;
-    public int _id_PortalEntrada;
+    private int _id_PortalEntrada;
 
     public Bilhete (){
 
@@ -31,19 +31,26 @@ public class Bilhete {
         _id_PortalEntrada=b.getPortalEntrada();
     }
 
-    private int getIdBilhete() {
+    public Bilhete(int id, String dataEntrada, String dataSaida, int idPortal){
+         _idBilhete=id;
+         _dataHoraEntrada= dataEntrada;
+         _dataHoraSaida= dataSaida;
+         _id_PortalEntrada=idPortal;
+    }
+
+    public  int getIdBilhete() {
         return _idBilhete;
     }
 
-    private String getHoraSaida() {
+    public String getHoraSaida() {
         return _dataHoraSaida;
     }
 
-    private String getHoraEntrada() {
+    public String getHoraEntrada() {
         return _dataHoraEntrada;
     }
 
-    private int getPortalEntrada() {
+    public int getPortalEntrada() {
         return _id_PortalEntrada;
     }
 
