@@ -187,13 +187,10 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jButtonRegistarPagamento = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jTextFieldRegisPagData = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListNotificacoes = new javax.swing.JList();
-        jSeparator1 = new javax.swing.JSeparator();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -212,7 +209,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jTextFieldProcurarActionPerformed(evt);
             }
         });
-        jPanel6.add(jTextFieldProcurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 220, -1));
+        jPanel6.add(jTextFieldProcurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, -1));
 
         jButtonProcurar.setText("Procurar");
         jButtonProcurar.addActionListener(new java.awt.event.ActionListener() {
@@ -220,15 +217,15 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jButtonProcurarActionPerformed(evt);
             }
         });
-        jPanel6.add(jButtonProcurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
+        jPanel6.add(jButtonProcurar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         jLabel6.setText(" visualização em que está!");
         jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 350, 110));
+        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 250, 110));
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Modo de Visualização"));
-        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel8.setLayout(new java.awt.BorderLayout());
 
         jRadioButtonNCliente.setText("Nº de Cliente");
         jRadioButtonNCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -236,7 +233,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jRadioButtonNClienteActionPerformed(evt);
             }
         });
-        jPanel8.add(jRadioButtonNCliente);
+        jPanel8.add(jRadioButtonNCliente, java.awt.BorderLayout.CENTER);
 
         jRadioButtonNomeCliente.setText("Nome do Cliente");
         jRadioButtonNomeCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -244,9 +241,9 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jRadioButtonNomeClienteActionPerformed(evt);
             }
         });
-        jPanel8.add(jRadioButtonNomeCliente);
+        jPanel8.add(jRadioButtonNomeCliente, java.awt.BorderLayout.PAGE_START);
 
-        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 290, -1));
+        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 200, 70));
 
         jButtonRegistarCliente.setText("Registar Novo Cliente");
         jButtonRegistarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +251,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jButtonRegistarClienteActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonRegistarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, -1, -1));
+        jPanel3.add(jButtonRegistarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, -1, -1));
 
         jButtonEditar.setText("Editar Cliente");
         jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -262,7 +259,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jButtonEditarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
+        jPanel3.add(jButtonEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
 
         jComboBoxTipoCliente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos os Clientes" }));
         try {
@@ -277,7 +274,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jComboBoxTipoClienteActionPerformed(evt);
             }
         });
-        jPanel3.add(jComboBoxTipoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 290, -1));
+        jPanel3.add(jComboBoxTipoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 200, -1));
 
         jLabelNumerroCliente.setText("Número do Cliente");
 
@@ -309,24 +306,18 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelNumerroCliente)
+                    .addComponent(jLabelMatricula)
+                    .addComponent(jLabelModoEntrada)
                     .addComponent(jLabelNomeCliente)
                     .addComponent(jLabel1))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldidCliente)
-                            .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelMatricula)
-                            .addComponent(jLabelModoEntrada))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldModoEntrada)
-                            .addComponent(jTextFieldMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTextFieldNib))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextFieldNib, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(jTextFieldMatricula, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(jTextFieldModoEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(jTextFieldidCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,23 +325,29 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNumerroCliente)
-                    .addComponent(jLabelModoEntrada)
-                    .addComponent(jTextFieldidCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldModoEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldidCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNomeCliente)
-                    .addComponent(jLabelMatricula)
                     .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNomeCliente))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelModoEntrada)
+                    .addComponent(jTextFieldModoEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelMatricula)
                     .addComponent(jTextFieldMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldNib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(jTextFieldNib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap())
         );
 
         jTabbedPane3.addTab("Informações do Cliente", jPanel7);
+
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jRadioButtonRelClienteNentrada.setText("Nº de entradas");
         jRadioButtonRelClienteNentrada.addActionListener(new java.awt.event.ActionListener() {
@@ -358,6 +355,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jRadioButtonRelClienteNentradaActionPerformed(evt);
             }
         });
+        jPanel13.add(jRadioButtonRelClienteNentrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 130, -1));
 
         jRadioButtonRelClienteValorMensal.setText("Valor mensal a pagar");
         jRadioButtonRelClienteValorMensal.addActionListener(new java.awt.event.ActionListener() {
@@ -365,6 +363,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jRadioButtonRelClienteValorMensalActionPerformed(evt);
             }
         });
+        jPanel13.add(jRadioButtonRelClienteValorMensal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
         jRadioButtonRelClienteTemposEstacion.setText("Tempos médios de estacionamento");
         jRadioButtonRelClienteTemposEstacion.addActionListener(new java.awt.event.ActionListener() {
@@ -372,6 +371,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jRadioButtonRelClienteTemposEstacionActionPerformed(evt);
             }
         });
+        jPanel13.add(jRadioButtonRelClienteTemposEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, -1));
 
         jButtonRelClienteGerarRel.setText("Gerar Relatório");
         jButtonRelClienteGerarRel.addActionListener(new java.awt.event.ActionListener() {
@@ -379,31 +379,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jButtonRelClienteGerarRelActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jRadioButtonRelClienteNentrada, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButtonRelClienteTemposEstacion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(jRadioButtonRelClienteValorMensal, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonRelClienteGerarRel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRelClienteGerarRel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButtonRelClienteValorMensal)
-                    .addComponent(jRadioButtonRelClienteNentrada)
-                    .addComponent(jRadioButtonRelClienteTemposEstacion)))
-        );
+        jPanel13.add(jButtonRelClienteGerarRel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 134, 140));
 
         jTabbedPane3.addTab("Relatórios sobre o Cliente", jPanel13);
 
@@ -415,20 +391,20 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane3.addTab("Lista de Pagamentos em Atraso do Cliente", jPanel14);
 
-        jPanel3.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 650, -1));
+        jPanel3.add(jTabbedPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 490, -1));
 
         jPanel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes Registados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
@@ -459,10 +435,12 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel3.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 310));
+        jPanel3.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 350));
 
         jTabbedPane1.addTab("Gestão de Clientes", jPanel3);
 
@@ -474,14 +452,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -497,7 +475,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 jButtonRelDiaGerarActionPerformed(evt);
             }
         });
-        jPanel9.add(jButtonRelDiaGerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, -1, 80));
+        jPanel9.add(jButtonRelDiaGerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, 80));
 
         jRadioButtonRelDiaTotalEntSai.setText("Total de entradas e saidas");
         jRadioButtonRelDiaTotalEntSai.addActionListener(new java.awt.event.ActionListener() {
@@ -582,7 +560,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jLabel5.setText("Ano:");
         jPanel16.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
 
-        jPanel9.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 10, 310, 150));
+        jPanel9.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 310, 150));
 
         jTabbedPane2.addTab("Relatórios Diários", jPanel9);
 
@@ -630,23 +608,20 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelRelMP2)
+                    .addComponent(jRadioButtonRelMPNpag)
+                    .addComponent(jRadioButtonRelMPTotal)
+                    .addComponent(jRadioButtonRelMPNumPerce)
+                    .addComponent(jRadioButtonRelMPAvarias)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addComponent(jLabelRelMP1)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldRelMPIdMaq, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelRelMP2)
-                            .addComponent(jRadioButtonRelMPNpag)
-                            .addComponent(jRadioButtonRelMPTotal)
-                            .addComponent(jRadioButtonRelMPNumPerce)
-                            .addComponent(jRadioButtonRelMPAvarias))))
-                .addGap(293, 293, 293)
+                        .addComponent(jTextFieldRelMPIdMaq, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(124, 124, 124)
                 .addComponent(jButtonRelMPGerar)
-                .addContainerGap())
+                .addGap(157, 157, 157))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -654,10 +629,11 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelRelMP1)
                             .addComponent(jTextFieldRelMPIdMaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(28, 28, 28)
                         .addComponent(jLabelRelMP2)
                         .addGap(16, 16, 16)
                         .addComponent(jRadioButtonRelMPNpag)
@@ -667,7 +643,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                         .addComponent(jRadioButtonRelMPNumPerce)
                         .addGap(17, 17, 17)
                         .addComponent(jRadioButtonRelMPAvarias))
-                    .addComponent(jButtonRelMPGerar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
+                    .addComponent(jButtonRelMPGerar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -784,16 +760,16 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -804,7 +780,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap(123, Short.MAX_VALUE)
+                        .addContainerGap(73, Short.MAX_VALUE)
                         .addComponent(jComboBoxTabDistHora, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel12)
@@ -814,13 +790,14 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jComboBoxTabDistNivel, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelTabDist1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 64, Short.MAX_VALUE))
+                        .addGap(16, 16, Short.MAX_VALUE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jButtonTabDistGera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelTabDist2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -828,9 +805,6 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addComponent(jLabelTabDist1)
@@ -843,7 +817,10 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                             .addComponent(jLabel12)
                             .addComponent(jComboBoxTabDistHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(57, 57, 57)
-                        .addComponent(jButtonTabDistGera, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButtonTabDistGera, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1015,9 +992,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
                             .addContainerGap(36, Short.MAX_VALUE))
                         .addGroup(jPanel19Layout.createSequentialGroup()
                             .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel19Layout.createSequentialGroup()
-                                    .addComponent(jLabel10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel10)
                                 .addGroup(jPanel19Layout.createSequentialGroup()
                                     .addGap(120, 120, 120)
                                     .addComponent(jTextFieldRegPagMontante, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1073,7 +1048,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
 
         jTabbedPane1.addTab("Registar Pagamento", jPanel17);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 880, 366));
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 730, 400));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 395, -1, 11));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Notificações"));
 
@@ -1085,40 +1061,36 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 880, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 395, -1, 11));
-
-        jMenu3.setText("Logout");
-        jMenu3.add(jSeparator3);
-
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 907, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -1705,8 +1677,6 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JList jListPagamentosAtraso;
     private javax.swing.JList jListPagamentosAtrasoCliente;
     private javax.swing.JList jListTabelaDistribuicoes;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -1759,7 +1729,6 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
