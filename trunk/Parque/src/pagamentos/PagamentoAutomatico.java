@@ -11,6 +11,6 @@ package pagamentos;
 public class PagamentoAutomatico extends Pagamento {
 
     public void processaPagamentos() {
-        throw new UnsupportedOperationException();
+        return;
     }
 }

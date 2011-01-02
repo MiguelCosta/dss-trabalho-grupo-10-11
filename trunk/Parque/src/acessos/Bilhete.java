@@ -31,11 +31,10 @@ public class Bilhete {
         _id_PortalEntrada=b.getPortalEntrada();
     }
 
-    public Bilhete(int id, String dataEntrada, String dataSaida, int idPortal){
+    public Bilhete(int id, String dataEntrada, String dataSaida){
          _idBilhete=id;
          _dataHoraEntrada= dataEntrada;
          _dataHoraSaida= dataSaida;
-         _id_PortalEntrada=idPortal;
     }
 
     public  int getIdBilhete() {
@@ -52,6 +51,10 @@ public class Bilhete {
 
     public int getPortalEntrada() {
         return _id_PortalEntrada;
+    }
+
+    public void setPortalEntrada(int portal){
+        _id_PortalEntrada=portal;
     }
 
 

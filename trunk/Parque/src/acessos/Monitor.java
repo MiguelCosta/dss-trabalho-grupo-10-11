@@ -16,7 +16,7 @@ public class Monitor {
         _informacao = "";
     }
     public String comunicaErro(String aErro) {
-        throw new UnsupportedOperationException();
+        return "";
     }
 
     public void mostrar(String info) { //getInformacao
