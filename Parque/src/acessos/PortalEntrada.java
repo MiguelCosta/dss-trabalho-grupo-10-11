@@ -24,11 +24,11 @@ public class PortalEntrada extends Portal {
 	}
 
 	public int verificarFormaEntrada() {
-
+            return 0;
 	}
 
 	public boolean existeDispositivo() {
-		
+            return true;
 	}
 
 	public boolean verificaOcupacao() {
