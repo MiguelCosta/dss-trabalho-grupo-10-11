@@ -111,7 +111,8 @@ public class BaseDados {
             dataSaida = rSet.getString(4);
         }
 
-        Bilhete aux = new Bilhete(Integer.parseInt(idBi), dataEntrada,dataSaida);
+        int idInt= Integer.parseInt(idBi);
+        Bilhete aux = new Bilhete(idInt, dataEntrada,dataSaida);
         GregorianCalendar dataActual = new GregorianCalendar();
 
         float montante = pagamentos.MaquinaPagamento.calculaMulta(aux);
