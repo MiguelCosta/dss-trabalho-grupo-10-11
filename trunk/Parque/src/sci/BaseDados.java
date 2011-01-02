@@ -28,11 +28,11 @@ public class BaseDados {
      public static void registoEntradaAvenca(int aNCliente) {
     
     }
-    public void registarPagamento(Bilhete aBilhete) {
-        throw new UnsupportedOperationException();
+    public static void registarPagamento(String id_cliente, String data, String modo,String montante) throws SQLException, Exception {
+        Query.adicionarPagamento(id_cliente, data, modo, montante);
     }
 
-    public void registarManutencao(String id_Maquina, String desc,String hora_manutencao, String tempo_Manutencao,String id_funcionario) throws SQLException, Exception{
+    public static void registarManutencao(String id_Maquina, String desc,String hora_manutencao, String tempo_Manutencao,String id_funcionario) throws SQLException, Exception{
        Query.adicionarManutencao(id_Maquina, desc, hora_manutencao, tempo_Manutencao, id_funcionario);
     }
 
