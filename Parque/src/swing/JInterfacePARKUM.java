@@ -37,7 +37,7 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
     FichaCliente cliente = new FichaCliente();
 
     /** Creates new form JInterfacePARKUM */
-    public JInterfacePARKUM() {
+    public JInterfacePARKUM() throws SQLException {
         //Util.centerOnScreen(this);
          try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -57,6 +57,16 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
         jTextFieldNib.setEditable(false);
         jTextFieldMatricula.setEditable(false);
         jTextFieldModoEntrada.setEditable(false);
+
+        String pag = "";
+        DefaultListModel model = new DefaultListModel();
+        rSet = Query.queryClientes();
+        
+        while (rSet.next()){
+            pag = Query.pagamentoEmAtraso(rSet.getString(1));
+            model.addElement(pag);
+        }
+        jListPagamentosAtraso.setModel(model);
     }
 
     /** This method is called from within the constructor to
@@ -1439,7 +1449,6 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
             JOptionPane.showMessageDialog(null, "Seleccione o cliente que pretende alterar!", "Erro ao alterar cliente",1);
         } else {
 
-
             String idCliente = jTextFieldidCliente.getText();
             JDialogAlterCliente alterarProduto = null;
             try {
@@ -1551,6 +1560,10 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
             jTextFieldMatricula.setText(cliente.getMatricula());
             jTextFieldNib.setText(cliente.getNib());
 
+            DefaultListModel model = new DefaultListModel();
+            String atraso = Query.pagamentoEmAtraso(cliente.getIdCliente());
+            model.addElement(atraso);
+            jListPagamentosAtrasoCliente.setModel(model);
 
 
         } catch (SQLException ex) {
@@ -1621,7 +1634,11 @@ catch (SQLException ex) { Logger.getLogger(JInterfacePARKUM.class.getName()).log
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new JInterfacePARKUM().setVisible(true);
+                try {
+                    new JInterfacePARKUM().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
