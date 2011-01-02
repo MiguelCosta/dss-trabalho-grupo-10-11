@@ -4,6 +4,8 @@
  */
 package parkum_cs;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Miguel
@@ -16,6 +18,7 @@ public class PainelGlobal {
     public PainelGlobal(){
         _nVeiculosTotal=0;
         _estaLivre = true;
+
     }
 
     public void actualizaInfo(int nVeiculos, boolean estaLivre) {
