@@ -19,17 +19,8 @@ public class Bilhete {
         _idBilhete=0;
         _dataHoraEntrada=null;
         _dataHoraSaida=null;
-        _id_PortalEntrada=0;
     }
 
-
-    public Bilhete(Bilhete b){
-
-        _idBilhete=b.getIdBilhete();
-        _dataHoraEntrada = b.getHoraEntrada();
-        _dataHoraSaida = b.getHoraSaida();
-        _id_PortalEntrada=b.getPortalEntrada();
-    }
 
     public Bilhete(int id, String dataEntrada, String dataSaida){
          _idBilhete=id;
