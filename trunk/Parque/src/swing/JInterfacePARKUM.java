@@ -25,6 +25,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import sci.BaseDados;
 import sci.GestaoRelatorios;
 
 /**
@@ -1126,7 +1127,8 @@ public class JInterfacePARKUM extends javax.swing.JFrame implements Observer {
             }
         else {
             try {
-                Query.adicionarManutencao(idMaquina, desc, hora_manutencao, tempoMan, idFuncionario);
+                BaseDados.registarManutencao(idMaquina, desc, hora_manutencao, hora_manutencao, idFuncionario);
+                //Query.adicionarManutencao(idMaquina, desc, hora_manutencao, tempoMan, idFuncionario);
             } catch (SQLException ex) {
                 Logger.getLogger(JInterfacePARKUM.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
