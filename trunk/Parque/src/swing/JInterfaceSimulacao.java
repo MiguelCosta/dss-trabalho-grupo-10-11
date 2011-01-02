@@ -62,6 +62,7 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
         jButtonRegistarPagamentoBilhete = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldPagamentoMontanteBilhete = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -343,6 +344,19 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Pagamentos", jPanel2);
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 772, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 151, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel4);
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -458,6 +472,7 @@ public class JInterfaceSimulacao extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelModoEntradaClienteRegistado;
     private javax.swing.JPanel jPanelPagamentoBilhete;
     private javax.swing.JPanel jPanelPagamentoClienteRegistado;
