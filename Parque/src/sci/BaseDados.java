@@ -8,6 +8,7 @@ import acessos.Bilhete;
 import acessos.PortalEntrada;
 import acessos.PortalSaida;
 import clientes.GestaoClientes;
+import java.sql.SQLException;
 import pagamentos.MaquinaPagamento;
 
 /**
@@ -20,9 +21,11 @@ public class BaseDados {
     public PortalSaida _unnamed_PortalSaida_;
     public GestaoRelatorios _unnamed_GestaoRelatorios_;
     public GestaoClientes _unnamed_GestaoClientes_;
+    
 
-    public void registaBilhete(int aId) {
-        throw new UnsupportedOperationException();
+
+    public void registaBilhete(int aId, String dataEntrada) throws SQLException {
+       Model.stmt.executeQuery("INSERT INTO BILHETES VALUES '"+aId+"','"+dataEntrada+"','','',''");
     }
 
     public void registoEntradaAuto(int aCodDisp) {
