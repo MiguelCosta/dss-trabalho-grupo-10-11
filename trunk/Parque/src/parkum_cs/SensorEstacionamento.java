@@ -11,10 +11,15 @@ package parkum_cs;
 public class SensorEstacionamento {
 
     private String _idSensor;
-    private String _idsensor;
-    private boolean _estado;
-    public PARKUM_CS _unnamed_PARKUM_CS_;
-    public PARKUM_CS _unnamed_PARKUM_CS_2;
+    private boolean _estaOcupado;
+
+    public String getId(){
+        return _idSensor;
+    }
+
+    public boolean getEstaOcupado(){
+        return _estaOcupado;
+    }
 
     public void actualizaSensor() {
         throw new UnsupportedOperationException();

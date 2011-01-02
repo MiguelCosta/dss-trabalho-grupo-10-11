@@ -5,7 +5,12 @@
 
 package acessos;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import parkum_cs.PainelGlobal;
+import sci.BaseDados;
+import sci.Model;
 
 /**
  *
@@ -45,6 +50,25 @@ public class Portal {
 	_monitor.mostrar("O funcionário foi contactado");
     }
 
-    
+    public boolean existeDispositivo(String codDisp) throws SQLException {
+
+            ResultSet rSet = null;
+            ArrayList<String> codigos = new ArrayList<String>();
+            boolean encontrado = false;
+            String sql = "SELECT * FROM CLIENTES WHERE ID_DISPOSITIVO = '";
+            rSet=Model.stmt.executeQuery(sql+codDisp+"'");
+            while(rSet.next()){
+
+                String code = rSet.getString(6);
+                codigos.add(code);
+                }
+
+            for(String cod: codigos){
+                if(cod.equals(codDisp)){
+                encontrado = true;
+                }
+            }
+        return encontrado;
+    }
 
 }

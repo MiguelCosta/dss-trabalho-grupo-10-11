@@ -59,11 +59,7 @@ public class PortalSaida {
     public int verificaFormaSaida() {
         throw new UnsupportedOperationException();
     }
-
-    public boolean existeDispositivo(int aCodDisp) {
-        throw new UnsupportedOperationException();
-    }
-
+    
     public int leNumClienteAvenca() {
         throw new UnsupportedOperationException();
     }
