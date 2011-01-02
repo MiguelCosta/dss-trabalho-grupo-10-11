@@ -13,31 +13,22 @@ package acessos;
 public class PortalEntrada extends Portal {
         private int _portalID;
 	private boolean _estado;
-	private int _codDisp;
-	
-	public Bilhete _bilhete;
 
         public PortalEntrada(int portalID){
             super(portalID);
+            _estado=false;
         }
 
 	public boolean estado() {
 		throw new UnsupportedOperationException();
 	}
 
-	
-
-	public void imprimeBilhete() {
-		throw new UnsupportedOperationException();
-	}
-
 	public int verificarFormaEntrada() {
-            int codDiap = 0;
-            return codDiap;
+
 	}
 
 	public boolean existeDispositivo() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public boolean verificaOcupacao() {

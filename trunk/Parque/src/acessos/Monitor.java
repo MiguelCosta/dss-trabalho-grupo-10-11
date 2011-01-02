@@ -19,12 +19,12 @@ public class Monitor {
         throw new UnsupportedOperationException();
     }
 
-    public String mostrar() { //getInformacao
-        return _informacao;
+    public void mostrar(String info) { //getInformacao
+        System.out.println(info);
     }
 
     public void alterarInfo(String informacao){
-        this._informacao = informacao;
+        _informacao = informacao;
     }
 
     public void adicionarInfo(String informacao){
