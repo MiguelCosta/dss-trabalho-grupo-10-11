@@ -86,7 +86,7 @@ public class MaquinaPagamento {
         return;
     }
 
-    public static void leDados(String aImput) {
+    public static void leDados(String aInput) {
     }
 
     public static void comunicaSucesso() {
