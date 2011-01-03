@@ -10,3 +10,8 @@
 -Faltam 2 relatorios diarios
 
 -Falta um relatório cliente ...
+
+
+o que está mal:
+    - o numero de bilhete estraviados nao calcula certo por causa da data
+    - os pagamentos em atraso tambem nao funciona ao que tudo indica também por causa do tratamento das datas
